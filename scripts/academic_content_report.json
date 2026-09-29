@@ -1,0 +1,990 @@
+{
+  "courses": {
+    "Diferansiyel Denklemler": {
+      "file_count": 3,
+      "definitions": 0,
+      "theorems": 0,
+      "examples": 0,
+      "problems": 1,
+      "solutions": 0,
+      "exams_count": 1,
+      "sample_files": [
+        "difdenk-2023-vize.pdf",
+        "difdenk_final_06012025.jpg",
+        "Diferansiyel_Denklemler_Final.pdf"
+      ],
+      "exams": [
+        "difdenk-2023-vize.pdf"
+      ]
+    },
+    "Bilgisayar Mimarisi": {
+      "file_count": 2,
+      "definitions": 3,
+      "theorems": 3,
+      "examples": 16,
+      "problems": 1,
+      "solutions": 2,
+      "exams_count": 0,
+      "sample_files": [
+        "Bilgisayar_Mimarisi.pdf",
+        "Bilgisayar_Mimarisi_2021_final.docx"
+      ],
+      "exams": []
+    },
+    "Graf Teorisi": {
+      "file_count": 1,
+      "definitions": 46,
+      "theorems": 50,
+      "examples": 17,
+      "problems": 12,
+      "solutions": 5,
+      "exams_count": 0,
+      "sample_files": [
+        "GRAF TEORİ DERS NOTLARI.docx"
+      ],
+      "exams": []
+    },
+    "Görsel Programlama": {
+      "file_count": 2,
+      "definitions": 0,
+      "theorems": 0,
+      "examples": 0,
+      "problems": 0,
+      "solutions": 0,
+      "exams_count": 0,
+      "sample_files": [
+        "gorsel_prog_vize_2022.pdf",
+        "gorsel_prog_vize_2023.pdf"
+      ],
+      "exams": []
+    },
+    "Analitik Geometri": {
+      "file_count": 102,
+      "definitions": 0,
+      "theorems": 0,
+      "examples": 0,
+      "problems": 89,
+      "solutions": 0,
+      "exams_count": 2,
+      "sample_files": [
+        "AnaGeo\\1._Hafta_Ders_Notlar.pdf",
+        "AnaGeo\\analitik 2_vize sonrası-ekli.pdf",
+        "AnaGeo\\Analitik Geometri I .pdf",
+        "AnaGeo\\Analitik Geometri II.pdf",
+        "AnaGeo\\analitik-geo-1.pdf"
+      ],
+      "exams": [
+        "AnaGeo\\vize oncesi(1).pdf",
+        "AnaGeo\\vize sonrası.pdf"
+      ]
+    },
+    "Matematiksel Analiz": {
+      "file_count": 14,
+      "definitions": 152,
+      "theorems": 177,
+      "examples": 2,
+      "problems": 9,
+      "solutions": 8,
+      "exams_count": 2,
+      "sample_files": [
+        "Analiz\\2025 Vize 1.sınıf.jpeg",
+        "Analiz\\Analiz umut pdf.pdf",
+        "Analiz\\analiz-1 final.txt",
+        "Analiz\\analiz3_defter_keremu.pdf",
+        "Analiz\\analiz3_final_2023.jpg"
+      ],
+      "exams": [
+        "Analiz\\2025 Vize 1.sınıf.jpeg",
+        "Analiz\\analiz-1 final.txt"
+      ]
+    },
+    "Bilgisayar Programlama": {
+      "file_count": 91,
+      "definitions": 5,
+      "theorems": 20,
+      "examples": 73,
+      "problems": 28,
+      "solutions": 4,
+      "exams_count": 1,
+      "sample_files": [
+        "Bilgisayar Programlama\\04122421_BYLGYSAYAR_BYLYMY_DERSY_DERS_NOTLARI3.pdf",
+        "Bilgisayar Programlama\\matbil.py",
+        "Bilgisayar Programlama\\PYTHON PROGRAMLAMA & ALGORİTMA_ SIFIRDAN İLERİ SEVİYEYE TAM KILAVUZ (1).pdf",
+        "Bilgisayar Programlama\\tauzenharshad.py",
+        "Bilgisayar Programlama\\BilgProgramlama\\desktop.ini"
+      ],
+      "exams": [
+        "Bilgisayar Programlama\\BilgProgramlama\\Final\\final.py"
+      ]
+    },
+    "Temel Bilgi Teknolojileri": {
+      "file_count": 180,
+      "definitions": 2,
+      "theorems": 6,
+      "examples": 159,
+      "problems": 23,
+      "solutions": 5,
+      "exams_count": 2,
+      "sample_files": [
+        "TBT\\1.sınıf vize A.jpeg",
+        "TBT\\1.sınıf vize B.jpeg",
+        "TBT\\asdasd.txt",
+        "TBT\\donem-1.html",
+        "TBT\\donem-1.pdf"
+      ],
+      "exams": [
+        "TBT\\1.sınıf vize A.jpeg",
+        "TBT\\1.sınıf vize B.jpeg"
+      ]
+    }
+  },
+  "overall_totals": {
+    "definitions": 208,
+    "theorems": 256,
+    "examples": 267,
+    "problems": 163,
+    "solutions": 24,
+    "exams": 8
+  },
+  "pdf_details": [
+    {
+      "path": "Bilgisayar_Mimarisi.pdf",
+      "pages": 137,
+      "total_chars": 35020,
+      "is_scanned": false,
+      "course": "Bilgisayar Mimarisi",
+      "metrics": {
+        "defs": 3,
+        "thms": 3,
+        "exs": 15,
+        "probs": 1,
+        "sols": 2
+      }
+    },
+    {
+      "path": "difdenk-2023-vize.pdf",
+      "pages": 4,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Diferansiyel Denklemler",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Diferansiyel_Denklemler_Final.pdf",
+      "pages": 3,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Diferansiyel Denklemler",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "gorsel_prog_vize_2022.pdf",
+      "pages": 2,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Görsel Programlama",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "gorsel_prog_vize_2023.pdf",
+      "pages": 2,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Görsel Programlama",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\1._Hafta_Ders_Notlar.pdf",
+      "pages": 10,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\analitik 2_vize sonrası-ekli.pdf",
+      "pages": 73,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\Analitik Geometri I .pdf",
+      "pages": 56,
+      "total_chars": 82,
+      "is_scanned": false,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\Analitik Geometri II.pdf",
+      "pages": 38,
+      "total_chars": 22,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\analitik-geo-1.pdf",
+      "pages": 161,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\analitik-geo-2.pdf",
+      "pages": 112,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\uygulamalar.pdf",
+      "pages": 13,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\vize oncesi(1).pdf",
+      "pages": 43,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\vize sonrası.pdf",
+      "pages": 45,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "AnaGeo\\yeni analitik 26.7.2016(1).pdf",
+      "pages": 77,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Analitik Geometri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Analiz\\Analiz umut pdf.pdf",
+      "pages": 14,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Matematiksel Analiz",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Analiz\\analiz3_defter_keremu.pdf",
+      "pages": 47,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Matematiksel Analiz",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Analiz\\Analiz_3.pdf",
+      "pages": 117,
+      "total_chars": 0,
+      "is_scanned": true,
+      "course": "Matematiksel Analiz",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Analiz\\Analiz 1\\Analiz 1.pdf",
+      "pages": 97,
+      "total_chars": 5691,
+      "is_scanned": false,
+      "course": "Matematiksel Analiz",
+      "metrics": {
+        "defs": 6,
+        "thms": 8,
+        "exs": 1,
+        "probs": 3,
+        "sols": 7
+      }
+    },
+    {
+      "path": "Analiz\\Analiz 1\\Analiz I Öğrenci Notları.pdf",
+      "pages": 17,
+      "total_chars": 9398,
+      "is_scanned": false,
+      "course": "Matematiksel Analiz",
+      "metrics": {
+        "defs": 0,
+        "thms": 2,
+        "exs": 1,
+        "probs": 1,
+        "sols": 1
+      }
+    },
+    {
+      "path": "Analiz\\Analiz 1\\Analiz_1.pdf",
+      "pages": 772,
+      "total_chars": 546587,
+      "is_scanned": false,
+      "course": "Matematiksel Analiz",
+      "metrics": {
+        "defs": 146,
+        "thms": 167,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Bilgisayar Programlama\\04122421_BYLGYSAYAR_BYLYMY_DERSY_DERS_NOTLARI3.pdf",
+      "pages": 21,
+      "total_chars": 15891,
+      "is_scanned": false,
+      "course": "Bilgisayar Programlama",
+      "metrics": {
+        "defs": 0,
+        "thms": 10,
+        "exs": 23,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Bilgisayar Programlama\\PYTHON PROGRAMLAMA & ALGORİTMA_ SIFIRDAN İLERİ SEVİYEYE TAM KILAVUZ (1).pdf",
+      "pages": 23,
+      "total_chars": 32726,
+      "is_scanned": false,
+      "course": "Bilgisayar Programlama",
+      "metrics": {
+        "defs": 5,
+        "thms": 7,
+        "exs": 16,
+        "probs": 21,
+        "sols": 4
+      }
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\Bilgisayar Programlama I Ödevi-II.pdf",
+      "pages": 3,
+      "total_chars": 5213,
+      "is_scanned": false,
+      "course": "Bilgisayar Programlama",
+      "metrics": {
+        "defs": 0,
+        "thms": 3,
+        "exs": 3,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Bilgisayar Programlama\\SORULAR\\PC PROGRAMLAMA ÖRNEK SORULAR 2.pdf",
+      "pages": 12,
+      "total_chars": 5221,
+      "is_scanned": false,
+      "course": "Bilgisayar Programlama",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 1,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "Bilgisayar Programlama\\SORULAR\\PC PROGRAMLAMA ÖRNEK SORULAR.pdf",
+      "pages": 1,
+      "total_chars": 564,
+      "is_scanned": false,
+      "course": "Bilgisayar Programlama",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 1,
+        "probs": 1,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1.pdf",
+      "pages": 28,
+      "total_chars": 23867,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 1,
+        "thms": 2,
+        "exs": 44,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\Matlab Çıkmış Sorular 2.pdf",
+      "pages": 6,
+      "total_chars": 7752,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 1,
+        "exs": 2,
+        "probs": 5,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\Matlab Çıkmış Sınav Soruları 1.pdf",
+      "pages": 2,
+      "total_chars": 2380,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 2,
+        "probs": 4,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\ocak.pdf",
+      "pages": 7,
+      "total_chars": 6609,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 1,
+        "exs": 2,
+        "probs": 9,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders1.pdf",
+      "pages": 1,
+      "total_chars": 719,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 1,
+        "probs": 0,
+        "sols": 5
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders10.pdf",
+      "pages": 5,
+      "total_chars": 2764,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 5,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders2.pdf",
+      "pages": 6,
+      "total_chars": 4196,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 4,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders3.pdf",
+      "pages": 6,
+      "total_chars": 4380,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 6,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders4.pdf",
+      "pages": 4,
+      "total_chars": 2257,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 8,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders5.pdf",
+      "pages": 4,
+      "total_chars": 2910,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 5,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders6.pdf",
+      "pages": 3,
+      "total_chars": 2044,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 7,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders7.pdf",
+      "pages": 3,
+      "total_chars": 1839,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 5,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders8.pdf",
+      "pages": 4,
+      "total_chars": 3705,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 1,
+        "thms": 2,
+        "exs": 5,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "TBT\\donem-1\\PDF\\ders9.pdf",
+      "pages": 3,
+      "total_chars": 1725,
+      "is_scanned": false,
+      "course": "Temel Bilgi Teknolojileri",
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 0,
+        "probs": 0,
+        "sols": 0
+      }
+    }
+  ],
+  "docx_details": [
+    {
+      "path": "Bilgisayar_Mimarisi_2021_final.docx",
+      "paragraphs": 18,
+      "char_count": 1569,
+      "course": "Bilgisayar Mimarisi",
+      "sample": [
+        "ESKİŞEHİR OSMANGAZİ ÜNİVERSİTESİMatematik-Bilgisayar Bölümü, Bilgisayar MimarisiYıl Sonu İmtihan, 20.01.2020, Süre:30 dakika",
+        "Komut(buyruk) kümesinde daha fazla genel kullanım amaçlı kaydedici olması neden iyidir? Kaydedici sayısı çok düşük olursa ne tür sorunlar ortaya çıkar? ",
+        "Kod çevirici devrelere 1 örnek veriniz. ",
+        "Onaltılık tabanından verilen BABA.1101 sayısını sekizlik tabanına çeviriniz.",
+        "Onluk tabanında verilen 1011.1101 sayısını BCD kodu ile kodlayınız."
+      ],
+      "metrics": {
+        "defs": 0,
+        "thms": 0,
+        "exs": 1,
+        "probs": 0,
+        "sols": 0
+      }
+    },
+    {
+      "path": "GRAF TEORİ DERS NOTLARI.docx",
+      "paragraphs": 1285,
+      "char_count": 120506,
+      "course": "Graf Teorisi",
+      "sample": [
+        "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ",
+        "GRAF TEORİ VE UYGULAMALARI-I",
+        "PROF.DR. İBRAHİM GÜNALTILI",
+        "Eskişehir Osmngazi Üniversitesi, Fen Fakültesi, ",
+        "Matematik ve Bilgisayar Bilimleri Bölümü Öğretim Üyesi"
+      ],
+      "metrics": {
+        "defs": 46,
+        "thms": 50,
+        "exs": 17,
+        "probs": 12,
+        "sols": 5
+      }
+    }
+  ],
+  "code_details": [
+    {
+      "path": "Bilgisayar Programlama\\matbil.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 56,
+      "functions": [
+        "asalmi",
+        "pozbol",
+        "asalcarpan",
+        "carpim"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\tauzenharshad.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 39,
+      "functions": [
+        "taumu",
+        "zenginmi",
+        "harshadm"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\evli.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 32,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\ifelse.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 7,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\negpoz.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 10,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\tekcift.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 13,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\top.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 15,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\uygulama1.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 7,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\uygulama2.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 8,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\uygulama3.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 2,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\uygulama4.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 2,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\Final\\final.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 4,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\FinalHazirlik\\files\\files.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 0,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\BilgProgramlama\\FinalHazirlik\\sqlite3\\sqlite.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 71,
+      "functions": [
+        "verileriYazdir"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q1.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 2,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q2.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 5,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q3.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 5,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q4.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 7,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q5.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 10,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q6.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 11,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q7.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 31,
+      "functions": [
+        "isPrime",
+        "isSemiPrime",
+        "semiPrimes",
+        "main"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\FOR\\q8.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 14,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\GENEL\\q1.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 2,
+      "functions": [
+        "printlen"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\GENEL\\q2.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 8,
+      "functions": [
+        "freq"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\GENEL\\q3.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 11,
+      "functions": [
+        "countUpperLower"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\GENEL\\q4.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 7,
+      "functions": [
+        "q4"
+      ]
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\GENEL\\q5.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 4,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\GENEL\\q6.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 6,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\Koşullu Durumlar\\q1.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 5,
+      "functions": []
+    },
+    {
+      "path": "Bilgisayar Programlama\\Programlama-2\\Koşullu Durumlar\\q2.py",
+      "language": "python",
+      "course": "Bilgisayar Programlama",
+      "lines": 3,
+      "functions": []
+    }
+  ],
+  "image_count": 132
+}

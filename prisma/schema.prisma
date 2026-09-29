@@ -1,0 +1,464 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User Profile & Learning Intelligence
+model User {
+  id               String               @id @default(cuid())
+  email            String?              @unique
+  username         String               @unique
+  passwordHash     String?
+  rating           Int                  @default(1200) // Problem Skill Rating (Elo)
+  ratingDeviation  Float                @default(350.0) // Bayesian uncertainty
+  independenceScore Float               @default(5.0) // 1.0 - 5.0 stars
+  xp               Int                  @default(0)
+  streakDays       Int                  @default(0)
+  lastActiveDate   DateTime?
+  preferredLang    String               @default("tr") // "tr" or "en"
+  role             String               @default("USER") // "USER" or "ADMIN"
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+
+  submissions      Submission[]
+  bookmarks        Bookmark[]
+  mistakes         MistakeItem[]
+  spacedReviews    SpacedReview[]
+  dailyLogs        DailyLog[]
+  conceptMasteries UserConceptMastery[]
+}
+
+// Verified Mathematical Knowledge Base
+model Concept {
+  id                 String               @id // e.g. "bayes-theorem", "matrix-multiplication"
+  category           String               // MATHEMATICS, COMPUTER_SCIENCE, MATH_X_CS
+  subcategory        String               // Foundations, Probability, Linear Algebra, etc.
+  formalStatement    String               // Invariant formal LaTeX statement
+  assumptions        String?              // Required mathematical assumptions
+  notation           String?              // Standard notation
+  canonicalFormula   String?              // Canonical mathematical formula
+  proofDerivation    String?              // Step-by-step formal derivation
+  verificationLevel  Int                  @default(1) // Level 1 to Level 6
+  verificationStatus String               @default("VERIFIED") // VERIFIED, FORMALLY_VERIFIED, REVIEW_PENDING
+  sourceTitle        String               // Academic source title
+  sourceAuthor       String               // Author / institution
+  sourceCitation     String?              // Chapter, section, or academic URL
+  version            Int                  @default(1)
+  lastReviewedAt     DateTime             @default(now())
+
+  translations       ConceptTranslation[]
+  lessonSteps        LessonStep[]
+  prerequisites      ConceptDependency[]  @relation("DependentConcept")
+  dependents         ConceptDependency[]  @relation("PrerequisiteConcept")
+  problems           ProblemConcept[]
+  userMasteries      UserConceptMastery[]
+  topicConcepts      TopicConcept[]
+}
+
+model ConceptTranslation {
+  id              String   @id @default(cuid())
+  conceptId       String
+  language        String   // "en", "tr"
+  name            String   // e.g. "Bayes' Theorem" / "Bayes Teoremi"
+  dualTerminology String?  // e.g. "Bayes Teoremi (Bayes' Theorem)"
+  definition      String   // KaTeX Markdown
+  intuition       String   // Mental model / conceptual explanation
+  commonPitfalls  String   // JSON string or Markdown of common misconceptions
+
+  concept         Concept  @relation(fields: [conceptId], references: [id], onDelete: Cascade)
+  @@unique([conceptId, language])
+}
+
+model ConceptDependency {
+  id             String   @id @default(cuid())
+  conceptId      String   // The higher-level concept (e.g. "eigenvalues")
+  prerequisiteId String   // The prerequisite concept (e.g. "matrix-multiplication")
+  importance     String   @default("ESSENTIAL") // ESSENTIAL, RECOMMENDED
+
+  concept        Concept  @relation("DependentConcept", fields: [conceptId], references: [id], onDelete: Cascade)
+  prerequisite   Concept  @relation("PrerequisiteConcept", fields: [prerequisiteId], references: [id], onDelete: Cascade)
+  @@unique([conceptId, prerequisiteId])
+}
+
+model LessonStep {
+  id                String                 @id @default(cuid())
+  conceptId         String
+  stepOrder         Int                    // 1: Intuition, 2: Definition, 3: Notation, 4: Worked Example, 5: Mini Check, 6: Guided Problem
+  stepType          String                 // INTUITION, DEFINITION, WORKED_EXAMPLE, MINI_CHECK, GUIDED_PROBLEM
+  miniCheckAnswer   String?                // Machine-evaluable answer if applicable
+  miniCheckOptions  String?                // JSON options if multiple choice
+
+  translations      LessonStepTranslation[]
+  concept           Concept                @relation(fields: [conceptId], references: [id], onDelete: Cascade)
+}
+
+model LessonStepTranslation {
+  id                String     @id @default(cuid())
+  lessonStepId      String
+  language          String     // "en", "tr"
+  title             String
+  content           String     // KaTeX Markdown
+  miniCheckQuestion String?
+
+  lessonStep        LessonStep @relation(fields: [lessonStepId], references: [id], onDelete: Cascade)
+  @@unique([lessonStepId, language])
+}
+
+// Problem Catalog
+model Problem {
+  id                 String               @id @default(cuid())
+  slug               String               @unique
+  category           String               // MATHEMATICS, COMPUTER_SCIENCE, MATH_X_CS
+  subcategory        String
+  difficulty         String               // BEGINNER, EASY, INTERMEDIATE, ADVANCED, VERY_ADVANCED, EXPERT
+  rating             Int                  // Target Elo (1000 - 2200+)
+  questionType       String               // MULTIPLE_CHOICE, NUMERIC, ALGEBRAIC, MULTI_STEP, DEBUGGING, CODING
+  estimatedTime      Int                  // minutes
+  correctAnswer      String               // Invariant machine-checkable string / regex / JSON
+  codeSnippet        String?
+  testCases          String?              // JSON array
+  language           String?
+  verificationLevel  Int                  @default(3)
+  verificationSource String?              // Academic source attribution
+  isPublished        Boolean              @default(true)
+  solveCount         Int                  @default(0)
+  attemptCount       Int                  @default(0)
+  problemOrigin      String               @default("GENERATED_VERIFIED") // SOURCE_EXACT, SOURCE_ADAPTED, GENERATED_FROM_SOURCE, GENERATED_VERIFIED
+  sourceProblemId    String?
+  sourceProblem      SourceProblem?       @relation(fields: [sourceProblemId], references: [id])
+  createdAt          DateTime             @default(now())
+
+  translations       ProblemTranslation[]
+  hints              Hint[]
+  concepts           ProblemConcept[]
+  submissions        Submission[]
+  mistakes           MistakeItem[]
+  bookmarks          Bookmark[]
+  spacedReviews      SpacedReview[]
+}
+
+model ProblemTranslation {
+  id             String   @id @default(cuid())
+  problemId      String
+  language       String   // "en", "tr"
+  title          String
+  prompt         String   // KaTeX Markdown
+  options        String?  // JSON array for MC
+  solution       String   // Detailed solution walkthrough
+  commonMistakes String?  // JSON array of pitfalls
+
+  problem        Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  @@unique([problemId, language])
+}
+
+model ProblemConcept {
+  id        String   @id @default(cuid())
+  problemId String
+  conceptId String
+
+  problem   Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  concept   Concept  @relation(fields: [conceptId], references: [id], onDelete: Cascade)
+  @@unique([problemId, conceptId])
+}
+
+model Hint {
+  id           String            @id @default(cuid())
+  problemId    String
+  order        Int               // 1, 2, 3
+  penaltyScore Float             @default(0.5) // affects independence score
+  translations HintTranslation[]
+  problem      Problem           @relation(fields: [problemId], references: [id], onDelete: Cascade)
+}
+
+model HintTranslation {
+  id        String   @id @default(cuid())
+  hintId    String
+  language  String   // "en", "tr"
+  title     String   // e.g. "Invariant Property" / "Değişmez Özellik"
+  content   String   // KaTeX Markdown
+
+  hint      Hint     @relation(fields: [hintId], references: [id], onDelete: Cascade)
+  @@unique([hintId, language])
+}
+
+model Submission {
+  id            String   @id @default(cuid())
+  userId        String
+  problemId     String
+  userAnswer    String
+  isCorrect     Boolean
+  timeSpentSec  Int
+  hintsRevealed Int      @default(0)
+  ratingBefore  Int
+  ratingAfter   Int
+  independenceEarned Float @default(5.0)
+  xpEarned      Int      @default(0)
+  createdAt     DateTime @default(now())
+
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  problem       Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+}
+
+model MistakeItem {
+  id             String   @id @default(cuid())
+  userId         String
+  problemId      String
+  lastUserAnswer String
+  mistakeCount   Int      @default(1)
+  resolved       Boolean  @default(false)
+  userNotes      String?
+  lastAttemptAt  DateTime @default(now())
+
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  problem        Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  @@unique([userId, problemId])
+}
+
+model SpacedReview {
+  id           String   @id @default(cuid())
+  userId       String
+  problemId    String
+  intervalDays Float    @default(1.0)
+  easeFactor   Float    @default(2.5) // SM-2
+  repetition   Int      @default(0)
+  dueDate      DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  problem      Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  @@unique([userId, problemId])
+}
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  problemId String
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  problem   Problem  @relation(fields: [problemId], references: [id], onDelete: Cascade)
+  @@unique([userId, problemId])
+}
+
+model DailyLog {
+  id            String   @id @default(cuid())
+  userId        String
+  dateString    String   // YYYY-MM-DD
+  completed     Boolean  @default(true)
+  problemsCount Int      @default(1)
+
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, dateString])
+}
+
+model UserConceptMastery {
+  id                     String   @id @default(cuid())
+  userId                 String
+  conceptId              String
+  conceptualScore        Int      @default(0) // 0 - 100%
+  formulaScore           Int      @default(0) // 0 - 100%
+  problemSolvingScore    Int      @default(0) // 0 - 100%
+  transferScore          Int      @default(0) // 0 - 100%
+  independentSolvesCount Int      @default(0)
+  totalSolvesCount       Int      @default(0)
+  lastPracticedAt        DateTime @default(now())
+
+  user                   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  concept                Concept  @relation(fields: [conceptId], references: [id], onDelete: Cascade)
+  @@unique([userId, conceptId])
+}
+
+// ==========================================
+// ACADEMIC SOURCE PROVENANCE & KNOWLEDGE SYSTEM
+// ==========================================
+
+model SourceRepository {
+  id             String           @id // "repo-master" (D:\Belgeler\Ders), "repo-active" (C:\Users\ARDA\Desktop\2.sınıf Güz)
+  name           String           // e.g. "ESOGÜ Master Ders Arşivi", "2. Sınıf Güz Aktif Çalışma Deposu"
+  rootPath       String           // Canonical root directory
+  role           String           // "MASTER_ARCHIVE", "ACTIVE_SEMESTER_SUPPLEMENT"
+  academicPeriod String?          // "1-3. Sınıf Lisans", "2. Sınıf Güz"
+  isMaster       Boolean          @default(false)
+  createdAt      DateTime         @default(now())
+
+  locations      SourceLocation[]
+}
+
+model SourceCluster {
+  id          String           @id // Grouping for near-duplicates, e.g. "cluster-analiz-1"
+  title       String
+  description String?
+  documents   SourceDocument[]
+}
+
+model SourceFamily {
+  id          String           @id // Grouping for versioning over years, e.g. "fam-difdenk-exams"
+  name        String
+  subject     String
+  documents   SourceDocument[]
+}
+
+model SourceDocument {
+  id                 String           @id // Canonical ID (e.g. SHA-256 or canonical-slug)
+  sha256             String           @unique
+  canonicalName      String           // e.g. "GRAF TEORİ DERS NOTLARI.docx"
+  fileType           String           // pdf, docx, code, image, text
+  sizeBytes          Int
+  pageCount          Int?
+  isScanned          Boolean          @default(false)
+  author             String?          // e.g. "Prof. Dr. İbrahim Günaltılı", "Doç. Dr. Özer Çelik"
+  institution        String?          @default("Eskişehir Osmangazi Üniversitesi")
+  academicPeriod     String?          // "2. Sınıf Güz", "1. Sınıf Bahar", etc.
+  primaryRole        String           // PRIMARY_THEORY, PRIMARY_TEACHING, PRIMARY_PROOF, EXAM_PAPER, EXAMPLE_SOURCE, PROBLEM_SOURCE, SOLUTION_SOURCE, CODE_SOURCE, SUPPORTING_NOTE, PERSONAL_NOTE, REFERENCE, DUPLICATE, ARCHIVED, NEEDS_REVIEW
+  secondaryRoles     String?          // JSON array of strings
+  authority          String           @default("PROFESSOR") // PROFESSOR, DEPARTMENT, REFERENCE_TEXTBOOK, STUDENT_NOTE, UNKNOWN
+  verificationLevel  String           @default("SOURCE_REFERENCED") // SOURCE_REFERENCED, SOURCE_CROSS_CHECKED, SYMBOLICALLY_VERIFIED, NUMERICALLY_VERIFIED, CODE_VERIFIED, HUMAN_REVIEWED, OCR_UNCERTAIN, CONFLICTING_SOURCES, UNVERIFIED
+  whyThisSource      String?          // Explicit bullet points / explanation card
+  clusterId          String?
+  familyId           String?
+  qualityMetrics     String?          // JSON: { authority, completeness, clarity, relevance, exampleQuality, problemQuality, solutionQuality, extractionQuality, OCRQuality, recency, provenanceConfidence }
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  cluster            SourceCluster?   @relation(fields: [clusterId], references: [id])
+  family             SourceFamily?    @relation(fields: [familyId], references: [id])
+  locations          SourceLocation[]
+  occurrences        SourceOccurrence[]
+  references         SourceReference[]
+  problems           SourceProblem[]
+}
+
+model SourceLocation {
+  id             String           @id @default(cuid())
+  documentId     String
+  repositoryId   String
+  relativePath   String
+  fullPath       String
+  isCanonical    Boolean          @default(true) // Master location = true, duplicate location = false
+  createdAt      DateTime         @default(now())
+
+  document       SourceDocument   @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  repository     SourceRepository @relation(fields: [repositoryId], references: [id], onDelete: Cascade)
+
+  @@unique([repositoryId, relativePath])
+}
+
+model Course {
+  id                String              @id // e.g. "analiz-3", "graf-teorisi", "bilgisayar-mimarisi"
+  code              String              // e.g. "MAT201", "CENG203"
+  name              String              // e.g. "Graf Teorisi ve Uygulamaları-I"
+  englishName       String?
+  department        String              @default("Matematik ve Bilgisayar Bilimleri")
+  semester          String              // "1. Sınıf Güz", "2. Sınıf Güz", etc.
+  isCurrentSemester Boolean             @default(false) // true for 2. Sınıf Güz (Repo 1 active)
+  coverageStatus    String              @default("COMPLETE") // COMPLETE, PARTIAL, INCOMPLETE_NEEDS_SUPPLEMENTARY
+  primarySourceId   String?
+  description       String?
+
+  topics            CourseTopic[]
+  prerequisites     CoursePrerequisite[] @relation("DependentCourse")
+  dependents        CoursePrerequisite[] @relation("PrereqCourse")
+}
+
+model CoursePrerequisite {
+  id             String   @id @default(cuid())
+  courseId       String
+  prerequisiteId String
+  relationType   String   @default("INFERRED_PREREQUISITE") // DIRECT_ACADEMIC, INFERRED_PREREQUISITE
+
+  course         Course   @relation("DependentCourse", fields: [courseId], references: [id], onDelete: Cascade)
+  prerequisite   Course   @relation("PrereqCourse", fields: [prerequisiteId], references: [id], onDelete: Cascade)
+
+  @@unique([courseId, prerequisiteId])
+}
+
+model CourseTopic {
+  id                     String         @id // e.g. "graf-euler-hamilton", "mips-pipelining", "ode-bernoulli"
+  courseId               String
+  orderIndex             Int
+  title                  String
+  englishTitle           String?
+  description            String?
+  primaryTeachingSourceId String?
+  primaryTheorySourceId  String?
+  primaryExamSourceId    String?
+
+  course                 Course         @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  concepts               TopicConcept[]
+}
+
+model TopicConcept {
+  id        String      @id @default(cuid())
+  topicId   String
+  conceptId String
+
+  topic     CourseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  concept   Concept     @relation(fields: [conceptId], references: [id], onDelete: Cascade)
+
+  @@unique([topicId, conceptId])
+}
+
+model SourceReference {
+  id                 String         @id @default(cuid())
+  documentId         String
+  conceptId          String?
+  sectionTitle       String?
+  pageNumber         Int?
+  paragraphSnippet   String?
+  referenceType      String         // DEFINITION, THEOREM, LEMMA, PROOF, FORMULA, WORKED_EXAMPLE
+  verificationStatus String         @default("SOURCE_REFERENCED")
+
+  document           SourceDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+}
+
+model SourceProblem {
+  id                String           @id @default(cuid())
+  documentId        String
+  problemType       String           // SOURCE_EXACT, SOURCE_ADAPTED, GENERATED_FROM_SOURCE
+  examYear          Int?             // 2021, 2022, 2023, 2024, 2025
+  examType          String?          // VIZE, FINAL, BUT, QUIZ, HOMEWORK, BOOK_EXERCISE
+  sourceLocation    String           // e.g. "Sayfa 3, Soru 2"
+  rawPrompt         String           // KaTeX Markdown
+  adaptedPrompt     String?
+  officialSolution  String?
+  verificationLevel String           @default("SOURCE_REFERENCED")
+
+  document          SourceDocument   @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  problems          Problem[]
+  solutions         SourceSolution[]
+}
+
+model SourceSolution {
+  id                 String        @id @default(cuid())
+  sourceProblemId    String
+  methodName         String        // e.g. "Yöntem 1: Bernoulli Değişken Değiştirme", "Yöntem 2: Lineerleştirme"
+  solutionText       String
+  authorType         String        // PROFESSOR_OFFICIAL, STUDENT_EXAM_SHEET, CAS_VERIFIED_AXIOM
+  verificationStatus String        @default("SOURCE_REFERENCED")
+
+  sourceProblem      SourceProblem @relation(fields: [sourceProblemId], references: [id], onDelete: Cascade)
+}
+
+model SourceOccurrence {
+  id            String         @id @default(cuid())
+  canonicalName String         // e.g. "Handshaking Lemma", "Örnek 3.4"
+  documentId    String
+  pageOrSection String
+  notes         String?
+
+  document      SourceDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+}
+
+model SourceConflict {
+  id               String   @id @default(cuid())
+  topic            String
+  sourceAId        String
+  sourceBId        String
+  description      String
+  resolutionStatus String   @default("UNRESOLVED") // UNRESOLVED, RESOLVED_CANONICAL_CHOSEN
+  resolutionNotes  String?
+  createdAt        DateTime @default(now())
+}
