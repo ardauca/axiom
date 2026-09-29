@@ -135,21 +135,31 @@ export default function CoursesPage() {
               className="p-6 rounded-2xl border border-academic-200 dark:border-academic-800 bg-white dark:bg-academic-900/60 shadow-sm hover:border-academic-300 dark:hover:border-academic-700 transition-all space-y-4"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-academic-100 dark:border-academic-800/60 pb-3">
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold px-2 py-1 rounded bg-academic-100 dark:bg-academic-800 text-academic-700 dark:text-academic-300">
+                <Link
+                  href={`/courses/${course.id}`}
+                  className="flex items-center gap-3 group"
+                >
+                  <span className="font-mono text-xs font-bold px-2 py-1 rounded bg-academic-100 dark:bg-academic-800 text-academic-700 dark:text-academic-300 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
                     {course.code}
                   </span>
-                  <h2 className="text-xl font-serif font-bold text-academic-900 dark:text-academic-100">
+                  <h2 className="text-xl font-serif font-bold text-academic-900 dark:text-academic-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors flex items-center gap-2">
                     {course.name}
+                    <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-amber-500" />
                   </h2>
                   {course.englishName && (
                     <span className="text-xs text-academic-500 hidden md:inline">
                       ({course.englishName})
                     </span>
                   )}
-                </div>
+                </Link>
 
                 <div className="flex items-center gap-2">
+                  <Link
+                    href={`/courses/${course.id}`}
+                    className="px-3 py-1 text-xs font-mono font-bold rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition-colors border border-amber-500/20"
+                  >
+                    Dersi İncele
+                  </Link>
                   <span className={`text-[11px] font-mono px-2 py-0.5 rounded font-bold ${
                     course.coverageStatus === 'COMPLETE'
                       ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20'

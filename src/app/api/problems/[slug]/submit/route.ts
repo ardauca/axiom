@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { verifyAnswer } from '@/lib/verification/cas';
 import { calculateRatingUpdate } from '@/lib/algorithms/elo';
 import { calculateNextReview } from '@/lib/algorithms/spacedRepetition';
+import { diagnoseError, recordMistakeWithDiagnosis } from '@/lib/tutor/remediationEngine';
 
 export async function POST(
   req: Request,
@@ -133,36 +134,30 @@ export async function POST(
       },
     });
 
-    // 7. Mistake Notebook Handling
+    // 7. Mistake Notebook & Adaptive Remediation Handling
+    let remediation = null;
     if (!isCorrect) {
-      await prisma.mistakeItem.upsert({
-        where: {
-          userId_problemId: {
-            userId: user.id,
-            problemId: problem.id,
-          },
-        },
-        update: {
-          lastUserAnswer: String(userAnswer),
-          mistakeCount: { increment: 1 },
-          resolved: false,
-          lastAttemptAt: new Date(),
-        },
-        create: {
-          userId: user.id,
-          problemId: problem.id,
-          lastUserAnswer: String(userAnswer),
-          mistakeCount: 1,
-          resolved: false,
-        },
-      });
+      remediation = diagnoseError(
+        String(userAnswer),
+        problem.correctAnswer,
+        problem.concepts
+      );
+      await recordMistakeWithDiagnosis(
+        user.id,
+        problem.id,
+        String(userAnswer),
+        remediation
+      );
     } else {
       await prisma.mistakeItem.updateMany({
         where: {
           userId: user.id,
           problemId: problem.id,
         },
-        data: { resolved: true },
+        data: {
+          resolved: true,
+          repairedAt: new Date(),
+        },
       });
 
       const reviewQuality = hintsUsed === 0 ? 5 : hintsUsed === 1 ? 4 : 3;
@@ -199,6 +194,7 @@ export async function POST(
       verificationMethod: verification.verificationMethod,
       pointsTested: verification.pointsTested,
       prerequisiteRecommendations,
+      remediation,
       ratingUpdate: {
         oldRating: user.rating,
         newRating: ratingResult.newRating,

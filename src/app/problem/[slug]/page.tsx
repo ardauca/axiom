@@ -308,12 +308,45 @@ export default function ProblemSolvingPage({
                         </span>
                       </>
                     ) : (
-                      <div className="space-y-2 w-full">
+                      <div className="space-y-3 w-full">
                         <div className="flex items-center gap-2">
                           <XCircle className="w-4 h-4 text-rose-500 shrink-0" />
-                          <span>{t.problem.incorrect}</span>
+                          <span className="font-bold">{t.problem.incorrect}</span>
                         </div>
-                        {submissionResult.prerequisiteRecommendations?.length > 0 && (
+
+                        {/* Adaptive Remediation Card */}
+                        {submissionResult.remediation ? (
+                          <div className="p-4 rounded-xl bg-amber-500/10 border-2 border-amber-500/30 text-academic-900 dark:text-academic-100 text-xs space-y-2 mt-2">
+                            <div className="flex items-center justify-between">
+                              <span className="font-bold text-amber-600 dark:text-amber-400 font-mono uppercase text-[11px] flex items-center gap-1.5">
+                                <AlertTriangle className="w-3.5 h-3.5" />
+                                {submissionResult.remediation.headline}
+                              </span>
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-700 dark:text-amber-300 font-semibold">
+                                {submissionResult.remediation.estimatedMinutes} dk Tamir
+                              </span>
+                            </div>
+
+                            <p className="text-academic-700 dark:text-academic-300 leading-relaxed">
+                              {submissionResult.remediation.explanation}
+                            </p>
+
+                            {submissionResult.remediation.repairConceptId && (
+                              <div className="pt-1 flex items-center justify-between">
+                                <span className="text-[11px] text-academic-500 font-mono">
+                                  Tavsiye: Soruyu zorlamak yerine temeli güçlendirin
+                                </span>
+                                <Link
+                                  href={`/learn/${submissionResult.remediation.repairConceptId}`}
+                                  className="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold font-mono text-xs hover:bg-amber-400 transition-colors flex items-center gap-1 shadow-sm"
+                                >
+                                  <span>Önkoşulu Tamir Et</span>
+                                  <ArrowRight className="w-3.5 h-3.5" />
+                                </Link>
+                              </div>
+                            )}
+                          </div>
+                        ) : submissionResult.prerequisiteRecommendations?.length > 0 ? (
                           <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs flex items-center justify-between gap-3 mt-2">
                             <div>
                               <span className="font-bold block">
@@ -330,7 +363,7 @@ export default function ProblemSolvingPage({
                               {t.prerequisite.reviewButton}
                             </Link>
                           </div>
-                        )}
+                        ) : null}
                       </div>
                     )}
                   </div>

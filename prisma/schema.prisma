@@ -30,6 +30,8 @@ model User {
   spacedReviews    SpacedReview[]
   dailyLogs        DailyLog[]
   conceptMasteries UserConceptMastery[]
+  readinessRecords CourseReadiness[]
+  dailyStudyPlans  DailyStudyPlan[]
 }
 
 // Verified Mathematical Knowledge Base
@@ -210,6 +212,8 @@ model MistakeItem {
   lastUserAnswer String
   mistakeCount   Int      @default(1)
   resolved       Boolean  @default(false)
+  errorType      String   @default("UNKNOWN") // PREREQUISITE_GAP, DEFINITION_MISUNDERSTANDING, ALGEBRAIC_ERROR, CALCULATION_ERROR, METHOD_SELECTION_ERROR, NOTATION_ERROR
+  repairedAt     DateTime?
   userNotes      String?
   lastAttemptAt  DateTime @default(now())
 
@@ -357,10 +361,12 @@ model Course {
   coverageStatus    String              @default("COMPLETE") // COMPLETE, PARTIAL, INCOMPLETE_NEEDS_SUPPLEMENTARY
   primarySourceId   String?
   description       String?
+  examDate          DateTime?
 
   topics            CourseTopic[]
   prerequisites     CoursePrerequisite[] @relation("DependentCourse")
   dependents        CoursePrerequisite[] @relation("PrereqCourse")
+  readinessRecords  CourseReadiness[]
 }
 
 model CoursePrerequisite {
@@ -379,9 +385,11 @@ model CourseTopic {
   id                     String         @id // e.g. "graf-euler-hamilton", "mips-pipelining", "ode-bernoulli"
   courseId               String
   orderIndex             Int
+  unitTitle              String?        // e.g. "Ünite 1: Çok Değişkenli Diferansiyel Hesap"
   title                  String
   englishTitle           String?
   description            String?
+  estimatedMinutes       Int            @default(45)
   primaryTeachingSourceId String?
   primaryTheorySourceId  String?
   primaryExamSourceId    String?
@@ -461,4 +469,71 @@ model SourceConflict {
   resolutionStatus String   @default("UNRESOLVED") // UNRESOLVED, RESOLVED_CANONICAL_CHOSEN
   resolutionNotes  String?
   createdAt        DateTime @default(now())
+}
+
+// ==========================================
+// COURSE-CENTRIC TUTOR & INTELLIGENCE MODELS
+// ==========================================
+
+model CourseReadiness {
+  id                  String   @id @default(cuid())
+  userId              String
+  courseId            String
+  topicCoverageScore  Int      @default(0) // 0 - 100%
+  conceptMasteryScore Int      @default(0) // 0 - 100%
+  problemSolvingScore Int      @default(0) // 0 - 100%
+  retentionScore      Int      @default(0) // 0 - 100%
+  examReadinessScore  Int      @default(0) // Evidence-based weighted index
+  weakTopicsCount     Int      @default(0)
+  updatedAt           DateTime @updatedAt
+
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course              Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model DailyStudyPlan {
+  id                   String   @id @default(cuid())
+  userId               String
+  dateString           String   // YYYY-MM-DD
+  recommendedCourseId  String
+  recommendedTopicId   String?
+  recommendedConceptId String?
+  estimatedMinutes     Int      @default(45)
+  rationale            String   // e.g. "Sınav Yakınlığı + Önkoşul Tamiri"
+  isCompleted          Boolean  @default(false)
+  createdAt            DateTime @default(now())
+
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, dateString])
+}
+
+model ExternalAcademicEvidence {
+  id               String   @id @default(cuid())
+  conceptId        String
+  institution      String   // MIT, Stanford, Harvard, Cambridge, Oxford, OpenStax, etc.
+  courseName       String   // e.g. "MIT 18.02 Multivariable Calculus"
+  url              String
+  tier             Int      // 1: Top Universities, 2: Open Textbooks, 3: Classical Standard Textbooks
+  pedagogicalRole  String   // BEST_INTUITION, FORMAL_DEFINITION, FORMAL_PROOF, BEST_WORKED_EXAMPLE, CROSS_CHECK
+  citation         String
+  extractedExcerpt String?  // Short excerpt / definition summary
+  license          String   @default("Educational Fair Use / Citation")
+  createdAt        DateTime @default(now())
+}
+
+model SourceFusionContext {
+  id                    String   @id @default(cuid())
+  conceptId             String   @unique
+  courseAuthorityDocId  String?  // ESOGÜ professor source
+  formalDefinitionDocId String?  // Strongest formal definition
+  proofDocId            String?  // Rigorous proof source
+  intuitionDocId        String?  // Clearest pedagogical conceptual source
+  exampleDocId          String?  // Strongest worked example source
+  examDocId             String?  // ESOGÜ exam paper source
+  notationDifferences   String?  // Explanation of notation differences
+  verifiedClaimsJson    String?  // JSON array of claims with provenance
+  updatedAt             DateTime @updatedAt
 }
