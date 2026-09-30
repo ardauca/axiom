@@ -133,6 +133,26 @@ export async function fuseAcademicSources(
     notationDifferences = 'ESOGÜ Bilgisayar Mimarisi ve Patterson & Hennessy standardında 5 aşamalı MIPS boru hattı [IF, ID, EX, MEM, WB] olarak adlandırılır. Veri riskleri (RAW: Read After Write) forwarding ile 0 stall\'a indirgenir; ancak Load-Use riski zorunlu 1 çevrimlik stall (kabarcık) gerektirir.';
   } else if (conceptId === 'linq-expressions') {
     notationDifferences = 'C# LINQ sorgularında Query Syntax (from e in list where ... select) ile Method Syntax (list.Where(...).Select(...)) tamamen denktir; derleyici sorguyu arka planda Extension Method zincirine dönüştürür.';
+  } else if (conceptId === 'group-lagrange-theorem') {
+    notationDifferences = 'Modern Cebir dersinde bir H altgrubunun G içindeki sol denklik sınıfları gH = {gh : h in H} veya aH biçiminde yazılır. [G:H] simgesi H\'nin G içindeki indeksini (ayrık koset sayısını) gösterir. Lagrange teoremine göre |G| = [G:H] * |H| olup |H|, |G|\'yi böler.';
+  } else if (conceptId === 'frenet-serret-frame') {
+    notationDifferences = 'Diferansiyel Geometri literatüründe eğri yay parametresiyle verildiğinde alfa(s) kullanılır; hız |alfa\'(s)| = 1\'dir. Teğet T(s) = alfa\'(s), asli normal N(s) = T\'(s)/|T\'(s)| ve binormal B(s) = T x N olarak tanımlanır. Eğrilik kappa(s) = |T\'(s)| ve burulma tau(s) skalerdir.';
+  } else if (conceptId === 'symbolic-polynomial-gcd') {
+    notationDifferences = 'Sembolik Hesaplamada iki polinomun OBEB\'i gcd(P, Q) veya obeb(P, Q) olarak yazılır. Tam sayılar halkası Z[x] üzerinde hesaplama yapılırken katsayı patlamasını önlemek için sözde kalan (pseudo-remainder prem(P, Q)) ve Subresultant PRS notasyonu kullanılır.';
+  } else if (conceptId === 'lu-decomposition') {
+    notationDifferences = 'Sayısal Yöntemler ve Sayısal Lineer Cebirde A = LU ayrışımı yapılırken L birim alt üçgensel matris (köşegeni 1 olan matris: L_ii = 1), U ise üst üçgensel matris olarak normalize edilir.';
+  } else if (conceptId === 'topological-compactness') {
+    notationDifferences = 'Topoloji dersinde açık örtü {U_alpha : alpha in Lambda} ailesidir. Kompaktlık her açık örtünün sonlu bir alt örtüsünün bulunmasıdır. R^n reel uzayında standart topolojiye göre kompaktlık "kapalı ve sınırlı" (Heine-Borel) kavramıyla özdeştir.';
+  } else if (conceptId === 'cauchy-riemann-equations') {
+    notationDifferences = 'Kompleks Analiz ders notlarında z = x + iy için f(z) = u(x, y) + iv(x, y) ayrışımı kullanılır. Cauchy-Riemann denklemleri u_x = v_y ve u_y = -v_x olarak ifade edilir. Bu kısmi türevler türevlenebilirliğin gerek koşuludur.';
+  } else if (conceptId === 'divide-and-conquer-master-theorem') {
+    notationDifferences = 'Algoritma analizinde yineleme T(n) = a T(n/b) + f(n) formundadır; a >= 1 alt problem sayısı, b > 1 boyut küçültme oranıdır. Kritik üst c_crit = log_b(a) olup f(n) fonksiyonunun n^(log_b a) ile asimptotik kıyası yapılır.';
+  } else if (conceptId === 'category-functor-monad') {
+    notationDifferences = 'Kategori teorisinde Ob(C) nesneler, Hom(A, B) veya Mor(A, B) morfizmlerdir. Functor F: C -> D nesne ve morfizm dönüşümüdür. Monad ise (T, eta, mu) üçlüsüdür; eta: Id -> T birim (return), mu: T^2 -> T çarpım (join/flatMap) doğal dönüşümüdür.';
+  } else if (conceptId === 'java-jvm-memory-generics') {
+    notationDifferences = 'Java dilinde primitive tipler (int, double) doğrudan değer tutarken nesne değişkenleri Stack üzerinde referans (işaretçi değeri) saklar. Java kesinlikle Pass-by-Value çalışır; parametreye referansın bir kopyası aktarılır. Generic yapılarda Tip Silme (Type Erasure) derleme aşamasında tip kontrolünden sonra Object\'e dönüştürülür.';
+  } else if (conceptId === 'rsa-public-key-cryptography') {
+    notationDifferences = 'Kriptoloji dersinde n = p*q (iki büyük asal sayı), Euler totient fonksiyonu phi(n) = (p-1)*(q-1)\'dir. Genel anahtar (e, n), özel anahtar (d, n)\'dir ve d*e = 1 (mod phi(n)) yani d = e^(-1) mod phi(n) olarak seçilir.';
   }
 
   // 6. Build Verified Claims

@@ -121,6 +121,26 @@ export async function generateStructuredLesson(
     mentalModelText = `**Zihinsel Model (Endüstriyel Çamaşırhane Bandı):**\n\nYıkama, kurutma, katlama ve dolaba yerleştirme aşamalarından oluşan bir çamaşırhane düşünün. Birinci çamaşır yıkamadan kurutmaya geçtiğinde, ikinci çamaşırı hemen yıkamaya atabilirsiniz (Pipelining). Ancak eğer ikinci çamaşır birincinin kurumasını beklemek zorundaysa (örneğin aynı sepeti kullanacaklarsa veya sonuç verisine bağımlıysa), çamaşırhane bandı duraklar (Stall / Kabarcık). İleri iletim (Forwarding) ise ıslak sonucu kurutma bitmeden doğrudan sonraki aşamaya elden teslim etmektir.`;
   } else if (conceptId === 'linq-expressions') {
     mentalModelText = `**Zihinsel Model (Tarif Kartı vs Pişmiş Yemek):**\n\nBir yemek tarifi yazdığınızda yemek henüz pişmemiştir, elinizde sadece ne yapılacağını anlatan bir talimat vardır. LINQ sorgusu tanımlandığında (\`var q = list.Where(...)\`), sorgu çalıştırılmaz; sadece bir 'çalıştırma planı' (tarif) saklanır. Ne zaman ki \`foreach\`, \`.ToList()\` veya \`.Count()\` çağrılır, işte o an fırın yakılır ve veriler tek tek işlenir (Ertelenmiş Yürütme / Deferred Execution).`;
+  } else if (conceptId === 'group-lagrange-theorem') {
+    mentalModelText = `**Zihinsel Model (Eşit Dilimli Pasta / Ayrık Bölüntü):**\n\nSonlu bir $G$ grubunu bir pasta olarak düşünün. Bir $H$ altgrubu pastadan kesilen referans bir dilimdir ($|H|$ elemanlı). Altgrubun elemanlarını grubun farklı $g$ elemanlarıyla çarptığınızda ($gH$ sol denklik sınıfları), referans dilimle birebir aynı boyutta ve birbiriyle ASLA kesişmeyen (ayrık) yeni dilimler elde edersiniz. Pastanın tamamı bu eşit dilimlerle hiç boşluk kalmadan kaplandığından, toplam pasta boyutu $|G|$, dilim boyutu $|H|$'a TAM bölünmek zorundadır ($|G| = [G:H] \\cdot |H|$).`;
+  } else if (conceptId === 'frenet-serret-frame') {
+    mentalModelText = `**Zihinsel Model (Roller Coaster / Akrobat Uçağı Kokpiti):**\n\n3 boyutlu uzayda kıvrılan bir rayda giden bir vagonun kokpitinde oturduğunuzu hayal edin. Burnunuzun baktığı yön teğet vektörüdür ($T$), rayın kıvrıldığı yöne doğru başınızı çevirdiğiniz yön asli normaldir ($N$), tavana dik bakan yön ise binormaldir ($B$). Eğrilik $\\kappa$, vagonun ne kadar sert viraj aldığını (rotadan sapma hızı), burulma $\\tau$ ise rayın kendi ekseni etrafında ne kadar burgu yaptığını (düzlemden çıkış hızı) ölçer.`;
+  } else if (conceptId === 'symbolic-polynomial-gcd') {
+    mentalModelText = `**Zihinsel Model (Katsayı Patlaması Freni):**\n\nSembolik hesaplama sistemlerinde iki dev polinomun OBEB'ini standart Öklid bölmesiyle hesaplarsanız, rasyonel sayı pay ve paydaları binlerce basamağa fırlar (Intermediate Coefficient Explosion) ve bilgisayar kilitlenir. Subresultant PRS yöntemi, her adımda gereksiz ortak çarpanları determinant teorisiyle önceden sezerek sadeleştirir ve hesaplamayı patlamadan tam sayılar halkasında tutar.`;
+  } else if (conceptId === 'lu-decomposition') {
+    mentalModelText = `**Zihinsel Model (İki Aşamalı Hızlı Çözüm Konveyörü):**\n\n$Ax = b$ lineer sistemini doğrudan çözmek her yeni sağ taraf vektörü $b$ için pahalı Gauss eliminasyonu ($O(n^3)$) gerektirir. $A$ matrisini bir defaya mahsus $L$ (alt üçgensel) ve $U$ (üst üçgensel) olarak çarpanlarına ayırırsanız, problem iki çocuk oyuncağına dönüşür: önce $Ly = b$ ile ileriye doğru yerine koyma ($O(n^2)$), ardından $Ux = y$ ile geriye doğru yerine koyma ($O(n^2)$).`;
+  } else if (conceptId === 'topological-compactness') {
+    mentalModelText = `**Zihinsel Model (Sonsuz Battaniyeden Sonlu Seçim):**\n\nBir odayı (uzayı) sonsuz sayıda irili ufaklı battaniye parçasıyla (açık örtü) örttüğünüzü hayal edin. Eğer oda 'kompakt' ise, bu sonsuz battaniyenin içinden öyle SONLU sayıda (örneğin 15 tane) battaniye seçebilirsiniz ki, odayı yine de tek bir nokta bile açıkta kalmayacak şekilde tamamen örter. $\\mathbb{R}^n$ uzayında bu mucize ancak ve ancak küme hem sınırlarına sahip olduğunda (kapalı) hem de uzayın sonsuzuna kaçmadığında (sınırlı) mümkündür (Heine-Borel).`;
+  } else if (conceptId === 'cauchy-riemann-equations') {
+    mentalModelText = `**Zihinsel Model (İki Boyutlu Açı Koruma / Konformluk):**\n\nReel analizde türev tek bir doğrultudan limit iken, karmaşık düzlemde $z$ noktasına her yönden (sağdan, soldan, çaprazdan, spiral çizerek) yaklaşabilirsiniz. Fonksiyonun karmaşık türeve sahip olması, türevin yaklaşılan yönden bağımsız olmasını gerektirir. Bu olağanüstü katı simetri ancak reel ve sanal kısımların $u_x = v_y$ ve $u_y = -v_x$ dengesini kusursuz sağlamasıyla mümkündür; bu denge dönüşümün açıları ve yönü korumasını (konformluk) garanti eder.`;
+  } else if (conceptId === 'divide-and-conquer-master-theorem') {
+    mentalModelText = `**Zihinsel Model (Yönetim Piramidi: İşçiler mi CEO mu?):**\n\nBir problemi $a$ adet alt probleme bölüp her birini $n/b$ boyutuna indiren ve birleştirme için $f(n)$ iş yapan bir algoritma düşünün. Özyineleme ağacının yapraklarındaki toplam iş $n^{\\log_b a}$'dır (en alttaki işçiler). Kök seviyesindeki iş ise $f(n)$'dir (CEO). Master Teoremi der ki: Eğer işçiler baskınsa maliyet $O(n^{\\log_b a})$, her seviye eşit çalışıyorsa maliyet $O(n^{\\log_b a} \\log n)$ (MergeSort durumu), CEO baskınsa maliyet doğrudan $O(f(n))$ olur.`;
+  } else if (conceptId === 'category-functor-monad') {
+    mentalModelText = `**Zihinsel Model (Evrenler Arası Harita ve Yan Etki Kutusu):**\n\nKategori nesneler ve aralarındaki dönüşüm oklarından oluşan bir mikro-evrendir. Functor, bir evrendeki tüm nesneleri ve okları diğer bir evrene haritalarken rotaları ve yapıları (birlik ve bileşke) bozmadan koruyan bir tercümandır. Monad ise saf fonksiyonel dünyada 'yan etkileri' (hata yönetimi, I/O, durum değişikliği) şık bir kutu içine sarıp, bu kutuları birbirine zincirlemeyi (\`flatMap\`) sağlayan cebirsel bir yapıdır.`;
+  } else if (conceptId === 'java-jvm-memory-generics') {
+    mentalModelText = `**Zihinsel Model (Adres Defteri ve Derleme Sonrası Maskeleme):**\n\nJava'da nesneler Heap denen dev depoda yaşar. Stack'teki yerel değişkenler ise nesnenin kendisini değil, deponun raf numarasını (adresini/referansını) tutar. Bir metoda nesne gönderdiğinizde Java bu raf numarasının bir fotokopisini metoda verir (kesinlikle Pass-by-Value). Java Generics ise derleyicinin taktığı güvenlik gözlüğüdür; derleme bittiğinde gözlük çıkarılır ve tüm generic tipler \`Object\`'e dönüştürülür (Type Erasure), böylece 1995 yılından kalan JVM'ler bile kodunuzu hatasız çalıştırır.`;
+  } else if (conceptId === 'rsa-public-key-cryptography') {
+    mentalModelText = `**Zihinsel Model (Açık Asma Kilit ve Tek Yönlü Tuzak Kapı):**\n\nHerkesin görebileceği meydana açık bir asma kilit bırakırsınız ($n$ ve $e$ genel anahtarı). Biri size gizli bir mesaj göndermek istediğinde mesajı kutuya koyup kilidi tık diye kapatır. Kapatmak çocuk oyuncağıdır (modüler üs alma). Ancak o kilidi anahtarsız açmak için iki dev asal sayının çarpımını ($n = p \\cdot q$) çarpanlarına ayırmak gerekir ki bu evrenin yaşı kadar sürer. Kilidi açacak tek anahtar ise sadece sizde olan $d$ gizli çarpanıdır (Euler Totient Teoremi).`;
   }
   steps.push({
     stepOrder: 3,
@@ -283,6 +303,106 @@ export async function generateStructuredLesson(
     ];
     checkAns = 'Sorgu tanımlandığı satırda çalıştırılmaz; foreach, ToList() veya Count() gibi tetikleyicilerle tüketildiği anda kaynak koleksiyon üzerindeki güncel veriler üzerinden değerlendirilir.';
     checkExpl = 'LINQ sorguları tembel değerlendirme (lazy evaluation) ilkesine göre tasarlanmıştır. Sorgu değişkeni sadece komut ağacını tutar, veri üzerinde dolaşma ancak sonuç talep edildiğinde (iteratör çağrıldığında) gerçekleşir.';
+  } else if (conceptId === 'group-lagrange-theorem') {
+    checkQ = 'Mertebesi 24 olan sonlu bir G grubunda mertebesi 7 olan bir altgrup bulunabilir mi?';
+    checkOpts = [
+      'Hayır, çünkü Lagrange Teoremi gereğince herhangi bir altgrubun mertebesi |H|, grup mertebesi |G|=24\'ü tam bölmelidir; 7 sayısı 24\'ü bölmez.',
+      'Evet, 7 asal sayı olduğu için her grupta bulunabilir.',
+      'Yalnızca grup değişmeli (Abelian) ise bulunabilir.',
+      'Evet, Sylow teoremleri gereğince 7 mertebeli altgrup kesinlikle vardır.'
+    ];
+    checkAns = 'Hayır, çünkü Lagrange Teoremi gereğince herhangi bir altgrubun mertebesi |H|, grup mertebesi |G|=24\'ü tam bölmelidir; 7 sayısı 24\'ü bölmez.';
+    checkExpl = 'Lagrange Teoremi\'nin doğrudan bir sonucu olarak sonlu bir grupta herhangi bir altgrubun eleman sayısı grup mertebesinin bir böleni olmak zorundadır. 24\'ün bölenleri 1, 2, 3, 4, 6, 8, 12, 24 olup 7 bunların arasında yer almaz.';
+  } else if (conceptId === 'frenet-serret-frame') {
+    checkQ = 'Bir uzay eğrisinin Frenet-Serret çatısında burulma (torsion) tau(s) = 0 ise eğrinin geometrik davranışı hakkında hangisi kesinlikle doğrudur?';
+    checkOpts = [
+      'Eğri tamamen tek bir 2-boyutlu düzlem içinde kalır (düzlemsel eğridir) ve oskülatör düzleminden asla dışarı çıkmaz.',
+      'Eğri bir doğrudur (eğrilik de sıfırdır).',
+      'Eğri kesinlikle bir çemberdir.',
+      'Eğri kapalı bir eğri olamaz.'
+    ];
+    checkAns = 'Eğri tamamen tek bir 2-boyutlu düzlem içinde kalır (düzlemsel eğridir) ve oskülatör düzleminden asla dışarı çıkmaz.';
+    checkExpl = 'dB/ds = -tau N formülü gereğince tau = 0 ise binormal vektör B(s) sabittir (dB/ds = 0). Binormalin sabit olması, eğrinin oskülatör düzleminden ayrılmadığını ve dolayısıyla tamamen sabit bir düzlemde yattığını kanıtlar.';
+  } else if (conceptId === 'symbolic-polynomial-gcd') {
+    checkQ = 'Tam sayılar halkası Z[x] üzerinde çalışan bilgisayarlı cebir sistemlerinde standart Öklid algoritması yerine neden Subresultant PRS veya modüler algoritmalar tercih edilir?';
+    checkOpts = [
+      'Standart bölme adımlarında katsayıların pay ve paydaları üssel olarak büyür (Intermediate Coefficient Explosion); Subresultant PRS ise katsayı büyümesini kontrol altında tutar.',
+      'Standart Öklid algoritması polinomlarda çalışmaz.',
+      'Öklid algoritması sonsuz döngüye girer.',
+      'Modüler algoritmalar yalnızca 1. dereceden polinomları çözer.'
+    ];
+    checkAns = 'Standart bölme adımlarında katsayıların pay ve paydaları üssel olarak büyür (Intermediate Coefficient Explosion); Subresultant PRS ise katsayı büyümesini kontrol altında tutar.';
+    checkExpl = 'Rasyonel sayılarda kesirli bölme yapıldığında katsayı basamak sayısı geometrik olarak patlar ve bellek taşmasına yol açar. Subresultant PRS, her adımdaki ortak bölenleri önceden öngörerek sadeleştirir.';
+  } else if (conceptId === 'lu-decomposition') {
+    checkQ = 'A = LU çarpanlarına ayırma işlemi yapıldıktan sonra, yeni bir b sağ taraf vektörü için Ax = b sistemini çözmenin aritmetik işlem karmaşıklığı nedir?';
+    checkOpts = [
+      'O(n^2) çünkü yalnızca Ly = b (ileri) ve Ux = y (geri) üçgensel yerine koyma adımları çalıştırılır.',
+      'O(n^3) çünkü yeniden Gauss eliminasyonu yapılır.',
+      'O(n log n) FFT dönüşümüyle çözülür.',
+      'O(1) doğrudan çarpma yapılır.'
+    ];
+    checkAns = 'O(n^2) çünkü yalnızca Ly = b (ileri) ve Ux = y (geri) üçgensel yerine koyma adımları çalıştırılır.';
+    checkExpl = 'A = LU çarpanlarına ayırma O(n^3/3) işlemle bir kere yapılır. Ayrıştırma yapıldıktan sonra her yeni b vektörü için iki adet üçgensel sistem çözümü toplamda sadece 2 * n^2/2 = n^2 = O(n^2) işlem gerektirir.';
+  } else if (conceptId === 'topological-compactness') {
+    checkQ = 'Heine-Borel Teoremi\'ne göre R^n Öklid uzayında standart topolojide bir alt kümenin kompakt olması için gerek ve yeter koşul nedir?';
+    checkOpts = [
+      'Kümenin kapalı (closed) ve sınırlı (bounded) olması.',
+      'Kümenin açık ve bağlantılı olması.',
+      'Kümenin sayılabilir olması.',
+      'Kümenin tüm noktalarının iç nokta olması.'
+    ];
+    checkAns = 'Kümenin kapalı (closed) ve sınırlı (bounded) olması.';
+    checkExpl = 'Heine-Borel teoremine göre R^n uzayında bir A alt kümesinin kompakt olması (her açık örtünün sonlu alt örtüye sahip olması) kümenin kapalı ve sınırlı olmasına denktir.';
+  } else if (conceptId === 'cauchy-riemann-equations') {
+    checkQ = 'f(z) = u(x,y) + iv(x,y) karmaşık fonksiyonunun bir z noktasında türevlenebilir olması için u ve v bileşenlerinin Cauchy-Riemann denklemlerini sağlaması yeterli midir?';
+    checkOpts = [
+      'Yalnızca CR denklemleri yetmez; u ve v\'nin birinci mertebeden kısmi türevlerinin o noktada sürekli olması da gereklidir.',
+      'Evet, CR denklemleri sağlandığı anda fonksiyon daima analitiktir.',
+      'Hayır, fonksiyonun mutlaka polinom olması şarttır.',
+      'Evet, süreklilik türevlenebilirlikten sonra otomatik gelir.'
+    ];
+    checkAns = 'Yalnızca CR denklemleri yetmez; u ve v\'nin birinci mertebeden kısmi türevlerinin o noktada sürekli olması da gereklidir.';
+    checkExpl = 'Cauchy-Riemann denklemleri türevlenebilirlik için gerek koşuldur. Yeter koşul olması için u_x, u_y, v_x, v_y kısmi türevlerinin var olması ve noktanın bir komşuluğunda sürekli olması şarttır.';
+  } else if (conceptId === 'divide-and-conquer-master-theorem') {
+    checkQ = 'T(n) = 2 T(n/2) + Theta(n) yinelemesinde (MergeSort) Master Teoremi hangi duruma girer ve karmaşıklığı ne olur?';
+    checkOpts = [
+      'Durum 2: f(n) = Theta(n^(log_2 2)) = Theta(n) olduğundan T(n) = Theta(n log n) olur.',
+      'Durum 1: T(n) = Theta(n) olur.',
+      'Durum 3: T(n) = Theta(n^2) olur.',
+      'Master Teoremi bu yinelemeye uygulanamaz.'
+    ];
+    checkAns = 'Durum 2: f(n) = Theta(n^(log_2 2)) = Theta(n) olduğundan T(n) = Theta(n log n) olur.';
+    checkExpl = 'a=2, b=2 olup log_b(a) = log_2(2) = 1\'dir. f(n) = Theta(n) = Theta(n^1) olduğundan özyineleme ağacının her seviyesinde eşit iş yapılır; log n seviye olduğundan toplam karmaşıklık Theta(n log n) çıkar.';
+  } else if (conceptId === 'category-functor-monad') {
+    checkQ = 'Bir F: C -> D funktorunun sağladığı iki temel yapısal koruma aksiyomu nedir?';
+    checkOpts = [
+      'Birim morfizmleri korur: F(id_A) = id_F(A) ve bileşke işlemini korur: F(g o f) = F(g) o F(f).',
+      'Tüm nesneleri tek bir nesneye eşler.',
+      'Sadece sonlu kategorilerde tersinir morfizmleri korur.',
+      'Kategorinin nesne sayısını sabit tutar.'
+    ];
+    checkAns = 'Birim morfizmleri korur: F(id_A) = id_F(A) ve bileşke işlemini korur: F(g o f) = F(g) o F(f).';
+    checkExpl = 'Funktor tanımı gereği bir kategoriden diğerine nesne ve okları aktarırken hem kimlik morfizmlerini korumak (F(id_A) = id_F(A)) hem de okların bağlanma sırasını korumak (F(g o f) = F(g) o F(f)) zorundadır.';
+  } else if (conceptId === 'java-jvm-memory-generics') {
+    checkQ = 'Java dilinde public void degistir(List<String> list) { list = new ArrayList<>(); } çağrıldığında çağıran taraftaki orijinal liste neden değişmez?';
+    checkOpts = [
+      'Java kesinlikle Pass-by-Value çalışır; metoda listenin kendisi değil, referans adresinin bir kopyası geçer. Kopya değişkene yeni nesne atanması çağıranın referansını etkilemez.',
+      'List arayüzü immutable (değiştirilemez) olduğu için.',
+      'Generics tip silme (type erasure) nedeniyle liste belleğe yazılamaz.',
+      'Garbage collector yeni oluşturulan listeyi anında yok eder.'
+    ];
+    checkAns = 'Java kesinlikle Pass-by-Value çalışır; metoda listenin kendisi değil, referans adresinin bir kopyası geçer. Kopya değişkene yeni nesne atanması çağıranın referansını etkilemez.';
+    checkExpl = 'Java\'da her parametre aktarımı kesinlikle Pass-by-Value\'dur. Nesnelerde "referansın değeri" (pointer kopyası) kopyalanır. Metot içinde "list = new..." yapıldığında yerel kopya işaretçi yeni nesneye yönlendirilir, çağıranın işaretçisi eski nesneyi göstermeye devam eder.';
+  } else if (conceptId === 'rsa-public-key-cryptography') {
+    checkQ = 'RSA algoritmasında p ve q asal sayıları seçildikten sonra phi(n) = (p-1)(q-1) değeri neden son derece gizli tutulmalıdır?';
+    checkOpts = [
+      'phi(n) bilinirse, genel anahtar e kullanılarak gizli anahtar d = e^(-1) mod phi(n) Genişletilmiş Öklid Algoritması ile anında O(log n) sürede hesaplanabilir.',
+      'phi(n) mesajın şifreli halini doğrudan içerir.',
+      'phi(n) bilinirse p ve q sayıları negatif hale gelir.',
+      'phi(n) olmadan genel anahtar e üretilemez.'
+    ];
+    checkAns = 'phi(n) bilinirse, genel anahtar e kullanılarak gizli anahtar d = e^(-1) mod phi(n) Genişletilmiş Öklid Algoritması ile anında O(log n) sürede hesaplanabilir.';
+    checkExpl = 'RSA\'nın tüm güvenliği n\'nin çarpanlarına ayrılamamasına ve dolayısıyla phi(n)\'in bilinememesine dayanır. phi(n) bilinirse d = e^(-1) mod phi(n) ters çarpanı saniyeler içinde hesaplanır ve şifreleme kırılır.';
   }
 
   steps.push({

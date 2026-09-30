@@ -1,0 +1,702 @@
+{
+  "MAT301": {
+    "code": "MAT301",
+    "name": "Modern Cebir",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Modern Cebir Nedir?"
+      },
+      {
+        "week": "2",
+        "topic": "Gruplar"
+      },
+      {
+        "week": "3",
+        "topic": "Devirli Gruplar"
+      },
+      {
+        "week": "4",
+        "topic": "Grup Homomorfizmleri"
+      },
+      {
+        "week": "5",
+        "topic": "Verilen Gruplardan Yeni Gruplar Üretmek"
+      },
+      {
+        "week": "6",
+        "topic": "İzomorfizm Teoremleri"
+      },
+      {
+        "week": "7",
+        "topic": "Soru Çözümleri"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Halkalar"
+      },
+      {
+        "week": "10",
+        "topic": "Grup ve Halkalar Arasındaki Benzerlikler"
+      },
+      {
+        "week": "11",
+        "topic": "Tamlık Bölgeleri"
+      },
+      {
+        "week": "12",
+        "topic": "Cisimler"
+      },
+      {
+        "week": "13",
+        "topic": "Polinom Halkası"
+      },
+      {
+        "week": "14",
+        "topic": "Polinomların Kökleri"
+      },
+      {
+        "week": "15",
+        "topic": "Soru Çözümleri"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT303": {
+    "code": "MAT303",
+    "name": "Diferansiyel Geometri",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Eğriler Teorisi ve Parametrizasyon"
+      },
+      {
+        "week": "2",
+        "topic": "Yay Parametresi ve Eğri Boyu"
+      },
+      {
+        "week": "3",
+        "topic": "Frenet-Serret Çatısı (T, N, B)"
+      },
+      {
+        "week": "4",
+        "topic": "Eğrilik (Curvature) ve Geometrik Yorumu"
+      },
+      {
+        "week": "5",
+        "topic": "Burulma (Torsion) ve Oskülatör Düzlem"
+      },
+      {
+        "week": "6",
+        "topic": "Frenet-Serret Formüllerinin Uygulamaları"
+      },
+      {
+        "week": "7",
+        "topic": "Dairesel Helis ve Düzlemsel Eğriler"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Yüzeyler Teorisi ve Düzenli Yüzeyler"
+      },
+      {
+        "week": "10",
+        "topic": "Tanjant Düzlemi ve Yüzey Normali"
+      },
+      {
+        "week": "11",
+        "topic": "Birinci Temel Form ve Alan Hesabı"
+      },
+      {
+        "week": "12",
+        "topic": "İkinci Temel Form ve Asli Eğrilikler"
+      },
+      {
+        "week": "13",
+        "topic": "Gauss Eğriliği ve Ortalama Eğrilik"
+      },
+      {
+        "week": "14",
+        "topic": "Geodezikler ve Gauss-Bonnet Teoremi"
+      },
+      {
+        "week": "15",
+        "topic": "Genel Tekrar ve Problem Çözümleri"
+      },
+      {
+        "week": "16",
+        "topic": "Dönem Sonu Sınavı"
+      }
+    ]
+  },
+  "CENG301": {
+    "code": "CENG301",
+    "name": "Sembolik Hesaplama I",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Başlangıç, hesap makinası olarak Maple"
+      },
+      {
+        "week": "2",
+        "topic": "Polinomlar ve rasyonel fonksiyonlar, denklemler, tam sayılarla eğlence"
+      },
+      {
+        "week": "3",
+        "topic": "Birin dönüştürme, trigonometri, data tipleri"
+      },
+      {
+        "week": "4",
+        "topic": "Fonksiyonalrı tanımlama, limitler"
+      },
+      {
+        "week": "5",
+        "topic": "Türev alma, ekstremumlar, integral, grafikler"
+      },
+      {
+        "week": "6",
+        "topic": "Diferensiyel denklemler, lineer cebir"
+      },
+      {
+        "week": "7",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Koşul durumları"
+      },
+      {
+        "week": "10",
+        "topic": "For ve while döngüsü"
+      },
+      {
+        "week": "11",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "12",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "13",
+        "topic": "Çok değişkenli ve vektör kalkülüsü"
+      },
+      {
+        "week": "14",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "15",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG303": {
+    "code": "CENG303",
+    "name": "Matematiksel Yazılım ve Tasarım",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Temel Kavramlar"
+      },
+      {
+        "week": "2",
+        "topic": "LaTex Girdi Dosyaları"
+      },
+      {
+        "week": "3",
+        "topic": "Dizgi"
+      },
+      {
+        "week": "4",
+        "topic": "Başlıklar, bölümler ve kısımlar"
+      },
+      {
+        "week": "5",
+        "topic": "Şekil ekleme"
+      },
+      {
+        "week": "6",
+        "topic": "Atıflar"
+      },
+      {
+        "week": "7",
+        "topic": "Kırılgan komutlar"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Matematik Formülleri"
+      },
+      {
+        "week": "10",
+        "topic": "Teoremler ve yasalar"
+      },
+      {
+        "week": "11",
+        "topic": "Kaynakça oluşturma"
+      },
+      {
+        "week": "12",
+        "topic": "Dizin oluşturma"
+      },
+      {
+        "week": "13",
+        "topic": "Grafik çizimleri"
+      },
+      {
+        "week": "14",
+        "topic": "XY-Pic"
+      },
+      {
+        "week": "15",
+        "topic": "PSTricks"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl Sonu Sınavı"
+      }
+    ]
+  },
+  "MAT302": {
+    "code": "MAT302",
+    "name": "Topoloji",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Temel Kavramlar"
+      },
+      {
+        "week": "2",
+        "topic": "Metrik Uzaylar"
+      },
+      {
+        "week": "3",
+        "topic": "Topolojik uzaylar"
+      },
+      {
+        "week": "4",
+        "topic": "Tabanlar"
+      },
+      {
+        "week": "5",
+        "topic": "Noktanın kümeye göre konumu"
+      },
+      {
+        "week": "6",
+        "topic": "Süreklilik"
+      },
+      {
+        "week": "7",
+        "topic": "Problem çözümleri"
+      },
+      {
+        "week": "8",
+        "topic": "Ara sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Yanıksaklık ve Hausdorff uzayları"
+      },
+      {
+        "week": "10",
+        "topic": "Çarpım uzayları"
+      },
+      {
+        "week": "11",
+        "topic": "Bölüm uzayları"
+      },
+      {
+        "week": "12",
+        "topic": "Kompaktlık"
+      },
+      {
+        "week": "13",
+        "topic": "Metrik uzaylarda tamlık ve kompaktlık"
+      },
+      {
+        "week": "14",
+        "topic": "Bağlantılı uzaylar"
+      },
+      {
+        "week": "15",
+        "topic": "Problem çözümleri"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT304": {
+    "code": "MAT304",
+    "name": "Kompleks Analiz",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Karmaşık sayılar kümesi"
+      },
+      {
+        "week": "2",
+        "topic": "Karmaşık fonksiyonlar"
+      },
+      {
+        "week": "3",
+        "topic": "Karmaşık fonksiyonların limiti ve sürekliliği"
+      },
+      {
+        "week": "4",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "5",
+        "topic": "Karmaşık fonksiyonların türevleri"
+      },
+      {
+        "week": "6",
+        "topic": "Analitik fonksiyonlar"
+      },
+      {
+        "week": "7",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Karmaşık fonksiyonların integrali"
+      },
+      {
+        "week": "10",
+        "topic": "Karmaşık sayı dizi ve serileri"
+      },
+      {
+        "week": "11",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "12",
+        "topic": "Karmaşık fonksiyon dizi ve serileri"
+      },
+      {
+        "week": "13",
+        "topic": "Taylor ve Laurent serileri"
+      },
+      {
+        "week": "14",
+        "topic": "Kalıntı teoremi ve Kalıntı teoreminin gerçel integral hesabına uygulanması"
+      },
+      {
+        "week": "15",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG302": {
+    "code": "CENG302",
+    "name": "Algoritmalar",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Temel Kavramlar"
+      },
+      {
+        "week": "2",
+        "topic": "Asimptotik notasyonlar"
+      },
+      {
+        "week": "3",
+        "topic": "Fark denklemleri"
+      },
+      {
+        "week": "4",
+        "topic": "Basit algoritmalar ve karmaşıklığı"
+      },
+      {
+        "week": "5",
+        "topic": "Basit algoritmalar ve karmaşıklığı"
+      },
+      {
+        "week": "6",
+        "topic": "Öz yinelemeli algoritmalar ve karmaşıklığı"
+      },
+      {
+        "week": "7",
+        "topic": "Soru çözümü"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Böl ve yönet algoritmaları"
+      },
+      {
+        "week": "10",
+        "topic": "Böl ve yönet algoritmaları"
+      },
+      {
+        "week": "11",
+        "topic": "Dinamik programlama"
+      },
+      {
+        "week": "12",
+        "topic": "Dinamik programlama"
+      },
+      {
+        "week": "13",
+        "topic": "Böl yönet ve Dinamik algoritmaların kıyaslanması"
+      },
+      {
+        "week": "14",
+        "topic": "Sıralama algoritmalarının karmaşıklığı"
+      },
+      {
+        "week": "15",
+        "topic": "Soru çözümü"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG304": {
+    "code": "CENG304",
+    "name": "Kategori Teorisi ve Bilgisayar Bilimleri",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Kategoriler"
+      },
+      {
+        "week": "2",
+        "topic": "Küçük kategoriler"
+      },
+      {
+        "week": "3",
+        "topic": "Verilen kategoriden yeni kategoriler üretmek"
+      },
+      {
+        "week": "4",
+        "topic": "Fonksiyonel Programlama Dili"
+      },
+      {
+        "week": "5",
+        "topic": "Özel objeler ve özel morfizmler"
+      },
+      {
+        "week": "6",
+        "topic": "Monomorfizm ve Epimorfizm"
+      },
+      {
+        "week": "7",
+        "topic": "Fonksiyonel Programlama Dili (FPL)"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "FPL ile morfizmler arasındaki ilişkiler"
+      },
+      {
+        "week": "10",
+        "topic": "Funktorlar"
+      },
+      {
+        "week": "11",
+        "topic": "Doğal Transformasyonlar"
+      },
+      {
+        "week": "12",
+        "topic": "Kategoriler arasındaki denklikler"
+      },
+      {
+        "week": "13",
+        "topic": "FPL ile funktor ve doğal transformasyon arasındaki ilişkiler"
+      },
+      {
+        "week": "14",
+        "topic": "Çarpım ve toplam objeler"
+      },
+      {
+        "week": "15",
+        "topic": "FPL ile özel objeler arasındaki ilişkiler"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG401": {
+    "code": "CENG401",
+    "name": "Java",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Java İle Nesne Tabanlı Programlamaya Giriş"
+      },
+      {
+        "week": "2",
+        "topic": "Veri Tipleri ve Operatörler"
+      },
+      {
+        "week": "3",
+        "topic": "Kontrol Yapıları"
+      },
+      {
+        "week": "4",
+        "topic": "Döngüler"
+      },
+      {
+        "week": "5",
+        "topic": "Sınıflar"
+      },
+      {
+        "week": "6",
+        "topic": "Nesneler, Metotlar, Paketler"
+      },
+      {
+        "week": "7",
+        "topic": "Diziler"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Stringler"
+      },
+      {
+        "week": "10",
+        "topic": "Kalıtım, Kapsülleme, Çok Biçimlilik, Koleksiyonlar"
+      },
+      {
+        "week": "11",
+        "topic": "Web Uygulamaları"
+      },
+      {
+        "week": "12",
+        "topic": "JDBC İle Veritabanı Programlama"
+      },
+      {
+        "week": "13",
+        "topic": "Text ve Xml Uygulamalarına Erişim"
+      },
+      {
+        "week": "14",
+        "topic": "Uygulamalar"
+      },
+      {
+        "week": "15",
+        "topic": "Uygulamalar"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG402": {
+    "code": "CENG402",
+    "name": "Kriptoloji",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Giriş"
+      },
+      {
+        "week": "2",
+        "topic": "Klasik şifreleme yöntemleri"
+      },
+      {
+        "week": "3",
+        "topic": "Klasik şifreleme yöntemleri"
+      },
+      {
+        "week": "4",
+        "topic": "Sayılar teorisi ve sonlu cisimler"
+      },
+      {
+        "week": "5",
+        "topic": "Sayılar teorisi ve sonlu cisimler"
+      },
+      {
+        "week": "6",
+        "topic": "Blok şifre sistemleri"
+      },
+      {
+        "week": "7",
+        "topic": "Blok şifre sistemleri"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Açık anahtarlı sistemler"
+      },
+      {
+        "week": "10",
+        "topic": "Açık anahtarlı sistemler"
+      },
+      {
+        "week": "11",
+        "topic": "Modern şifreleme yöntemleri"
+      },
+      {
+        "week": "12",
+        "topic": "RSA"
+      },
+      {
+        "week": "13",
+        "topic": "El-Gamal şifreleme yöntemi"
+      },
+      {
+        "week": "14",
+        "topic": "AES"
+      },
+      {
+        "week": "15",
+        "topic": "Dijital imza"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  }
+}

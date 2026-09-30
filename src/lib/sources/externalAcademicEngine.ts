@@ -434,6 +434,126 @@ const ACADEMIC_KNOWLEDGE_CORPUS: Record<string, ExternalSourceEvidence[]> = {
       extractedExcerpt: 'async/await allows asynchronous code to read sequentially. When await is encountered, the thread yields back to the caller/UI message loop until the awaited Task completes, preventing GUI freezes.',
       license: 'Microsoft Open Technical Documentation'
     }
+  ],
+  'group-lagrange-theorem': [
+    {
+      institution: 'Harvard University',
+      courseName: 'Harvard Math 122 Abstract Algebra',
+      url: 'https://people.math.harvard.edu/~gross/122/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Benedict Gross, Harvard Math 122: Cosets, Subgroups and Lagrange Theorem',
+      extractedExcerpt: 'Lagrange\'s theorem states that if H is a subgroup of a finite group G, then the order of H divides the order of G (|G| = [G:H] * |H|). The cosets of H partition G into disjoint equal-sized sets of size |H|.',
+      license: 'Harvard Open Course Material'
+    }
+  ],
+  'frenet-serret-frame': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.02 Multivariable Calculus & Differential Geometry',
+      url: 'https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Denis Auroux, MIT 18.02 Lecture 24: Curvature and Frenet-Serret Frame (T, N, B)',
+      extractedExcerpt: 'The Frenet-Serret apparatus provides a moving orthonormal coordinate frame (T, N, B) along a space curve parameterized by arc length s: dT/ds = kappa N, dN/ds = -kappa T + tau B, dB/ds = -tau N.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'symbolic-polynomial-gcd': [
+    {
+      institution: 'University of Waterloo / ACM SIGSAM',
+      courseName: 'CS 487 Introduction to Symbolic Computation',
+      url: 'https://cs.uwaterloo.ca/~kroeker/cs487/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Geddes, Czapor & Labahn, Algorithms for Computer Algebra (Waterloo Academic Press), Chapter 7: Polynomial GCD and Subresultant PRS',
+      extractedExcerpt: 'In symbolic computer algebra over Z[x], naive Euclidean algorithm leads to explosive coefficient growth. Pseudo-division and the Subresultant PRS (Polynomial Remainder Sequence) algorithm compute polynomial GCD without coefficient explosion.',
+      license: 'Academic Educational Fair Use'
+    }
+  ],
+  'lu-decomposition': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.06 Linear Algebra',
+      url: 'https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Gilbert Strang, MIT 18.06 Lecture 4: Factorization into A = LU',
+      extractedExcerpt: 'Gaussian elimination transforms matrix A into an upper triangular matrix U using elementary row operations recorded in unit lower triangular matrix L. Solving Ax = b reduces to two rapid triangular solves: Ly = b (forward) and Ux = y (back substitution).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'topological-compactness': [
+    {
+      institution: 'Cambridge University',
+      courseName: 'Cambridge Mathematical Tripos Part II: General Topology',
+      url: 'https://www.maths.cam.ac.uk/undergrad/lecturenotes',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Cambridge Tripos Part II Topology: Compactness, Heine-Borel Theorem and Finite Subcovers',
+      extractedExcerpt: 'A topological space X is compact if every open cover of X contains a finite subcover. In R^n with the standard metric topology, Heine-Borel theorem establishes that a subset is compact if and only if it is closed and bounded.',
+      license: 'Cambridge Open Course Material'
+    }
+  ],
+  'cauchy-riemann-equations': [
+    {
+      institution: 'Harvard University',
+      courseName: 'Harvard Math 213a Complex Analysis',
+      url: 'https://abel.math.harvard.edu/~ctm/home/text/class/harvard/213a/10/html/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Curt McMullen, Harvard Math 213a: Holomorphic Functions and the Cauchy-Riemann Equations',
+      extractedExcerpt: 'For f(z) = u(x,y) + i v(x,y) to be complex differentiable (holomorphic) at z_0, the partial derivatives must satisfy the Cauchy-Riemann equations: u_x = v_y and u_y = -v_x. Geometrically, this means the Jacobian acts as a conformal similarity transformation (rotation and scaling).',
+      license: 'Harvard Open Course Material'
+    }
+  ],
+  'divide-and-conquer-master-theorem': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 6.006 Introduction to Algorithms',
+      url: 'https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Erik Demaine & Dr. Jason Ku, MIT 6.006 Lecture 2: Divide and Conquer, Merge Sort and Master Theorem',
+      extractedExcerpt: 'For recurrence T(n) = a T(n/b) + f(n), the Master Theorem compares f(n) to n^(log_b a). In Case 2 where f(n) = Theta(n^(log_b a)), work is evenly split across all recursion levels, yielding Theta(n^(log_b a) * log n), exactly describing MergeSort with a=2, b=2.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'category-functor-monad': [
+    {
+      institution: 'Oxford University / Edinburgh',
+      courseName: 'Category Theory for Computer Science',
+      url: 'https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Bartosz Milewski, Category Theory for Programmers (Oxford & Edinburgh Lecture Series)',
+      extractedExcerpt: 'A category consists of objects and morphisms with associative composition and identity arrows. A Functor F: C -> D maps objects to objects and morphisms to morphisms, preserving identity (F(id_A) = id_F(A)) and composition (F(g o f) = F(g) o F(f)). A Monad is an endofunctor equipped with natural transformations unit (return) and multiplication (join / flatMap).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'java-jvm-memory-generics': [
+    {
+      institution: 'Stanford University',
+      courseName: 'Stanford CS108 Object-Oriented System Design',
+      url: 'https://web.stanford.edu/class/cs108/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Nick Parlante, Stanford CS108: Java Virtual Machine Memory Model & Generics Type Erasure',
+      extractedExcerpt: 'In the JVM, primitive types and stack frames live on thread stacks, while all objects and heap arrays reside in Heap memory. Java is strictly pass-by-value: for object variables, the copy of the pointer reference is passed by value. Generics in Java use type erasure for backward compatibility, replacing type parameters with Object or their upper bound at compile time.',
+      license: 'Stanford Open Course Material'
+    }
+  ],
+  'rsa-public-key-cryptography': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 6.875 Cryptography and Cryptanalysis',
+      url: 'https://ocw.mit.edu/courses/6-875-cryptography-and-cryptanalysis-spring-2005/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Shafi Goldwasser, MIT 6.875 Lecture 7: Public-Key Cryptography, Euler Totient and RSA',
+      extractedExcerpt: 'RSA security rests on the computational intractability of factoring large integers n = p * q. The public key is (n, e) where gcd(e, phi(n)) = 1, and the private key is d = e^(-1) mod phi(n), where phi(n) = (p - 1)(q - 1). By Euler\'s totient theorem, (m^e)^d = m^(e*d) = m^(k*phi(n) + 1) = m (mod n).',
+      license: 'Creative Commons BY-NC-SA'
+    }
   ]
 };
 

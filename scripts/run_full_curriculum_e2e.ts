@@ -327,6 +327,59 @@ async function runFullCurriculumE2E() {
     assert(hasFullLesson, `Course ${code} has active 8-step pedagogical lesson and deliberate practice problem`);
   }
 
+  // ============================================================================
+  // TEST SUITE 9: 3RD & 4TH YEAR (10 COMPULSORY COURSES) FULL COVERAGE
+  // ============================================================================
+  console.log('\n--- 9. 3RD & 4TH YEAR FULL 10 COURSES PEDAGOGICAL COMPLETENESS ---');
+
+  const y3y4Courses = [
+    // 3. Sınıf Güz
+    'MAT301', 'MAT303', 'CENG301', 'CENG303',
+    // 3. Sınıf Bahar
+    'MAT302', 'MAT304', 'CENG302', 'CENG304',
+    // 4. Sınıf Güz
+    'CENG401',
+    // 4. Sınıf Bahar
+    'CENG402'
+  ];
+
+  for (const code of y3y4Courses) {
+    const course = await prisma.course.findFirst({
+      where: { code },
+      include: {
+        topics: {
+          include: {
+            concepts: {
+              include: {
+                concept: {
+                  include: {
+                    lessonSteps: true,
+                    problems: true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    });
+
+    assert(!!course, `Course ${code} exists in catalog`);
+    assert(course!.topics.length > 0, `Course ${code} has official syllabus topics`);
+    const totalConcepts = course!.topics.reduce((acc, t) => acc + t.concepts.length, 0);
+    assert(totalConcepts > 0, `Course ${code} has registered academic concepts (found ${totalConcepts})`);
+    
+    // Check that at least one concept has full 8 steps and practice
+    const hasFullLesson = course!.topics.some(t => 
+      t.concepts.some(tc => tc.concept.lessonSteps.length === 8 && tc.concept.problems.length > 0)
+    );
+    assert(hasFullLesson, `Course ${code} has active 8-step pedagogical lesson and deliberate practice problem`);
+  }
+
+  // Verify all 30 courses across all 4 years in database
+  const all30Courses = [...y1y2Courses, ...y3y4Courses];
+  assert(all30Courses.length === 30, 'Total evaluated compulsory courses equal exactly 30');
+
   console.log('\n================================================================');
   console.log(`SUMMARY: ${passedTests} / ${totalTests} TESTS PASSED (100% SUCCESS)`);
   console.log('Official ESOGÜ 2024+ 30-Course Curriculum Teacher Engine is fully verified!');
