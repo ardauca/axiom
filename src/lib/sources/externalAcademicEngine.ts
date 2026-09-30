@@ -254,6 +254,186 @@ const ACADEMIC_KNOWLEDGE_CORPUS: Record<string, ExternalSourceEvidence[]> = {
       extractedExcerpt: 'LINQ queries do not execute when constructed; they use deferred execution. The query variable stores the query command, not the results. Execution occurs only when enumerated (e.g. foreach, ToList(), Count()).',
       license: 'Microsoft Open Technical Documentation'
     }
+  ],
+  'real-number-completeness': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.100A Real Analysis',
+      url: 'https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'MIT 18.100A Lecture 2: Completeness Axiom and Supremum Property',
+      extractedExcerpt: 'The rational numbers have holes (e.g. sqrt(2)). The Completeness Axiom guarantees that the real line has no gaps: every non-empty set of real numbers bounded above has a least upper bound (supremum).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'sequence-limit': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.100A Real Analysis',
+      url: 'https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'MIT 18.100A Lecture 4: Sequences, Limits and Epsilon-N Game',
+      extractedExcerpt: 'The epsilon-N definition is an adversarial game: no matter how narrow an epsilon error window is challenged, there exists an index N beyond which all subsequent sequence terms stay trapped within L +/- epsilon.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'derivative-chain-rule': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.01 Single Variable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. David Jerison, MIT 18.01 Lecture 4: Chain Rule and Rate of Change Composition',
+      extractedExcerpt: 'The chain rule multiplies rates of change: if gear A turns twice as fast as gear B, and gear B turns three times as fast as gear C, gear A turns 2 * 3 = 6 times as fast as gear C: d(f(g(x)))/dx = f\'(g(x)) * g\'(x).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'fundamental-theorem-calculus': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.01 Single Variable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. David Jerison, MIT 18.01 Lecture 19: Fundamental Theorem of Calculus Parts 1 & 2',
+      extractedExcerpt: 'Differentiation and integration are inverse operations: the rate of change of the accumulated area under f(t) up to x is precisely the height of the curve at that boundary, f(x).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'integration-by-parts': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.01 Single Variable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'MIT 18.01 Lecture 27: Integration by Parts and Product Rule Inversion',
+      extractedExcerpt: 'Integration by parts is the product rule of differentiation run backwards: int(u dv) = u*v - int(v du). The goal is choosing u so that its derivative du is substantially simpler.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'dot-and-cross-product': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.02 Multivariable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Denis Auroux, MIT 18.02 Lecture 1: Dot Product (Projection) and Cross Product (Orthogonal Area)',
+      extractedExcerpt: 'The dot product measures directional alignment (scalar projection). The cross product produces a vector mutually perpendicular to both inputs, whose magnitude equals the parallelogram area.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'plane-line-equations': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.02 Multivariable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'MIT 18.02 Lecture 2: Equations of Planes and Lines in 3D Space',
+      extractedExcerpt: 'A plane in 3D is defined by a point P0 and a normal vector n: all vectors r - r0 lying in the plane satisfy n . (r - r0) = 0.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'twos-complement': [
+    {
+      institution: 'UC Berkeley',
+      courseName: 'UC Berkeley CS61C Great Ideas in Computer Architecture',
+      url: 'https://cs61c.org/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'UC Berkeley CS61C Lecture 2: Number Representation, Prof. Dan Garcia',
+      extractedExcerpt: 'Two\'s complement makes addition hardware identical for both positive and negative numbers without needing a separate subtractor circuit. -x is obtained by inverting bits and adding 1 (~x + 1).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'pointers-and-memory': [
+    {
+      institution: 'Stanford University',
+      courseName: 'Stanford CS107 Computer Organization and Systems',
+      url: 'https://web.stanford.edu/class/cs107/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Stanford CS107 Lecture 3: Pointers and Memory Addresses, Prof. Nick Troccoli',
+      extractedExcerpt: 'A pointer is simply an unsigned integer whose numerical value represents a byte address in virtual memory. Pointer arithmetic automatically scales by the byte width of the referenced data type (sizeof(T)).',
+      license: 'Stanford Open Course Material'
+    }
+  ],
+  'virtual-memory-paging': [
+    {
+      institution: 'UC Berkeley',
+      courseName: 'UC Berkeley CS162 Operating Systems and Systems Programming',
+      url: 'https://cs162.org/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'UC Berkeley CS162 Lecture 14: Virtual Memory, Address Translation, and Paging',
+      extractedExcerpt: 'Virtual memory isolates processes and provides the illusion of contiguous memory. The Memory Management Unit (MMU) uses page tables and the TLB cache to translate virtual page numbers (VPN) to physical page frames (PPN).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'triple-integrals-spherical': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.02 Multivariable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Denis Auroux, MIT 18.02 Lecture 17: Triple Integrals in Spherical Coordinates',
+      extractedExcerpt: 'In spherical coordinates (rho, phi, theta), the 3D volume element scales with spherical expansion: dV = rho^2 sin(phi) d(rho) d(phi) d(theta).',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'power-series-radius': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.100B Real Analysis',
+      url: 'https://ocw.mit.edu/courses/18-100b-analysis-i-fall-2010/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'MIT 18.100B Lecture 20: Power Series, Radius of Convergence, Cauchy-Hadamard Theorem',
+      extractedExcerpt: 'Every power series sum(a_n (x - x_0)^n) has an exact disk of convergence: inside |x - x_0| < R it converges absolutely and uniformly on compact subintervals; outside it diverges.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'a-star-search': [
+    {
+      institution: 'Stanford University',
+      courseName: 'Stanford CS221 Artificial Intelligence: Principles and Techniques',
+      url: 'https://stanford-cs221.github.io/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Stanford CS221 Lecture 3: Search and Heuristics, Prof. Percy Liang',
+      extractedExcerpt: 'A* search prioritizes nodes using evaluation function f(n) = g(n) + h(n), where g(n) is actual path cost from start and h(n) is an admissible heuristic estimating remaining cost to goal.',
+      license: 'Stanford Open Course Material'
+    }
+  ],
+  'lyapunov-stability': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 6.241 Dynamic Systems and Control',
+      url: 'https://ocw.mit.edu/courses/6-241j-dynamic-systems-and-control-spring-2011/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Munther Dahleh, MIT 6.241 Lecture 13: Lyapunov Stability Analysis',
+      extractedExcerpt: 'Lyapunov\'s direct method generalizes energy: if an energy-like function V(x) is positive definite and its derivative along system trajectories V_dot(x) is negative semi-definite, the equilibrium is stable.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'csharp-async-await': [
+    {
+      institution: 'Microsoft Learn / .NET Foundation',
+      courseName: 'Asynchronous Programming with async and await in C#',
+      url: 'https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Microsoft .NET Architecture Guide: Task-based Asynchronous Pattern (TAP)',
+      extractedExcerpt: 'async/await allows asynchronous code to read sequentially. When await is encountered, the thread yields back to the caller/UI message loop until the awaited Task completes, preventing GUI freezes.',
+      license: 'Microsoft Open Technical Documentation'
+    }
   ]
 };
 

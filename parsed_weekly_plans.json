@@ -1,0 +1,1192 @@
+{
+  "MAT101": {
+    "code": "MAT101",
+    "name": "Analiz I",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Reel sayıların temel özellikleri"
+      },
+      {
+        "week": "2",
+        "topic": "Fonksiyonlar, Grafikler, Trigonometrik fonksiyonlar"
+      },
+      {
+        "week": "3",
+        "topic": "Fonksiyonların incelenmesi"
+      },
+      {
+        "week": "4",
+        "topic": "Diziler ve seriler"
+      },
+      {
+        "week": "5",
+        "topic": "Dizi ve seriler için yakınsaklık testleri"
+      },
+      {
+        "week": "6",
+        "topic": "Limits ve süreklilik kavramları"
+      },
+      {
+        "week": "7",
+        "topic": "Problem çözümleri"
+      },
+      {
+        "week": "8",
+        "topic": "Mid-Term Exam"
+      },
+      {
+        "week": "9",
+        "topic": "Fonksiyon dizi ve serileri"
+      },
+      {
+        "week": "10",
+        "topic": "Türev kavramı ve türev kuralları"
+      },
+      {
+        "week": "11",
+        "topic": "Bileşke fonksiyonların türevleri, Zincir kuralı"
+      },
+      {
+        "week": "12",
+        "topic": "Türevin uygulamaları,"
+      },
+      {
+        "week": "13",
+        "topic": "Maksimum ve minimum teoremleri"
+      },
+      {
+        "week": "14",
+        "topic": "Fonksiyon grafiklerinin detaylı çizimi"
+      },
+      {
+        "week": "15",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT103": {
+    "code": "MAT103",
+    "name": "Analitik Geometri",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Lineer denklem sistemleri ve Matrisler"
+      },
+      {
+        "week": "2",
+        "topic": "Uzayda Kartezyen koordinat sistemi"
+      },
+      {
+        "week": "3",
+        "topic": "Vektörler ve Vektörler üzerinde işlemler"
+      },
+      {
+        "week": "4",
+        "topic": "Düzlemde koordinat dönüşümleri"
+      },
+      {
+        "week": "5",
+        "topic": "Eğriler"
+      },
+      {
+        "week": "6",
+        "topic": "Konikler"
+      },
+      {
+        "week": "7",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "8",
+        "topic": "Ara sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Uzayda doğru ve düzlem"
+      },
+      {
+        "week": "10",
+        "topic": "Uzayda simetri"
+      },
+      {
+        "week": "11",
+        "topic": "Yüzey tanımı ve Grafiği"
+      },
+      {
+        "week": "12",
+        "topic": "Küre"
+      },
+      {
+        "week": "13",
+        "topic": "Silindir"
+      },
+      {
+        "week": "14",
+        "topic": "Koni"
+      },
+      {
+        "week": "15",
+        "topic": "Problem çözümü"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT105": {
+    "code": "MAT105",
+    "name": "Soyut Matematik",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Mantık"
+      },
+      {
+        "week": "2",
+        "topic": "Önermeler cebri"
+      },
+      {
+        "week": "3",
+        "topic": "İspat yöntemleri"
+      },
+      {
+        "week": "4",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "5",
+        "topic": "Kümeler"
+      },
+      {
+        "week": "6",
+        "topic": "Kümelerde işlemler"
+      },
+      {
+        "week": "7",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Bağıntı"
+      },
+      {
+        "week": "10",
+        "topic": "Bağıntı çeşitleri"
+      },
+      {
+        "week": "11",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "12",
+        "topic": "Denklik sınıfları"
+      },
+      {
+        "week": "13",
+        "topic": "Fonksiyonlar"
+      },
+      {
+        "week": "14",
+        "topic": "Fonksiyonlar"
+      },
+      {
+        "week": "15",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG101": {
+    "code": "CENG101",
+    "name": "Temel Bilgisayar Bilimleri I",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Matematiğin Temel Kavramları ve Bilgisayar Bilimi"
+      },
+      {
+        "week": "2",
+        "topic": "Bilgisayar Bilimine Giriş"
+      },
+      {
+        "week": "3",
+        "topic": "Algoritma ve Programlama"
+      },
+      {
+        "week": "4",
+        "topic": "Kriptografi ve Güvenlik"
+      },
+      {
+        "week": "5",
+        "topic": "Veri Tabanı"
+      },
+      {
+        "week": "6",
+        "topic": "Yapay Zekâ"
+      },
+      {
+        "week": "7",
+        "topic": "MATLAB Temel Komutları ve Fonksiyonları"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Değişkenler ve Veri Türleri"
+      },
+      {
+        "week": "10",
+        "topic": "MATLAB'da Matematiksel İşlemler"
+      },
+      {
+        "week": "11",
+        "topic": "Matris İşlemleri"
+      },
+      {
+        "week": "12",
+        "topic": "MATLAB'da Grafik Çizimi"
+      },
+      {
+        "week": "13",
+        "topic": "Kontrol Yapıları"
+      },
+      {
+        "week": "14",
+        "topic": "Fonksiyonlar ve Komut Dosyaları"
+      },
+      {
+        "week": "15",
+        "topic": "Veri Analizi ve İstatistik"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG103": {
+    "code": "CENG103",
+    "name": "Bilgisayar Programlama I",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Python programlama diline giriş"
+      },
+      {
+        "week": "2",
+        "topic": "Koşul deyimleri (if-else)"
+      },
+      {
+        "week": "3",
+        "topic": "Döngüler (for, while)"
+      },
+      {
+        "week": "4",
+        "topic": "Döngüler (for, while)"
+      },
+      {
+        "week": "5",
+        "topic": "Fonksiyonlar ve modüler programlama"
+      },
+      {
+        "week": "6",
+        "topic": "Python ile problem çözme"
+      },
+      {
+        "week": "7",
+        "topic": "Listeler ve demetler (tuples)"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Listeler ve demetler (tuples)"
+      },
+      {
+        "week": "10",
+        "topic": "Nesne yönelimli programlama (OOP) ve sınıflar"
+      },
+      {
+        "week": "11",
+        "topic": "Veri yapıları ve bellek yönetimi"
+      },
+      {
+        "week": "12",
+        "topic": "Veri yapıları ve bellek yönetimi"
+      },
+      {
+        "week": "13",
+        "topic": "Karakterler ve katarlar (strings)"
+      },
+      {
+        "week": "14",
+        "topic": "Problem çözme"
+      },
+      {
+        "week": "15",
+        "topic": "Yarıyıl sonu sınavları"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT102": {
+    "code": "MAT102",
+    "name": "Analiz II",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Riemann integrali için hazırlık"
+      },
+      {
+        "week": "2",
+        "topic": "İntegrallenebilen fonksiyonlar"
+      },
+      {
+        "week": "3",
+        "topic": "Belirli integralin özellikleri"
+      },
+      {
+        "week": "4",
+        "topic": "Belirli integralin özellikleri"
+      },
+      {
+        "week": "5",
+        "topic": "İntegral teoremleri"
+      },
+      {
+        "week": "6",
+        "topic": "Belirsiz integraller ve integral alma kuralları"
+      },
+      {
+        "week": "7",
+        "topic": "Belirsiz integraller ve integral alma kuralları"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Belirli integral ve uygulamaları"
+      },
+      {
+        "week": "10",
+        "topic": "Belirli integral ve uygulamaları"
+      },
+      {
+        "week": "11",
+        "topic": "Alan ve yay uzunluğu hesabı,"
+      },
+      {
+        "week": "12",
+        "topic": "Hacim hesabı"
+      },
+      {
+        "week": "13",
+        "topic": "Kütle ve kütle merkezi hesabı, hasolmayan integraller"
+      },
+      {
+        "week": "14",
+        "topic": "Kütle ve kütle merkezi hesabı, hasolmayan integraller"
+      },
+      {
+        "week": "15",
+        "topic": "Soru çözümleri"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT104": {
+    "code": "MAT104",
+    "name": "Lineer Cebir",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "𝑅𝑛 Standart Vektör Uzayı"
+      },
+      {
+        "week": "2",
+        "topic": "𝑅𝑛 Standart Vektör Uzayının alt uzayları"
+      },
+      {
+        "week": "3",
+        "topic": "𝑅𝑛 Standart Vektör Uzayında Lineer Bağımlılık ve Lineer Bağımsızlık"
+      },
+      {
+        "week": "4",
+        "topic": "𝑅𝑛 Standart Vektör Uzayında Taban ve Boyut"
+      },
+      {
+        "week": "5",
+        "topic": "𝑅𝑛 Standart Vektör Uzayları arasında lineer dönüşümler"
+      },
+      {
+        "week": "6",
+        "topic": "Lineer dönüşümler üzerinde tanımlı işlemler"
+      },
+      {
+        "week": "7",
+        "topic": "Problem çözümleri"
+      },
+      {
+        "week": "8",
+        "topic": "Ara sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Lineer dönüşümün çekirdek ve görüntü altuzayları"
+      },
+      {
+        "week": "10",
+        "topic": "Lineer dönüşümlerin matris temsilleri"
+      },
+      {
+        "week": "11",
+        "topic": "Endomorfizmler"
+      },
+      {
+        "week": "12",
+        "topic": "Özdeğer ve özvektörler teorisine giriş"
+      },
+      {
+        "week": "13",
+        "topic": "𝑅𝑛 iç-çarpım uzayı ve özellikleri"
+      },
+      {
+        "week": "14",
+        "topic": "𝑅𝑛  iç-çarpım uzayında norm"
+      },
+      {
+        "week": "15",
+        "topic": "Problem çözümleri"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT106": {
+    "code": "MAT106",
+    "name": "Ayrık Matematik",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Fonksiyonlar, İkili işlemler"
+      },
+      {
+        "week": "2",
+        "topic": "Peano aksiyomları, doğal sayılarda işlemler"
+      },
+      {
+        "week": "3",
+        "topic": "Tamsayıların inşası"
+      },
+      {
+        "week": "4",
+        "topic": "Tamsayılarda işlemler"
+      },
+      {
+        "week": "5",
+        "topic": "Pozitif ve negatif tamsayılar"
+      },
+      {
+        "week": "6",
+        "topic": "Tümevarım Prensibi"
+      },
+      {
+        "week": "7",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Tamsayılarda bölünebilme"
+      },
+      {
+        "week": "10",
+        "topic": "Asal sayılar"
+      },
+      {
+        "week": "11",
+        "topic": "EBOB ve EKOK"
+      },
+      {
+        "week": "12",
+        "topic": "Kongrüanslar"
+      },
+      {
+        "week": "13",
+        "topic": "Lineer kongrüans sistemleri"
+      },
+      {
+        "week": "14",
+        "topic": "Fermat ve Euler Teoremi"
+      },
+      {
+        "week": "15",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG102": {
+    "code": "CENG102",
+    "name": "Temel Bilgisayar Bilimleri II",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Matematiğin Temel Kavramları ve Bilgisayar Bilimi"
+      },
+      {
+        "week": "2",
+        "topic": "Bilgisayar Bilimine Giriş"
+      },
+      {
+        "week": "3",
+        "topic": "Algoritma ve Programlama"
+      },
+      {
+        "week": "4",
+        "topic": "Kriptografi ve Güvenlik"
+      },
+      {
+        "week": "5",
+        "topic": "Veri Tabanı"
+      },
+      {
+        "week": "6",
+        "topic": "Yapay Zekâ"
+      },
+      {
+        "week": "7",
+        "topic": "MATLAB Temel Komutları ve Fonksiyonları"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Değişkenler ve Veri Türleri"
+      },
+      {
+        "week": "10",
+        "topic": "MATLAB'da Matematiksel İşlemler"
+      },
+      {
+        "week": "11",
+        "topic": "Matris İşlemleri"
+      },
+      {
+        "week": "12",
+        "topic": "MATLAB'da Grafik Çizimi"
+      },
+      {
+        "week": "13",
+        "topic": "Kontrol Yapıları"
+      },
+      {
+        "week": "14",
+        "topic": "Fonksiyonlar ve Komut Dosyaları"
+      },
+      {
+        "week": "15",
+        "topic": "Veri Analizi ve İstatistik"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG104": {
+    "code": "CENG104",
+    "name": "Bilgisayar Programlama II",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Sınıflara Giriş"
+      },
+      {
+        "week": "2",
+        "topic": "Fonksiyon Aşırı Yükleme"
+      },
+      {
+        "week": "3",
+        "topic": "Operatör Aşırı Yükleme"
+      },
+      {
+        "week": "4",
+        "topic": "Operatör Aşırı Yükleme"
+      },
+      {
+        "week": "5",
+        "topic": "Kalıtım"
+      },
+      {
+        "week": "6",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "7",
+        "topic": "Sanal Fonksiyonlar"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Polimorfizm"
+      },
+      {
+        "week": "10",
+        "topic": "Şablonlar"
+      },
+      {
+        "week": "11",
+        "topic": "Şablonlar"
+      },
+      {
+        "week": "12",
+        "topic": "Standart Şablon Kütüphanesinin Tanıtımı"
+      },
+      {
+        "week": "13",
+        "topic": "Standart Şablon Kütüphanesinin Tanıtımı"
+      },
+      {
+        "week": "14",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "15",
+        "topic": "Problem Çözme"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl Sonu Sınavları"
+      }
+    ]
+  },
+  "MAT201": {
+    "code": "MAT201",
+    "name": "Analiz III",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Vektör değerli fonksiyonlar ve özellikleri"
+      },
+      {
+        "week": "2",
+        "topic": "Vektör değerli fonksiyonlarda limit"
+      },
+      {
+        "week": "3",
+        "topic": "Vektör değerli fonksiyonlarda süreklilik"
+      },
+      {
+        "week": "4",
+        "topic": "Vektör değerli fonksiyonlarda türev"
+      },
+      {
+        "week": "5",
+        "topic": "Vektör değerli fonksiyonlarda integral"
+      },
+      {
+        "week": "6",
+        "topic": "Eğriler ve özellikleri"
+      },
+      {
+        "week": "7",
+        "topic": "Çok değişkenli fonksiyonlar, çok değişkenli fonksiyonların tanım ve görüntü kümeleri"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Çok değişkenli fonksiyonlarda limit"
+      },
+      {
+        "week": "10",
+        "topic": "Çok değişkenli fonksiyonlarda süreklilik"
+      },
+      {
+        "week": "11",
+        "topic": "Çok değişkenli fonksiyonlarda türev ve kısmi türev"
+      },
+      {
+        "week": "12",
+        "topic": "Çok değişkenli fonksiyonlarda gradient vektör ve zincir kuralı"
+      },
+      {
+        "week": "13",
+        "topic": "Çok değişkenli fonksiyonlarda Taylor açılımı"
+      },
+      {
+        "week": "14",
+        "topic": "Diferensiyel ve tam diferensiyel kavramı"
+      },
+      {
+        "week": "15",
+        "topic": "Çok değişkenli fonksiyonların ekstrem değerleri"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "MAT203": {
+    "code": "MAT203",
+    "name": "Graf Teori",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Graf tanımı ve tarihçesi"
+      },
+      {
+        "week": "2",
+        "topic": "Graf teoride temel kavramlar"
+      },
+      {
+        "week": "3",
+        "topic": "Graf çeşitleri"
+      },
+      {
+        "week": "4",
+        "topic": "İzomorfik graflar"
+      },
+      {
+        "week": "5",
+        "topic": "Graflarda işlemler ve uzaklık kavramı"
+      },
+      {
+        "week": "6",
+        "topic": "Graflarda işlemler ve uzaklık kavramı"
+      },
+      {
+        "week": "7",
+        "topic": "Bağlantılılık ve Ağaçlar"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Bağlantılılık ve Ağaçlar"
+      },
+      {
+        "week": "10",
+        "topic": "Euler graflar"
+      },
+      {
+        "week": "11",
+        "topic": "Euler graflar"
+      },
+      {
+        "week": "12",
+        "topic": "Hamilton graflar"
+      },
+      {
+        "week": "13",
+        "topic": "Hamilton graflar"
+      },
+      {
+        "week": "14",
+        "topic": "En kısa yol problemleri"
+      },
+      {
+        "week": "15",
+        "topic": "Grafları boyamak"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG203": {
+    "code": "CENG203",
+    "name": "Bilgisayar Mimarisi",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Giriş ve Kısa Tarihçe"
+      },
+      {
+        "week": "2",
+        "topic": "Sayı Sistemleri ve İkili Kodlar"
+      },
+      {
+        "week": "3",
+        "topic": "Dijital Sistemlerin Temelleri"
+      },
+      {
+        "week": "4",
+        "topic": "CPU Yapısı ve İşlevi"
+      },
+      {
+        "week": "5",
+        "topic": "Komut Setleri"
+      },
+      {
+        "week": "6",
+        "topic": "Kontrol Birimi İşlemleri"
+      },
+      {
+        "week": "7",
+        "topic": "Bilgisayar Bağlantı Yapıları"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Dahili ve Harici Bellek"
+      },
+      {
+        "week": "10",
+        "topic": "Önbellek Belleği ve Önbellek Belleği Eşleme"
+      },
+      {
+        "week": "11",
+        "topic": "Girdi / Çıktı"
+      },
+      {
+        "week": "12",
+        "topic": "Bilgisayar Aritmetiği"
+      },
+      {
+        "week": "13",
+        "topic": "Bilgisayar Aritmetiği"
+      },
+      {
+        "week": "14",
+        "topic": "Bilgisayar Aritmetiği"
+      },
+      {
+        "week": "15",
+        "topic": "Bilgisayar Aritmetiği"
+      },
+      {
+        "week": "16,17",
+        "topic": "Final Sınavı"
+      }
+    ]
+  },
+  "MAT202": {
+    "code": "MAT202",
+    "name": "Analiz IV",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "İki katlı integrallerin tanımı, bazı özelikleri ve Fubini teoremleri"
+      },
+      {
+        "week": "2",
+        "topic": "İki katlı integrallerde değişken değiştirme ve bölge dönüşümü"
+      },
+      {
+        "week": "3",
+        "topic": "İki katlı integrallerin uygulamaları (alan, hacim)"
+      },
+      {
+        "week": "4",
+        "topic": "İki katlı integrallerin uygulamaları (kütle, ağırlık merkezi)"
+      },
+      {
+        "week": "5",
+        "topic": "Üç katlı integrallerin tanımı ve özelikleri"
+      },
+      {
+        "week": "6",
+        "topic": "Üç katlı integrallerde bölge dönüşümleri"
+      },
+      {
+        "week": "7",
+        "topic": "Üç katlı integrallerin küresel ve silindirik koordinatlar yardımıyla hesabı"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Üç katlı integrallerin uygulamaları (alan, hacim, ağırlık merkezi vb.)"
+      },
+      {
+        "week": "10",
+        "topic": "Skaler değerli fonksiyonların eğrisel integrali"
+      },
+      {
+        "week": "11",
+        "topic": "Vektör değerli fonksiyonların eğrisel integrali"
+      },
+      {
+        "week": "12",
+        "topic": "Eğrisel İntegrallerde Green teoremi"
+      },
+      {
+        "week": "13",
+        "topic": "Eğrisel İntegrallerde alan ve iş hesaplamaları"
+      },
+      {
+        "week": "14",
+        "topic": "Yüzey integralleri ve Stokes teoremi"
+      },
+      {
+        "week": "15",
+        "topic": "Yüzey integrallerinin uygulamaları"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "CENG202": {
+    "code": "CENG202",
+    "name": "Yapay Zeka",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Yapay Zekaya Giriş Kursu Organizasyonu / Aramaya Giriş"
+      },
+      {
+        "week": "2",
+        "topic": "Problem Formülasyonu ve Arama"
+      },
+      {
+        "week": "3",
+        "topic": "Heuristik Arama"
+      },
+      {
+        "week": "4",
+        "topic": "Üretim Sistemi"
+      },
+      {
+        "week": "5",
+        "topic": "Anlamsal Ağ ve Çerçeve"
+      },
+      {
+        "week": "6",
+        "topic": "Önerme Mantığı"
+      },
+      {
+        "week": "7",
+        "topic": "Önerme Mantığı"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınav"
+      },
+      {
+        "week": "9",
+        "topic": "Diğer Akıl Yürütme Yöntemleri"
+      },
+      {
+        "week": "10",
+        "topic": "Uygulamalar"
+      },
+      {
+        "week": "11",
+        "topic": "Desen Tanımaya Giriş"
+      },
+      {
+        "week": "12",
+        "topic": "Çok Katmanlı Sinir Ağı"
+      },
+      {
+        "week": "13",
+        "topic": "Çok Katmanlı Sinir Ağı"
+      },
+      {
+        "week": "14",
+        "topic": "Kendini Düzenleyen Sinir Ağı"
+      },
+      {
+        "week": "15",
+        "topic": "Kendini Düzenleyen Sinir Ağı"
+      },
+      {
+        "week": "16,17",
+        "topic": "Final Sınavı"
+      }
+    ]
+  },
+  "MAT204": {
+    "code": "MAT204",
+    "name": "Dinamik Sistemler",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Dinamik Bir Dünya Görüşü"
+      },
+      {
+        "week": "2",
+        "topic": "Tek Boyutlu Akışta Sabit Noktalar ve Kararlılık"
+      },
+      {
+        "week": "3",
+        "topic": "Doğrusal Kararlılık Analizi"
+      },
+      {
+        "week": "4",
+        "topic": "Eyer Düğümü Çatallanması, Transkritik Çatallanma"
+      },
+      {
+        "week": "5",
+        "topic": "Lazer Eşiği, Dirgen Çatallanması"
+      },
+      {
+        "week": "6",
+        "topic": "Kusurlu Çatallanmalar ve Felaketler"
+      },
+      {
+        "week": "7",
+        "topic": "Örnek çözme"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "İki Boyutlu Akışlı Lineer Sistemler Tanımlar ve Örnekler"
+      },
+      {
+        "week": "10",
+        "topic": "Lineer Sistemlerin Sınıflandırılması"
+      },
+      {
+        "week": "11",
+        "topic": "Faz Portreleri ve Çatallanma Türleri"
+      },
+      {
+        "week": "12",
+        "topic": "Sabit Noktalar ve Doğrusallaştırma"
+      },
+      {
+        "week": "13",
+        "topic": "Liapunov Fonksiyonu"
+      },
+      {
+        "week": "14",
+        "topic": "Limit Çevrim"
+      },
+      {
+        "week": "15",
+        "topic": "Faz portrelerinin bilgisayar simülasyonu"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  },
+  "STAT202": {
+    "code": "STAT202",
+    "name": "Olasılık ve İstatistik",
+    "weeks": [
+      {
+        "week": "1",
+        "topic": "Olasılık ile ilgili temel kavramlar ve özellikler"
+      },
+      {
+        "week": "2",
+        "topic": "Özel olayların olasılığı"
+      },
+      {
+        "week": "3",
+        "topic": "Rassal değişkenler"
+      },
+      {
+        "week": "4",
+        "topic": "Dağılım fonksiyonları"
+      },
+      {
+        "week": "5",
+        "topic": "Birikimli dağılım fonksiyonları"
+      },
+      {
+        "week": "6",
+        "topic": "Beklemen değer"
+      },
+      {
+        "week": "7",
+        "topic": "Aritmetik ortalama ve varyans"
+      },
+      {
+        "week": "8",
+        "topic": "Ara Sınavlar"
+      },
+      {
+        "week": "9",
+        "topic": "Kesikli dağılımlar"
+      },
+      {
+        "week": "10",
+        "topic": "Kesikli dağılımlar"
+      },
+      {
+        "week": "11",
+        "topic": "Kesikli dağılımlar"
+      },
+      {
+        "week": "12",
+        "topic": "Sürekli dağılımlar"
+      },
+      {
+        "week": "13",
+        "topic": "Sürekli dağılımlar"
+      },
+      {
+        "week": "14",
+        "topic": "Sürekli dağılımlar"
+      },
+      {
+        "week": "15",
+        "topic": "Örnekleme dağılımları"
+      },
+      {
+        "week": "16,17",
+        "topic": "Yarıyıl sonu sınavları"
+      }
+    ]
+  }
+}
