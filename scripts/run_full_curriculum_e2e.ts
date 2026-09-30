@@ -249,6 +249,35 @@ async function runFullCurriculumE2E() {
 
   assert(submission.isCorrect === true && submission.xpEarned === 50, 'Submission recorded with XP and rating gain');
 
+  // ============================================================================
+  // TEST SUITE 7: ACTIVE SEMESTER (2. SINIF GÜZ) CORE CURRICULUM COVERAGE
+  // ============================================================================
+  console.log('\n--- 7. ACTIVE SEMESTER (2. SINIF GÜZ) 5 COURSES CORE TOPICS COVERAGE ---');
+
+  const activeConcepts = [
+    { id: 'double-integrals', expectedProb: 'prob-analiz3-double-integral-polar', course: 'Analiz III' },
+    { id: 'green-theorem', expectedProb: 'prob-analiz3-green-theorem-area', course: 'Analiz III' },
+    { id: 'exact-differential-equations', expectedProb: 'prob-difdenk-exact-equation', course: 'Diferansiyel Denklemler' },
+    { id: 'spanning-trees', expectedProb: 'prob-graf-spanning-tree-edges', course: 'Graf Teori' },
+    { id: 'pipeline-hazards', expectedProb: 'prob-mimari-pipeline-forwarding-stalls', course: 'Bilgisayar Mimarisi' },
+    { id: 'linq-expressions', expectedProb: 'prob-gp1-linq-deferred-execution', course: 'Görsel Programlama I' }
+  ];
+
+  for (const ac of activeConcepts) {
+    const c = await prisma.concept.findUnique({
+      where: { id: ac.id },
+      include: {
+        lessonSteps: true,
+        problems: { include: { problem: true } }
+      }
+    });
+
+    assert(!!c, `Concept ${ac.id} (${ac.course}) exists in database`);
+    assert(c?.lessonSteps.length === 8, `Concept ${ac.id} has all 8 pedagogical lesson steps`);
+    const hasProb = c?.problems.some(p => p.problem.slug === ac.expectedProb);
+    assert(!!hasProb, `Concept ${ac.id} links to authentic practice problem ${ac.expectedProb}`);
+  }
+
   console.log('\n================================================================');
   console.log(`SUMMARY: ${passedTests} / ${totalTests} TESTS PASSED (100% SUCCESS)`);
   console.log('Official ESOGÜ 2024+ 30-Course Curriculum Teacher Engine is fully verified!');

@@ -152,6 +152,108 @@ const ACADEMIC_KNOWLEDGE_CORPUS: Record<string, ExternalSourceEvidence[]> = {
       extractedExcerpt: 'Weierstrass M-Test: If |f_n(x)| <= M_n for all x in E and sum(M_n) converges, then the series sum(f_n(x)) converges uniformly and absolutely on E.',
       license: 'Educational Reference'
     }
+  ],
+  'double-integrals': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.02 Multivariable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Denis Auroux, MIT 18.02 Lecture 14: Double Integrals and Volume under Surfaces',
+      extractedExcerpt: 'A double integral sums infinitely thin column volumes f(x, y) dA. Fubini\'s Theorem allows converting a 2D surface integral into two successive single-variable integrals by slicing along x or y.',
+      license: 'Creative Commons BY-NC-SA'
+    },
+    {
+      institution: 'Pearson Academic',
+      courseName: 'Calculus: A Complete Course (Adams & Essex)',
+      url: 'local://adams-essex-calculus-7th',
+      tier: 3,
+      pedagogicalRole: 'BEST_WORKED_EXAMPLE',
+      citation: 'Robert A. Adams & Christopher Essex, Calculus (7th Ed.), Section 14.1: Double Integrals over Bounded Regions, p. 812',
+      extractedExcerpt: 'Area element in polar coordinates: dA = r dr dtheta. In Cartesian: dA = dx dy = dy dx.',
+      license: 'Educational Reference'
+    }
+  ],
+  'green-theorem': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.02 Multivariable Calculus',
+      url: 'https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Prof. Denis Auroux, MIT 18.02 Lecture 21: Green\'s Theorem in the Plane',
+      extractedExcerpt: 'Green\'s Theorem bridges the boundary of a region with its interior: the circulation of a 2D vector field along a counterclockwise closed boundary equals the double integral of curl F over the enclosed area.',
+      license: 'Creative Commons BY-NC-SA'
+    },
+    {
+      institution: 'Cambridge University',
+      courseName: 'Cambridge Mathematical Tripos IA: Vector Calculus',
+      url: 'https://www.maths.cam.ac.uk/undergrad/lecturenotes',
+      tier: 1,
+      pedagogicalRole: 'FORMAL_PROOF',
+      citation: 'Cambridge Tripos IA Vector Calculus, Section 3.2: Green\'s Theorem and Stokes\' Theorem in 2D',
+      extractedExcerpt: 'Proof of Green\'s Theorem decomposes the region into Type I and Type II domains, applying the Fundamental Theorem of Calculus to each component P(x, y) and Q(x, y).',
+      license: 'Cambridge Open Course Material'
+    }
+  ],
+  'exact-differential-equations': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.03 Differential Equations',
+      url: 'https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'MIT 18.03 Lecture 3: Exact Equations and Integrating Factors, Prof. Arthur Mattuck',
+      extractedExcerpt: 'An ODE M dx + N dy = 0 is exact when M dx + N dy is the total differential dPsi of some potential function Psi(x, y). By Clairaut\'s theorem on equality of mixed partials, exactness requires dM/dy = dN/dx.',
+      license: 'Creative Commons BY-NC-SA'
+    }
+  ],
+  'spanning-trees': [
+    {
+      institution: 'Stanford University',
+      courseName: 'Stanford CS161 Design and Analysis of Algorithms',
+      url: 'https://web.stanford.edu/class/cs161/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Stanford CS161 Lecture 13: Minimum Spanning Trees, Kruskal and Prim Algorithms, Prof. Mary Wootters',
+      extractedExcerpt: 'A spanning tree connects all n vertices of G using the minimum possible number of edges, exactly n - 1, without containing any cycles.',
+      license: 'Stanford Open Course Material'
+    }
+  ],
+  'pipeline-hazards': [
+    {
+      institution: 'UC Berkeley',
+      courseName: 'UC Berkeley CS61C Great Ideas in Computer Architecture',
+      url: 'https://cs61c.org/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'UC Berkeley CS61C Lecture 12: Pipelining Hazards, Prof. Dan Garcia',
+      extractedExcerpt: 'Pipelining hazards prevent the next instruction from executing in its designated clock cycle. Structural hazards arise from resource contention; Data hazards arise from RAW dependencies; Control hazards arise from branch decisions.',
+      license: 'Creative Commons BY-NC-SA'
+    },
+    {
+      institution: 'Morgan Kaufmann',
+      courseName: 'Computer Organization and Design (Patterson & Hennessy)',
+      url: 'local://patterson-hennessy-5th',
+      tier: 3,
+      pedagogicalRole: 'BEST_WORKED_EXAMPLE',
+      citation: 'David A. Patterson & John L. Hennessy, Computer Organization and Design (5th Ed.), Section 4.7: Data Hazards and Forwarding',
+      extractedExcerpt: 'Forwarding paths route the ALU execution result directly from EX/MEM or MEM/WB pipeline registers back to the ALU inputs, eliminating data hazard stalls except for load-use hazards which require 1 stall cycle.',
+      license: 'Educational Reference'
+    }
+  ],
+  'linq-expressions': [
+    {
+      institution: 'Microsoft Learn / .NET Foundation',
+      courseName: 'C# Programming Guide: Language-Integrated Query (LINQ)',
+      url: 'https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'Microsoft .NET Architecture Guide: LINQ Query Execution and Deferred Evaluation',
+      extractedExcerpt: 'LINQ queries do not execute when constructed; they use deferred execution. The query variable stores the query command, not the results. Execution occurs only when enumerated (e.g. foreach, ToList(), Count()).',
+      license: 'Microsoft Open Technical Documentation'
+    }
   ]
 };
 

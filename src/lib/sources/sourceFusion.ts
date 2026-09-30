@@ -121,6 +121,18 @@ export async function fuseAcademicSources(
     notationDifferences = 'ESOGÜ sınavlarında ve Patterson & Hennessy standardında adres bitleri sırasıyla [Tag | Index | Offset] olarak sıralanır. Bazı mimarilerde Offset yerine Block Offset veya Byte Offset terimi kullanılır.';
   } else if (conceptId === 'uniform-convergence') {
     notationDifferences = 'ESOGÜ Analiz III/IV ders notlarında düzgün yakınsaklık f_n \\rightrightarrows f biçiminde çift okla gösterilirken, noktasal yakınsaklık f_n \\to f tek okla gösterilir. Adams & Essex ve Rudin kaynaklarında "f_n converges uniformly to f on E" veya f_n -> f (uniformly) açık ibaresi kullanılır. Sınavınızda profesörünüzün çift ok \\rightrightarrows notasyonunu kullanınız.';
+  } else if (conceptId === 'double-integrals') {
+    notationDifferences = 'ESOGÜ Analiz III ders notlarında alan elemanı dA veya dx dy / dy dx olarak yazılır. Kutupsal koordinatlara geçildiğinde Jacobian çarpanı olan r unutulmamalıdır: dA = r dr dtheta. Adams & Essex notasyonuyla birebir örtüşür.';
+  } else if (conceptId === 'green-theorem') {
+    notationDifferences = 'Eğrisel integralde kapalı eğri üzerinde saatin tersi yönü (pozitif yön) standarttır ve \\oint_C veya \\oint_{\\partial D}^+ sembolüyle gösterilir. Sınavınızda eğrinin yönünün pozitif (iç bölgeyi soluna alan) yönde olduğunu teyit ediniz; saat yönünde eğri verilirse işaret eksiye döner.';
+  } else if (conceptId === 'exact-differential-equations') {
+    notationDifferences = 'ESOGÜ Diferansiyel Denklemler dersinde potansiyel fonksiyon Psi(x, y) = C veya F(x, y) = C olarak adlandırılır. M(x, y)dx + N(x, y)dy = 0 formunda M\'nin y\'ye göre kısmi türevi, N\'nin x\'e göre kısmi türevine eşit olmalıdır: M_y = N_x.';
+  } else if (conceptId === 'spanning-trees') {
+    notationDifferences = 'Graf teorisi literatüründe n köşeli bir ağaçta tam olarak n - 1 kenar bulunur (|E| = |V| - 1). ESOGÜ notlarında T = (V, E\') kapsayan ağacı simgeler ve devirsiz (acyclic) bağlantılı alt çizgedir.';
+  } else if (conceptId === 'pipeline-hazards') {
+    notationDifferences = 'ESOGÜ Bilgisayar Mimarisi ve Patterson & Hennessy standardında 5 aşamalı MIPS boru hattı [IF, ID, EX, MEM, WB] olarak adlandırılır. Veri riskleri (RAW: Read After Write) forwarding ile 0 stall\'a indirgenir; ancak Load-Use riski zorunlu 1 çevrimlik stall (kabarcık) gerektirir.';
+  } else if (conceptId === 'linq-expressions') {
+    notationDifferences = 'C# LINQ sorgularında Query Syntax (from e in list where ... select) ile Method Syntax (list.Where(...).Select(...)) tamamen denktir; derleyici sorguyu arka planda Extension Method zincirine dönüştürür.';
   }
 
   // 6. Build Verified Claims

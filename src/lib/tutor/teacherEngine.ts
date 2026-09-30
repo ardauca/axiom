@@ -109,6 +109,18 @@ export async function generateStructuredLesson(
     mentalModelText = `**Zihinsel Model (Hafızalı Problem Çözücü):**\n\nBir problemi daha küçük örtüşen alt problemlere bölüp, her alt problemin sonucunu bir hafıza tablosuna kaydetmektir. Aynı alt soruyla tekrar karşılaşıldığında yeniden hesaplama yapılmaz, hafızadan $O(1)$ sürede okunur.`;
   } else if (conceptId === 'uniform-convergence') {
     mentalModelText = `**Zihinsel Model (Epsilon-Tüpü / Şerit Yaklaşımı):**\n\nNoktasal yakınsaklıkta (Pointwise), her $x$ noktası kendi hızında hedefe yaklaşır; bazı noktalar limite çok geç varabilir. Düzgün yakınsaklıkta (Uniform Convergence) ise, $f(x)$ limit fonksiyonunun etrafına $\\pm\\epsilon$ genişliğinde bir şerit (tüp) çizdiğimizde, belli bir $N$ indisinden sonraki TÜM $f_n(x)$ fonksiyonlarının grafiği BÜTÜN tanım kümesi boyunca İSTİSNASIZ olarak bu tüpün içerisine girer ve bir daha dışarı çıkamaz. $N$ sayısı $x$'e bağımlı olamaz, yalnızca seçilen hata payı $\\epsilon$'a bağlıdır ($N = N(\\epsilon)$).`;
+  } else if (conceptId === 'double-integrals') {
+    mentalModelText = `**Zihinsel Model (Ekmek Dilimleme / Hacim Toplama):**\n\nTek değişkenli integral bir eğrinin altındaki alanı dilim dilim toplarken, iki katlı integral $z = f(x, y)$ yüzeyinin altındaki 3 boyutlu katı cismin hacmini hesaplar. Fubini Teoremi, bir somun ekmeği önce $x$ ekseni boyunca paralel ince dilimlere ayırıp (her dilimin alanı bir iç integraldir), ardından bu dilimleri $y$ boyunca toplamaya (dış integral) benzer. Koordinat sırasını değiştirmek dilimleme yönünü 90 derece döndürmektir.`;
+  } else if (conceptId === 'green-theorem') {
+    mentalModelText = `**Zihinsel Model (Girdap Sayacı / Komşu İptali):**\n\nBölgeyi mikroskobik küçük karelere böldüğünüzü ve her karenin etrafında küçük birer girdap (curl / rotasyonel) döndüğünü hayal edin. İki komşu karenin ortak kenarındaki akışlar birbirine zıt yönde aktığı için birbirini tam olarak yok eder (iptal olur). Geriye yalnızca bölgenin en dış sınırındaki (çeperdeki) akış kalır. Dolayısıyla içerdeki tüm mikroskobik rotasyonellerin toplamı (çift katlı integral), dış çeperdeki toplam dolaşıma (eğrisel integral) eşittir.`;
+  } else if (conceptId === 'exact-differential-equations') {
+    mentalModelText = `**Zihinsel Model (Yükseklik Haritası ve Eşyükselti Eğrileri):**\n\nBir tepe yüzeyi $z = \\Psi(x, y)$ düşünün. Bu tepede sabit irtifada kalacak şekilde yürürseniz ($d\\Psi = 0$), yürüdüğünüz patika tam olarak diferansiyel denklemin çözüm eğrisi $\\Psi(x, y) = C$'dir. Denklemin tam (exact) olması, tepe yüzeyinin eğiminin (gradyanının) fiziksel olarak tutarlı olması anlamına gelir: $x$'e göre türevin $y$ değişimi ile $y$'ye göre türevin $x$ değişimi birbirine eşit olmalıdır ($M_y = N_x$, Clairaut / Schwarz teoremi).`;
+  } else if (conceptId === 'spanning-trees') {
+    mentalModelText = `**Zihinsel Model (Minimum Maliyetli Şebeke / Ağaç İskeleti):**\n\n$n$ adet kasabayı birbirine elektrik telleriyle bağlamak istiyorsunuz. Amacınız her kasabanın en az bir yoldan diğerlerine ulaşabilmesi (bağlantılılık), ancak gereksiz döngü/halka yapıp fazladan tel harcamamaktır (devirsizlik / ağaç yapısı). $n$ düğümü birbirine bağlayan en az kenarlı şebeke tam olarak $n - 1$ kenar içerir.`;
+  } else if (conceptId === 'pipeline-hazards') {
+    mentalModelText = `**Zihinsel Model (Endüstriyel Çamaşırhane Bandı):**\n\nYıkama, kurutma, katlama ve dolaba yerleştirme aşamalarından oluşan bir çamaşırhane düşünün. Birinci çamaşır yıkamadan kurutmaya geçtiğinde, ikinci çamaşırı hemen yıkamaya atabilirsiniz (Pipelining). Ancak eğer ikinci çamaşır birincinin kurumasını beklemek zorundaysa (örneğin aynı sepeti kullanacaklarsa veya sonuç verisine bağımlıysa), çamaşırhane bandı duraklar (Stall / Kabarcık). İleri iletim (Forwarding) ise ıslak sonucu kurutma bitmeden doğrudan sonraki aşamaya elden teslim etmektir.`;
+  } else if (conceptId === 'linq-expressions') {
+    mentalModelText = `**Zihinsel Model (Tarif Kartı vs Pişmiş Yemek):**\n\nBir yemek tarifi yazdığınızda yemek henüz pişmemiştir, elinizde sadece ne yapılacağını anlatan bir talimat vardır. LINQ sorgusu tanımlandığında (\`var q = list.Where(...)\`), sorgu çalıştırılmaz; sadece bir 'çalıştırma planı' (tarif) saklanır. Ne zaman ki \`foreach\`, \`.ToList()\` veya \`.Count()\` çağrılır, işte o an fırın yakılır ve veriler tek tek işlenir (Ertelenmiş Yürütme / Deferred Execution).`;
   }
   steps.push({
     stepOrder: 3,
@@ -211,6 +223,66 @@ export async function generateStructuredLesson(
     ];
     checkAns = 'Düzgün yakınsaklıkta seçilen N indisi yalnızca epsilon\'a bağlı olup tüm x in I için ortaktır; noktasal yakınsaklıkta ise N indisi hem epsilon\'a hem de x noktasına bağlı olabilir (N = N(epsilon, x)).';
     checkExpl = 'Tanım gereği forall epsilon > 0, exists N(epsilon) in N oyle ki forall n >= N ve forall x in I icin |f_n(x) - f(x)| < epsilon. Burada "forall x" niteleyicisi "exists N" ifadesinden sonra geldiği için N sayısı x\'ten tamamen bağımsızdır ve tüm aralık için tek bir N yeterlidir.';
+  } else if (conceptId === 'double-integrals') {
+    checkQ = 'İki katlı integralde Kartezyen koordinatlardan Kutupsal koordinatlara (x = r cos theta, y = r sin theta) geçerken alan elemanı dA neden dx dy yerine r dr dtheta olur?';
+    checkOpts = [
+      'Dönüşümün Jacobian determinantı |J| = r olduğu için ve kutup merkezinden uzaklaştıkça açı diliminin yay uzunluğu r dtheta kadar genişlediğinden.',
+      'r çarpanı integrali sadeleştirmek için keyfi olarak seçilmiş bir katsayıdır.',
+      'Yalnızca çember yarıçapı 1 olduğunda r çarpanı yazılır, diğer durumlarda yazılmaz.',
+      'r çarpanı integrali tek katlı integrale indirgemek için gereklidir.'
+    ];
+    checkAns = 'Dönüşümün Jacobian determinantı |J| = r olduğu için ve kutup merkezinden uzaklaştıkça açı diliminin yay uzunluğu r dtheta kadar genişlediğinden.';
+    checkExpl = 'Kartezyen ve kutupsal koordinat dönüşümünde alan elemanı dA = |J| dr dtheta formülüyle hesaplanır. Jacobian determinantı det([[cos theta, -r sin theta], [sin theta, r cos theta]]) = r(cos^2 theta + sin^2 theta) = r çıkar.';
+  } else if (conceptId === 'green-theorem') {
+    checkQ = 'Green Teoremi\'nin geçerli olabilmesi için C eğrisi ve D bölgesi hangi temel geometrik ve topolojik koşulları sağlamalıdır?';
+    checkOpts = [
+      'C parçalı pürüzsüz, basit ve kapalı bir eğri olmalı; D ise C ile sınırlanmış basit bağlantılı bir düzlem bölgesi olmalı ve eğri pozitif (saat yönünün tersi) yönlendirilmiş olmalıdır.',
+      'C eğrisi mutlaka bir elips veya çember olmalı, D bölgesi sonsuz olmalıdır.',
+      'P ve Q fonksiyonlarının türevlerinin sıfır olması zorunludur.',
+      'Eğrinin yönü fark etmeksizin sonuç her zaman pozitif çıkmalıdır.'
+    ];
+    checkAns = 'C parçalı pürüzsüz, basit ve kapalı bir eğri olmalı; D ise C ile sınırlanmış basit bağlantılı bir düzlem bölgesi olmalı ve eğri pozitif (saat yönünün tersi) yönlendirilmiş olmalıdır.';
+    checkExpl = 'Green Teoremi basit bağlantılı (içinde delik olmayan) bölgelerde, kendini kesmeyen (basit) kapalı ve parçalı pürüzsüz sınır eğrileri üzerinde saat yönünün tersi (iç bölgeyi solda bırakan pozitif yön) altında geçerlidir.';
+  } else if (conceptId === 'exact-differential-equations') {
+    checkQ = 'M(x, y)dx + N(x, y)dy = 0 denkleminin bir D bölgesinde tam (exact) olması için gerek ve yeter koşul nedir?';
+    checkOpts = [
+      'dM/dy = dN/dx (kısmi türevlerin eşitliği) şartının D bölgesinde her yerde sağlanması.',
+      'M(x, y) + N(x, y) = 0 olması.',
+      'Denklemin derecesinin 2 olması.',
+      'x ve y değişkenlerinin birbirinden bağımsız sabitler olması.'
+    ];
+    checkAns = 'dM/dy = dN/dx (kısmi türevlerin eşitliği) şartının D bölgesinde her yerde sağlanması.';
+    checkExpl = 'Clairaut teoremi gereği d^2 Psi / (dy dx) = d^2 Psi / (dx dy) olmalıdır. dPsi/dx = M ve dPsi/dy = N olduğundan dM/dy = dN/dx zorunlu ve yeterli tamlık koşuludur.';
+  } else if (conceptId === 'spanning-trees') {
+    checkQ = 'n köşeli bağlantılı bir G çizgesinin bir T kapsayan ağacı (spanning tree) hakkında hangisi kesinlikle doğrudur?';
+    checkOpts = [
+      'T kesinlikle n köşe ve n - 1 kenar içerir, hiçbir çevrim (cycle) barındırmaz.',
+      'T her zaman n kenar içerir.',
+      'T çizgesinde her köşenin derecesi en az 3 olmalıdır.',
+      'T yalnızca tam çizgelerde (complete graph) var olabilir.'
+    ];
+    checkAns = 'T kesinlikle n köşe ve n - 1 kenar içerir, hiçbir çevrim (cycle) barındırmaz.';
+    checkExpl = 'Ağaç tanımı gereği bağlantılı ve devirsiz bir çizgedir. n köşeli bir ağaçta kenar sayısı daima n - 1\'dir. Kapsayan ağaç, orijinal çizgenin tüm n köşesini içerir.';
+  } else if (conceptId === 'pipeline-hazards') {
+    checkQ = '5 aşamalı MIPS boru hattında (IF, ID, EX, MEM, WB) bir LW (Load Word) komutunun hemen ardından gelen ve yüklenen register\'ı kullanan bir ADD komutu arasındaki Load-Use veri tehlikesi (hazard), veri ileri iletimi (forwarding) donanımı varken bile neden tamamen 0 stall ile çözülemez?';
+    checkOpts = [
+      'Bellekten okunan veri ancak MEM aşamasının sonunda hazır olduğundan ve sonraki komut bu veriye EX aşamasının başında ihtiyaç duyduğundan, zamanda geriye doğru iletim yapılamaz; zorunlu 1 çevrimlik stall (kabarcık) gerekir.',
+      'ADD komutunun register yazma aşaması yoktur.',
+      'MIPS işlemcilerde forwarding devreleri yalnızca çıkarma işlemlerinde çalışır.',
+      'Boru hattı saat frekansı düştüğü için.'
+    ];
+    checkAns = 'Bellekten okunan veri ancak MEM aşamasının sonunda hazır olduğundan ve sonraki komut bu veriye EX aşamasının başında ihtiyaç duyduğundan, zamanda geriye doğru iletim yapılamaz; zorunlu 1 çevrimlik stall (kabarcık) gerekir.';
+    checkExpl = 'LW komutunda veri bellekten 4. aşama olan MEM aşamasının sonunda çıkar. Bir sonraki komut ise ALU işlemi için veriyi 3. aşama (EX) başında ister. Forwarding zamanda geriye veri gönderemeyeceğinden donanım 1 çevrimlik "stall" (kabarcık) eklemek zorundadır.';
+  } else if (conceptId === 'linq-expressions') {
+    checkQ = 'C# LINQ sorgularında Where() metodunun ertelenmiş yürütme (deferred execution) ile çalışması ne anlama gelir?';
+    checkOpts = [
+      'Sorgu tanımlandığı satırda çalıştırılmaz; foreach, ToList() veya Count() gibi tetikleyicilerle tüketildiği anda kaynak koleksiyon üzerindeki güncel veriler üzerinden değerlendirilir.',
+      'Sorgu arka planda ayrı bir thread\'de sonsuza kadar bekler.',
+      'Sorgu yalnızca veritabanı bağlantısı açıkken çalışır.',
+      'Sorgu derleme zamanında çalıştırılıp sabit diziye dönüştürülür.'
+    ];
+    checkAns = 'Sorgu tanımlandığı satırda çalıştırılmaz; foreach, ToList() veya Count() gibi tetikleyicilerle tüketildiği anda kaynak koleksiyon üzerindeki güncel veriler üzerinden değerlendirilir.';
+    checkExpl = 'LINQ sorguları tembel değerlendirme (lazy evaluation) ilkesine göre tasarlanmıştır. Sorgu değişkeni sadece komut ağacını tutar, veri üzerinde dolaşma ancak sonuç talep edildiğinde (iteratör çağrıldığında) gerçekleşir.';
   }
 
   steps.push({

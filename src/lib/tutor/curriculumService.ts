@@ -483,6 +483,40 @@ export const ESOGU_COMPULSORY_CURRICULUM_2024: OfficialCourseDef[] = [
             ]
           }
         ]
+      },
+      {
+        title: 'Ünite 3: Katlı İntegraller (Multiple Integrals)',
+        topics: [
+          {
+            id: 'top-analiz3-katli-integraller',
+            title: 'İki Katlı İntegraller ve Fubini Teoremi',
+            estimatedMinutes: 50,
+            concepts: [
+              {
+                id: 'double-integrals',
+                name: 'İki Katlı İntegraller ve Fubini Teoremi (Double Integrals)',
+                formalStatement: '\\iint_R f(x, y) \\, dA = \\int_a^b \\left( \\int_{g_1(x)}^{g_2(x)} f(x, y) \\, dy \\right) dx'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Ünite 4: Vektör Analizi ve Eğrisel İntegraller',
+        topics: [
+          {
+            id: 'top-analiz3-green-teoremi',
+            title: 'Green Teoremi ve Düzlemde Eğrisel İntegraller',
+            estimatedMinutes: 50,
+            concepts: [
+              {
+                id: 'green-theorem',
+                name: 'Green Teoremi (Düzlemde Eğrisel İntegral)',
+                formalStatement: '\\oint_{\\partial D} (P \\, dx + Q \\, dy) = \\iint_D \\left( \\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y} \\right) dA'
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -521,6 +555,23 @@ export const ESOGU_COMPULSORY_CURRICULUM_2024: OfficialCourseDef[] = [
             ]
           }
         ]
+      },
+      {
+        title: 'Ünite 2: Ağaçlar ve Kapsayan Ağaçlar',
+        topics: [
+          {
+            id: 'top-graf-agaclar',
+            title: 'Ağaçların Karakterizasyonu ve Kapsayan Ağaçlar (Spanning Trees)',
+            estimatedMinutes: 45,
+            concepts: [
+              {
+                id: 'spanning-trees',
+                name: 'Kapsayan Ağaçlar ve Ağaç Karakterizasyonu (Spanning Trees)',
+                formalStatement: 'G = (V, E) \\text{ bir ağaçtır} \\iff G \\text{ bağlantılı ve devirsizdir} \\iff |E| = |V| - 1'
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -555,6 +606,18 @@ export const ESOGU_COMPULSORY_CURRICULUM_2024: OfficialCourseDef[] = [
                 id: 'bernoulli-differential-equation',
                 name: 'Bernoulli Diferansiyel Denklemi',
                 formalStatement: 'y\' + P(x)y = Q(x)y^n \\implies v = y^{1-n}'
+              }
+            ]
+          },
+          {
+            id: 'top-difdenk-tam-denklemler',
+            title: 'Tam Diferansiyel Denklemler ve Potansiyel Fonksiyon',
+            estimatedMinutes: 45,
+            concepts: [
+              {
+                id: 'exact-differential-equations',
+                name: 'Tam Diferansiyel Denklemler (Exact Equations)',
+                formalStatement: 'M(x, y)dx + N(x, y)dy = 0 \\text{ tamdır} \\iff \\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}'
               }
             ]
           }
@@ -597,6 +660,23 @@ export const ESOGU_COMPULSORY_CURRICULUM_2024: OfficialCourseDef[] = [
             ]
           }
         ]
+      },
+      {
+        title: 'Ünite 2: İşlemci Boru Hattı ve Riskler',
+        topics: [
+          {
+            id: 'top-mimari-pipelining',
+            title: 'Boru Hattı Riskleri ve İleri İletim (Pipeline Hazards & Forwarding)',
+            estimatedMinutes: 50,
+            concepts: [
+              {
+                id: 'pipeline-hazards',
+                name: 'Boru Hattı Riskleri ve İleri İletim (Pipeline Hazards & Forwarding)',
+                formalStatement: '\\text{CPI} = 1 + \\text{Stall}_{\\text{Data}} + \\text{Stall}_{\\text{Control}} + \\text{Stall}_{\\text{Structural}}'
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -631,6 +711,23 @@ export const ESOGU_COMPULSORY_CURRICULUM_2024: OfficialCourseDef[] = [
                 id: 'csharp-delegates-events',
                 name: 'C# Delegeler ve Olay Dinleyiciler',
                 formalStatement: 'button.Click += new EventHandler(MyMethod);'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Ünite 2: Modern C# ve LINQ ile Veri İşleme',
+        topics: [
+          {
+            id: 'top-gp1-linq',
+            title: 'LINQ Sorguları ve Ertelenmiş Yürütme (Deferred Execution)',
+            estimatedMinutes: 45,
+            concepts: [
+              {
+                id: 'linq-expressions',
+                name: 'LINQ Sorguları ve Ertelenmiş Yürütme (Deferred Execution)',
+                formalStatement: '\\text{var query} = \\text{collection.Where(x => x.Condition).Select(x => x.Property);}'
               }
             ]
           }
