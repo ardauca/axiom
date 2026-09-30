@@ -120,6 +120,38 @@ const ACADEMIC_KNOWLEDGE_CORPUS: Record<string, ExternalSourceEvidence[]> = {
       extractedExcerpt: 'Most vectors change direction when multiplied by matrix A. Eigenvectors are special: they stay in the exact same direction, merely scaled by factor lambda: Ax = lambda x.',
       license: 'Creative Commons BY-NC-SA'
     }
+  ],
+  'uniform-convergence': [
+    {
+      institution: 'MIT OpenCourseWare',
+      courseName: 'MIT 18.100B Analysis I (Real Analysis)',
+      url: 'https://ocw.mit.edu/courses/18-100b-analysis-i-fall-2010/',
+      tier: 1,
+      pedagogicalRole: 'BEST_INTUITION',
+      citation: 'MIT 18.100B Lecture 18: Sequences and Series of Functions, Uniform Convergence, Prof. Hartley Rogers',
+      extractedExcerpt: 'Pointwise convergence allows the index N to depend on x, which can tear apart continuity (e.g. x^n on [0,1]). Uniform convergence forces an epsilon-tube around the limit function f for all x simultaneously: once n > N, the entire graph of f_n(x) stays trapped inside f(x) +/- epsilon.',
+      license: 'Creative Commons BY-NC-SA'
+    },
+    {
+      institution: 'Cambridge University',
+      courseName: 'Cambridge Mathematical Tripos IB: Analysis II',
+      url: 'https://www.maths.cam.ac.uk/undergrad/lecturenotes',
+      tier: 1,
+      pedagogicalRole: 'FORMAL_PROOF',
+      citation: 'Cambridge Tripos IB Analysis II, Chapter 3: Uniform Convergence and Uniform Limit Theorem',
+      extractedExcerpt: 'Uniform Limit Theorem: If a sequence of continuous functions f_n converges uniformly to f on E, then the limit function f is continuous on E. Proof uses the standard epsilon/3 triangle inequality decomposition: |f(x) - f(y)| <= |f(x) - f_n(x)| + |f_n(x) - f_n(y)| + |f_n(y) - f(y)|.',
+      license: 'Cambridge Open Course Material'
+    },
+    {
+      institution: 'Pearson Academic',
+      courseName: 'Calculus: A Complete Course (Adams & Essex)',
+      url: 'local://adams-essex-calculus-7th',
+      tier: 3,
+      pedagogicalRole: 'BEST_WORKED_EXAMPLE',
+      citation: 'Robert A. Adams & Christopher Essex, Calculus: A Complete Course (7th Ed.), Section 9.5: Power Series & Weierstrass M-Test, p. 518',
+      extractedExcerpt: 'Weierstrass M-Test: If |f_n(x)| <= M_n for all x in E and sum(M_n) converges, then the series sum(f_n(x)) converges uniformly and absolutely on E.',
+      license: 'Educational Reference'
+    }
   ]
 };
 

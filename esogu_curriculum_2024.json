@@ -1,0 +1,485 @@
+[
+  {
+    "header": "1. DÖNEM",
+    "courses": [
+      [
+        "821611008",
+        "Analiz I",
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      [
+        "821611009",
+        "Analitik Geometri",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821611013",
+        "Soyut Matematik",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821611010",
+        "Temel Bilgisayar Bilimleri I",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821611007",
+        "Bilgisayar Programlama I",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821011007",
+        "A.İ.İ.T. I",
+        "2",
+        "0",
+        "2",
+        "2"
+      ],
+      [
+        "821011008",
+        "Türk Dili I",
+        "2",
+        "0",
+        "0",
+        "2"
+      ],
+      [
+        "821011009",
+        "İngilizce I",
+        "3",
+        "0",
+        "0",
+        "2"
+      ],
+      [
+        "Rektörlük Sosyal Seçmeli (1 ders)",
+        "2",
+        "0",
+        "2",
+        "3"
+      ],
+      [
+        "Toplam :",
+        "23/22",
+        "2",
+        "18",
+        "30"
+      ]
+    ]
+  },
+  {
+    "header": "2. DÖNEM",
+    "courses": [
+      [
+        "821612008",
+        "Analiz II",
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      [
+        "821612009",
+        "Lineer Cebir",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821612013",
+        "Ayrık Matematik",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821612010",
+        "Temel Bilgisayar Bilimleri II",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821612007",
+        "Bilgisayar Programlama II",
+        "3",
+        "0",
+        "3",
+        "4"
+      ],
+      [
+        "821012006",
+        "A.İ.İ.T. II",
+        "2",
+        "0",
+        "2",
+        "2"
+      ],
+      [
+        "821012007",
+        "Türk Dili II",
+        "2",
+        "0",
+        "2",
+        "2"
+      ],
+      [
+        "821012008",
+        "İngilizce II",
+        "3",
+        "0",
+        "3",
+        "2"
+      ],
+      [
+        "Rektörlük Sosyal Seçmeli (1 Ders)",
+        "2",
+        "0",
+        "2",
+        "3"
+      ],
+      [
+        "Toplam :",
+        "23/22",
+        "2",
+        "25",
+        "30"
+      ]
+    ]
+  },
+  {
+    "header": "3. DÖNEM",
+    "courses": [
+      [
+        "821613001",
+        "Analiz III",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "82***",
+        "Graf Teori",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821613003",
+        "Diferensiyel Denklemler",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821613004",
+        "Bilgisayar Mimarisi",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821613005",
+        "Görsel Programlama I",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Matematik I  (1 ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Toplam :",
+        "18",
+        "0",
+        "18",
+        "30"
+      ]
+    ]
+  },
+  {
+    "header": "4. DÖNEM",
+    "courses": [
+      [
+        "821614001",
+        "Analiz IV",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "82***",
+        "Yapay Zeka",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "82****",
+        "Dinamik Sistemler",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821614004",
+        "Olasılık ve İstatistik",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821614005",
+        "Görsel Programlama II",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Matematik II  (1 ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Toplam :",
+        "18",
+        "0",
+        "18",
+        "30"
+      ]
+    ]
+  },
+  {
+    "header": "5. DÖNEM",
+    "courses": [
+      [
+        "8216***",
+        "Modern Cebir",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821615002",
+        "Diferensiyel Geometri",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821615003",
+        "Sembolik Hesaplama I",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821615004",
+        "Matematiksel Yazılım ve Tasarım",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Matematik III (1 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Bilgisayar I (1 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Toplam :",
+        "18",
+        "0",
+        "18",
+        "30"
+      ]
+    ]
+  },
+  {
+    "header": "6. DÖNEM",
+    "courses": [
+      [
+        "821616001",
+        "Topoloji",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821616002",
+        "Kompleks Analiz",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "821616003",
+        "Algoritmalar",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "8216***",
+        "Kategori Teorisi ve Bilgisayar Bilimleri",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Matematik IV (1 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Bilgisayar II (1 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Toplam :",
+        "18",
+        "0",
+        "18",
+        "30"
+      ]
+    ]
+  },
+  {
+    "header": "7. DÖNEM",
+    "courses": [
+      [
+        "8216***",
+        "Java",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "8216***",
+        "Zorunlu Seçmeli I (Bitirme Projesi)",
+        "2",
+        "2",
+        "4",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Matematik V(2 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Bilgisayar III (2 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Toplam :",
+        "17",
+        "2",
+        "19",
+        "30"
+      ]
+    ]
+  },
+  {
+    "header": "8. DÖNEM",
+    "courses": [
+      [
+        "8216****",
+        "Kriptoloji",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Zorunlu Seçmeli II (Bitirme Projesi)",
+        "2",
+        "2",
+        "4",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Matematik VI (2 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Alan İçi Seçmeli Bilgisayar IV (2 Ders)",
+        "3",
+        "0",
+        "3",
+        "5"
+      ],
+      [
+        "Toplam :",
+        "17",
+        "2",
+        "19",
+        "30"
+      ]
+    ]
+  }
+]

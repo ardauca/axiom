@@ -107,6 +107,8 @@ export async function generateStructuredLesson(
     mentalModelText = `**Zihinsel Model (Dairesel Saat Kadranı):**\n\nSayı doğrusunu sonsuza uzatmak yerine $n$ dilimli dairesel bir saat kadranına sarmaktır. $12$'den sonra $13$ değil $1$ gelir. Sayılar arasındaki mutlak fark mod $n$'in tam katıysa, bu sayılar aynı saat pozisyonuna denk gelir.`;
   } else if (conceptId === 'dynamic-programming') {
     mentalModelText = `**Zihinsel Model (Hafızalı Problem Çözücü):**\n\nBir problemi daha küçük örtüşen alt problemlere bölüp, her alt problemin sonucunu bir hafıza tablosuna kaydetmektir. Aynı alt soruyla tekrar karşılaşıldığında yeniden hesaplama yapılmaz, hafızadan $O(1)$ sürede okunur.`;
+  } else if (conceptId === 'uniform-convergence') {
+    mentalModelText = `**Zihinsel Model (Epsilon-Tüpü / Şerit Yaklaşımı):**\n\nNoktasal yakınsaklıkta (Pointwise), her $x$ noktası kendi hızında hedefe yaklaşır; bazı noktalar limite çok geç varabilir. Düzgün yakınsaklıkta (Uniform Convergence) ise, $f(x)$ limit fonksiyonunun etrafına $\\pm\\epsilon$ genişliğinde bir şerit (tüp) çizdiğimizde, belli bir $N$ indisinden sonraki TÜM $f_n(x)$ fonksiyonlarının grafiği BÜTÜN tanım kümesi boyunca İSTİSNASIZ olarak bu tüpün içerisine girer ve bir daha dışarı çıkamaz. $N$ sayısı $x$'e bağımlı olamaz, yalnızca seçilen hata payı $\\epsilon$'a bağlıdır ($N = N(\\epsilon)$).`;
   }
   steps.push({
     stepOrder: 3,
@@ -199,6 +201,16 @@ export async function generateStructuredLesson(
     ];
     checkAns = '(A - lambda*I)v = 0 denkleminin sıfırdan farklı bir v özvektör çözümü olması için matrisin tekil (singular) olması gerektiğinden';
     checkExpl = '(A - lambda*I)v = 0 homojen sisteminin aşikar olmayan (v != 0) bir çözüme sahip olabilmesi ancak ve ancak katsayılar matrisinin determinantının 0 olmasıyla mümkündür.';
+  } else if (conceptId === 'uniform-convergence') {
+    checkQ = '(f_n) fonksiyon dizisinin bir I aralığında f fonksiyonuna düzgün yakınsaması ile noktasal yakınsaması arasındaki en temel mantıksal ve niceliksel fark nedir?';
+    checkOpts = [
+      'Düzgün yakınsaklıkta seçilen N indisi yalnızca epsilon\'a bağlı olup tüm x in I için ortaktır; noktasal yakınsaklıkta ise N indisi hem epsilon\'a hem de x noktasına bağlı olabilir (N = N(epsilon, x)).',
+      'Noktasal yakınsaklık yalnızca kapalı ve sınırlı aralıklarda tanımlıdır.',
+      'Düzgün yakınsak fonksiyon dizileri hiçbir zaman türevlenemez.',
+      'Düzgün yakınsaklıkta her f_n fonksiyonunun sabit fonksiyon olması zorunludur.'
+    ];
+    checkAns = 'Düzgün yakınsaklıkta seçilen N indisi yalnızca epsilon\'a bağlı olup tüm x in I için ortaktır; noktasal yakınsaklıkta ise N indisi hem epsilon\'a hem de x noktasına bağlı olabilir (N = N(epsilon, x)).';
+    checkExpl = 'Tanım gereği forall epsilon > 0, exists N(epsilon) in N oyle ki forall n >= N ve forall x in I icin |f_n(x) - f(x)| < epsilon. Burada "forall x" niteleyicisi "exists N" ifadesinden sonra geldiği için N sayısı x\'ten tamamen bağımsızdır ve tüm aralık için tek bir N yeterlidir.';
   }
 
   steps.push({

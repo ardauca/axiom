@@ -119,6 +119,8 @@ export async function fuseAcademicSources(
     notationDifferences = 'Dersinizde değişken değiştirme v = y^(1-n) olarak tanımlanır. Bazı Batı literatüründe u = y^(1-n) veya w = y^(1-n) harfleri tercih edilmektedir; formülasyon matematiksel olarak tamamen denktir.';
   } else if (conceptId === 'cache-mapping') {
     notationDifferences = 'ESOGÜ sınavlarında ve Patterson & Hennessy standardında adres bitleri sırasıyla [Tag | Index | Offset] olarak sıralanır. Bazı mimarilerde Offset yerine Block Offset veya Byte Offset terimi kullanılır.';
+  } else if (conceptId === 'uniform-convergence') {
+    notationDifferences = 'ESOGÜ Analiz III/IV ders notlarında düzgün yakınsaklık f_n \\rightrightarrows f biçiminde çift okla gösterilirken, noktasal yakınsaklık f_n \\to f tek okla gösterilir. Adams & Essex ve Rudin kaynaklarında "f_n converges uniformly to f on E" veya f_n -> f (uniformly) açık ibaresi kullanılır. Sınavınızda profesörünüzün çift ok \\rightrightarrows notasyonunu kullanınız.';
   }
 
   // 6. Build Verified Claims

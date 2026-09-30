@@ -353,12 +353,18 @@ model SourceLocation {
 model Course {
   id                String              @id // e.g. "analiz-3", "graf-teorisi", "bilgisayar-mimarisi"
   code              String              // e.g. "MAT201", "CENG203"
+  officialCode      String?             // e.g. "821613001" (ESOGÜ OBS / Bologna code)
   name              String              // e.g. "Graf Teorisi ve Uygulamaları-I"
   englishName       String?
   department        String              @default("Matematik ve Bilgisayar Bilimleri")
   semester          String              // "1. Sınıf Güz", "2. Sınıf Güz", etc.
   isCurrentSemester Boolean             @default(false) // true for 2. Sınıf Güz (Repo 1 active)
   coverageStatus    String              @default("COMPLETE") // COMPLETE, PARTIAL, INCOMPLETE_NEEDS_SUPPLEMENTARY
+  theoryHours       Int                 @default(3)
+  practiceHours     Int                 @default(0)
+  credits           Int                 @default(3)
+  ects              Int                 @default(5)
+  syllabusSourceUrl String?             @default("https://matbil.ogu.edu.tr/Sayfa/Index/63/2024-sonrasi")
   primarySourceId   String?
   description       String?
   examDate          DateTime?

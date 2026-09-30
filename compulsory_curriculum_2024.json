@@ -1,0 +1,394 @@
+{
+  "1. DÖNEM": [
+    {
+      "code": "821611008",
+      "name": "Analiz I",
+      "t": "3",
+      "u": "2",
+      "k": "4",
+      "ects": "5"
+    },
+    {
+      "code": "821611009",
+      "name": "Analitik Geometri",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821611013",
+      "name": "Soyut Matematik",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821611010",
+      "name": "Temel Bilgisayar Bilimleri I",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821611007",
+      "name": "Bilgisayar Programlama I",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821011007",
+      "name": "A.İ.İ.T. I",
+      "t": "2",
+      "u": "0",
+      "k": "2",
+      "ects": "2"
+    },
+    {
+      "code": "821011008",
+      "name": "Türk Dili I",
+      "t": "2",
+      "u": "0",
+      "k": "0",
+      "ects": "2"
+    },
+    {
+      "code": "821011009",
+      "name": "İngilizce I",
+      "t": "3",
+      "u": "0",
+      "k": "0",
+      "ects": "2"
+    }
+  ],
+  "2. DÖNEM": [
+    {
+      "code": "821612008",
+      "name": "Analiz II",
+      "t": "3",
+      "u": "2",
+      "k": "4",
+      "ects": "5"
+    },
+    {
+      "code": "821612009",
+      "name": "Lineer Cebir",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821612013",
+      "name": "Ayrık Matematik",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821612010",
+      "name": "Temel Bilgisayar Bilimleri II",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821612007",
+      "name": "Bilgisayar Programlama II",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "4"
+    },
+    {
+      "code": "821012006",
+      "name": "A.İ.İ.T. II",
+      "t": "2",
+      "u": "0",
+      "k": "2",
+      "ects": "2"
+    },
+    {
+      "code": "821012007",
+      "name": "Türk Dili II",
+      "t": "2",
+      "u": "0",
+      "k": "2",
+      "ects": "2"
+    },
+    {
+      "code": "821012008",
+      "name": "İngilizce II",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "2"
+    }
+  ],
+  "3. DÖNEM": [
+    {
+      "code": "821613001",
+      "name": "Analiz III",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "82***",
+      "name": "Graf Teori",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821613003",
+      "name": "Diferensiyel Denklemler",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821613004",
+      "name": "Bilgisayar Mimarisi",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821613005",
+      "name": "Gorsel Programlama I",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "Alan İçi Seçmeli Matematik I  (1 ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    }
+  ],
+  "4. DÖNEM": [
+    {
+      "code": "821614001",
+      "name": "Analiz IV",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "82***",
+      "name": "Yapay Zeka",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "82****",
+      "name": "Dinamik Sistemler",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821614004",
+      "name": "Olasılık ve İstatistik",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821614005",
+      "name": "Görsel Programlama II",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "Alan İçi Seçmeli Matematik II  (1 ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    }
+  ],
+  "5. DÖNEM": [
+    {
+      "code": "8216***",
+      "name": "Modern Cebir",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821615002",
+      "name": "Diferensiyel Geometri",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821615003",
+      "name": "Sembolik Hesaplama I",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821615004",
+      "name": "Matematiksel Yazılım ve Tasarım",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "Alan İçi Seçmeli Matematik III (1 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    },
+    {
+      "code": "Alan İçi Seçmeli Bilgisayar I (1 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    }
+  ],
+  "6. DÖNEM": [
+    {
+      "code": "821616001",
+      "name": "Topoloji",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821616002",
+      "name": "Kompleks Analiz",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "821616003",
+      "name": "Algoritmalar",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "8216***",
+      "name": "Kategori Teorisi ve Bilgisayar Bilimleri",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "Alan İçi Seçmeli Matematik IV (1 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    },
+    {
+      "code": "Alan İçi Seçmeli Bilgisayar II (1 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    }
+  ],
+  "7. DÖNEM": [
+    {
+      "code": "8216***",
+      "name": "Java",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "Alan İçi Seçmeli Matematik V(2 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    },
+    {
+      "code": "Alan İçi Seçmeli Bilgisayar III (2 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    }
+  ],
+  "8. DÖNEM": [
+    {
+      "code": "8216****",
+      "name": "Kriptoloji",
+      "t": "3",
+      "u": "0",
+      "k": "3",
+      "ects": "5"
+    },
+    {
+      "code": "Zorunlu Seçmeli II (Bitirme Projesi)",
+      "name": "2",
+      "t": "2",
+      "u": "4",
+      "k": "5",
+      "ects": ""
+    },
+    {
+      "code": "Alan İçi Seçmeli Matematik VI (2 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    },
+    {
+      "code": "Alan İçi Seçmeli Bilgisayar IV (2 Ders)",
+      "name": "3",
+      "t": "0",
+      "u": "3",
+      "k": "5",
+      "ects": ""
+    }
+  ]
+}
