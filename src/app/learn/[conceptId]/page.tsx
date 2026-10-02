@@ -52,6 +52,18 @@ export default function ConceptLessonPage({
   const isMiniCheck = currentStep?.stepType === 'MINI_CHECK';
   const isCorrect = selectedMiniAnswer === currentStep?.miniCheckAnswer;
 
+  const handleMiniCheckSelect = (opt: string) => {
+    setSelectedMiniAnswer(opt);
+    setMiniCheckSubmitted(true);
+    const passed = opt === currentStep?.miniCheckAnswer;
+    // Send progress evidence
+    fetch(`/api/concepts/${conceptId}/progress`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ miniCheckPassed: passed }),
+    }).catch(console.error);
+  };
+
   const handleNext = () => {
     if (currentStepIndex < steps.length - 1) {
       setCurrentStepIndex((prev) => prev + 1);
@@ -168,10 +180,7 @@ export default function ConceptLessonPage({
                   return (
                     <button
                       key={opt}
-                      onClick={() => {
-                        setSelectedMiniAnswer(opt);
-                        setMiniCheckSubmitted(true);
-                      }}
+                      onClick={() => handleMiniCheckSelect(opt)}
                       className={`p-3 rounded-lg text-xs font-mono text-left border transition-all ${
                         isSelected
                           ? isCorrect
@@ -187,23 +196,52 @@ export default function ConceptLessonPage({
               </div>
             )}
 
-            {/* Feedback Message */}
+            {/* Feedback Message & Adaptive Detour */}
             {miniCheckSubmitted && (
-              <div className={`p-3 rounded-lg text-xs font-mono flex items-center gap-2 ${
-                isCorrect
-                  ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20'
-                  : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20'
-              }`}>
-                {isCorrect ? (
-                  <>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                    <span>{language === 'tr' ? 'Doğru akıl yürütme! Sonraki adıma geçebilirsiniz.' : 'Correct reasoning! You can proceed to the next step.'}</span>
-                  </>
-                ) : (
-                  <>
-                    <XCircle className="w-4 h-4 text-rose-500" />
-                    <span>{language === 'tr' ? 'Yanıt doğru değil. Açıklamayı tekrar gözden geçirin.' : 'Incorrect. Review the step explanation and try again.'}</span>
-                  </>
+              <div className="space-y-3 pt-2">
+                <div className={`p-3.5 rounded-lg text-xs font-mono flex items-start gap-2.5 ${
+                  isCorrect
+                    ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20'
+                    : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20'
+                }`}>
+                  {isCorrect ? (
+                    <>
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <div>
+                        <strong>{language === 'tr' ? 'Doğru Akıl Yürütme!' : 'Correct Reasoning!'}</strong>
+                        <p className="mt-0.5 opacity-90">{currentStep.miniCheckExplanation || (language === 'tr' ? 'Tebrikler, kavramsal temeli başarıyla kavradınız.' : 'Great job, you mastered the foundation.')}</p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <XCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                      <div>
+                        <strong>{language === 'tr' ? 'Kavramsal Yanılgı Teşhis Edildi' : 'Misconception Diagnosed'}</strong>
+                        <p className="mt-0.5 opacity-90">{currentStep.miniCheckExplanation || (language === 'tr' ? 'Yanıt doğru değil. Lütfen tanım ve hipotezleri tekrar inceleyin.' : 'Incorrect answer. Review definition and assumptions.')}</p>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {/* Prerequisite Detour Recommendation on failure */}
+                {!isCorrect && concept.prerequisites && concept.prerequisites.length > 0 && (
+                  <div className="p-3.5 rounded-lg bg-amber-500/10 border border-amber-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
+                    <div className="space-y-1">
+                      <span className="text-amber-700 dark:text-amber-300 font-bold flex items-center gap-1.5">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        <span>Axiom Teşhisi: Önkoşul Boşluğu Olabilir</span>
+                      </span>
+                      <p className="text-academic-600 dark:text-academic-400 text-[11px]">
+                        Bu adımı anlamakta güçlük çekiyorsanız temel konu: <strong>{concept.prerequisites[0].name}</strong>
+                      </p>
+                    </div>
+                    <Link
+                      href={`/learn/${concept.prerequisites[0].id}`}
+                      className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold self-start sm:self-center transition-all shadow-sm"
+                    >
+                      Önkoşula Dön
+                    </Link>
+                  </div>
                 )}
               </div>
             )}

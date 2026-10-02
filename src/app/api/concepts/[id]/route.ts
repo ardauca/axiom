@@ -45,6 +45,14 @@ export async function GET(
       return NextResponse.json({ error: 'Concept not found' }, { status: 404 });
     }
 
+    // Auto-generate 8-step synthesized academic lesson if not yet populated
+    if (concept.lessonSteps.length === 0) {
+      const { syncConceptLessonWithFusion } = await import('@/lib/tutor/teacherEngine');
+      await syncConceptLessonWithFusion(id).catch(console.error);
+      // Reload concept
+      return GET(req, { params });
+    }
+
     const tr = concept.translations[0];
 
     const formatted = {

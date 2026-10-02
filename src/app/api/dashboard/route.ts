@@ -83,34 +83,61 @@ export async function GET(req: Request) {
       }
     });
 
-    // 4. Save or retrieve today's DailyStudyPlan in DB
-    const todayStr = new Date().toISOString().split('T')[0];
-    if (topRecommendation) {
-      await prisma.dailyStudyPlan.upsert({
-        where: {
-          userId_dateString: {
-            userId,
-            dateString: todayStr
-          }
-        },
-        create: {
-          userId,
-          dateString: todayStr,
-          recommendedCourseId: topRecommendation.courseId,
-          recommendedTopicId: topRecommendation.conceptId,
-          recommendedConceptId: topRecommendation.conceptId,
-          estimatedMinutes: topRecommendation.estimatedMinutes,
-          rationale: topRecommendation.rationale
-        },
-        update: {
-          recommendedCourseId: topRecommendation.courseId,
-          recommendedTopicId: topRecommendation.conceptId,
-          recommendedConceptId: topRecommendation.conceptId,
-          estimatedMinutes: topRecommendation.estimatedMinutes,
-          rationale: topRecommendation.rationale
-        }
-      });
+    // 4. Identify Prerequisite Gaps
+    let activePrerequisiteGap = null;
+    const gapMistake = unresolvedMistakes.find(m => m.errorType === 'PREREQUISITE_GAP');
+    if (gapMistake) {
+      activePrerequisiteGap = {
+        title: 'Önkoşul Boşluğu Tespit Edildi',
+        conceptName: gapMistake.problem.translations[0]?.title || 'Önkoşul Kavramı',
+        problemSlug: gapMistake.problem.slug,
+        mistakeId: gapMistake.id,
+        remediationAction: 'Önkoşul Dersi ile Tamir Et'
+      };
+    } else if (unresolvedMistakes.length > 0) {
+      activePrerequisiteGap = {
+        title: 'Kavramsal Yanılgı Tamiri Gerekiyor',
+        conceptName: unresolvedMistakes[0].problem.translations[0]?.title || 'Hedef Soru',
+        problemSlug: unresolvedMistakes[0].problem.slug,
+        mistakeId: unresolvedMistakes[0].id,
+        remediationAction: 'Yanıtı İncele ve Düzelt'
+      };
     }
+
+    // 5. Build Axiom's Plan for Today (3 structured, prioritized actions)
+    const primaryCourse = coursesWithProgress[0];
+    const secondaryCourse = coursesWithProgress[1] || primaryCourse;
+    const tertiaryCourse = coursesWithProgress[2] || primaryCourse;
+
+    const todaySchedule = [
+      {
+        order: 1,
+        type: 'CONTINUE_LESSON',
+        title: primaryCourse?.nextConcept?.name ? `Derse Devam: ${primaryCourse.nextConcept.name}` : `${primaryCourse?.code || 'Ders'} Müfredat İlerlemesi`,
+        courseCode: primaryCourse?.code || 'MAT201',
+        courseName: primaryCourse?.name || 'Analiz III',
+        durationMinutes: 25,
+        targetUrl: primaryCourse?.nextConcept ? `/learn/${primaryCourse.nextConcept.id}` : `/courses/${primaryCourse?.id || ''}`
+      },
+      {
+        order: 2,
+        type: activePrerequisiteGap ? 'REMEDIATE' : 'DIAGNOSE',
+        title: activePrerequisiteGap ? `Önkoşul Tamiri: ${activePrerequisiteGap.conceptName}` : `Kavram Teşhisi: ${secondaryCourse?.nextConcept?.name || secondaryCourse?.name || 'Konu Tekrarı'}`,
+        courseCode: secondaryCourse?.code || 'MAT203',
+        courseName: secondaryCourse?.name || 'Graf Teori',
+        durationMinutes: 15,
+        targetUrl: activePrerequisiteGap ? `/problem/${activePrerequisiteGap.problemSlug}` : (secondaryCourse?.nextConcept ? `/learn/${secondaryCourse.nextConcept.id}` : `/courses/${secondaryCourse?.id || ''}`)
+      },
+      {
+        order: 3,
+        type: 'REVIEW',
+        title: `Hafıza ve Aralıklı Tekrar: ${tertiaryCourse?.nextConcept?.name || tertiaryCourse?.name || 'Önceki Konular'}`,
+        courseCode: tertiaryCourse?.code || 'CENG203',
+        courseName: tertiaryCourse?.name || 'Bilgisayar Mimarisi',
+        durationMinutes: 15,
+        targetUrl: `/mastery`
+      }
+    ];
 
     return NextResponse.json({
       success: true,
@@ -121,8 +148,10 @@ export async function GET(req: Request) {
         independenceScore: activeUser.independenceScore,
         streakDays: activeUser.streakDays
       },
-      dailyStudyPlan: topRecommendation,
+      currentCourse: primaryCourse || null,
       courses: coursesWithProgress,
+      todaySchedule,
+      activePrerequisiteGap,
       mistakesCount: unresolvedMistakes.length,
       unresolvedMistakes: unresolvedMistakes.map(m => ({
         id: m.id,

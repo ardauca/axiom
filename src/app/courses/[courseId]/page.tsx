@@ -241,11 +241,20 @@ export default function CourseHubPage({
               Kanıta Dayalı Sınav Hazırlık İndeksi
             </h2>
           </div>
-          <div className="flex items-center gap-2 text-xs font-mono">
-            <span className="text-academic-500">Hedef Geçme Skoru:</span>
-            <span className="font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-              %{readiness.targetReadiness}
-            </span>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 text-xs font-mono">
+              <span className="text-academic-500">Hedef Geçme Skoru:</span>
+              <span className="font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                %{readiness.targetReadiness}
+              </span>
+            </div>
+            <Link
+              href={`/courses/${course.id}/exam`}
+              className="px-3 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-mono font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all"
+            >
+              <Target className="w-3.5 h-3.5" />
+              <span>Sınav Simülasyonu</span>
+            </Link>
           </div>
         </div>
 
@@ -343,9 +352,17 @@ export default function CourseHubPage({
               Müfredat Yol Haritası (Üniteler & Konular)
             </h2>
           </div>
-          <span className="text-xs font-mono text-academic-500">
-            {curriculum.units.length} Ünite
-          </span>
+          <div className="flex items-center gap-2 text-xs font-mono">
+            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-500/20">
+              {curriculum.masteredConceptsCount} Usta
+            </span>
+            <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold border border-amber-500/20">
+              {curriculum.totalConcepts - curriculum.masteredConceptsCount} Devam Eden
+            </span>
+            <span className="text-academic-400">
+              ({curriculum.units.length} Ünite)
+            </span>
+          </div>
         </div>
 
         <div className="space-y-6">

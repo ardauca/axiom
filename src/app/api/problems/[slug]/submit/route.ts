@@ -4,6 +4,7 @@ import { verifyAnswer } from '@/lib/verification/cas';
 import { calculateRatingUpdate } from '@/lib/algorithms/elo';
 import { calculateNextReview } from '@/lib/algorithms/spacedRepetition';
 import { diagnoseError, recordMistakeWithDiagnosis } from '@/lib/tutor/remediationEngine';
+import { updateMasteryOnSubmission } from '@/lib/tutor/masteryEngine';
 
 export async function POST(
   req: Request,
@@ -187,6 +188,17 @@ export async function POST(
       });
     }
 
+    // 8. Update UserConceptMastery & CourseReadiness (True Course Connection)
+    const masteryImpact = await updateMasteryOnSubmission({
+      userId: user.id,
+      problemId: problem.id,
+      isCorrect,
+      timeSpentSec,
+      hintsUsed,
+      attemptNumber,
+      independenceScore: ratingResult.independenceScore,
+    });
+
     return NextResponse.json({
       isCorrect,
       userAnswer,
@@ -195,6 +207,7 @@ export async function POST(
       pointsTested: verification.pointsTested,
       prerequisiteRecommendations,
       remediation,
+      masteryImpact,
       ratingUpdate: {
         oldRating: user.rating,
         newRating: ratingResult.newRating,
