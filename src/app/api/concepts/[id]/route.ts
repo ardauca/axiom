@@ -45,6 +45,14 @@ export async function GET(
       return NextResponse.json({ error: 'Concept not found' }, { status: 404 });
     }
 
+    // Fetch dynamic academic evidence and fusion context
+    const externalEvidence = await prisma.externalAcademicEvidence.findMany({
+      where: { conceptId: id }
+    });
+    const fusionContext = await prisma.sourceFusionContext.findUnique({
+      where: { conceptId: id }
+    });
+
     // Auto-generate 8-step synthesized academic lesson if not yet populated
     if (concept.lessonSteps.length === 0) {
       const { syncConceptLessonWithFusion } = await import('@/lib/tutor/teacherEngine');
@@ -96,6 +104,15 @@ export async function GET(
         rating: p.problem.rating,
         difficulty: p.problem.difficulty,
       })),
+      externalEvidence: externalEvidence.map((e) => ({
+        institution: e.institution,
+        courseName: e.courseName,
+        tier: e.tier,
+        role: e.pedagogicalRole,
+        citation: e.citation,
+        url: e.url,
+      })),
+      notationDifferences: fusionContext?.notationDifferences || null,
     };
 
     return NextResponse.json({ concept: formatted });

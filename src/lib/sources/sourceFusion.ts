@@ -130,12 +130,12 @@ export async function fuseAcademicSources(
     };
   });
 
-  // Identify external roles based on evaluation or specified role
-  const intuitionEvidence = evaluatedEvidence.find(e => e.evidence.pedagogicalRole === 'BEST_INTUITION')?.evidence
+  // Identify external roles based on multi-dimensional evaluation results
+  const intuitionEvidence = evaluatedEvidence.find(e => e.evaluation.recommendedRole === 'PRIMARY_THEORY' || e.evidence.pedagogicalRole === 'BEST_INTUITION')?.evidence
     || externalResearch.evidenceList.find(e => e.pedagogicalRole === 'BEST_INTUITION');
-  const proofEvidence = evaluatedEvidence.find(e => e.evidence.pedagogicalRole === 'FORMAL_PROOF')?.evidence
+  const proofEvidence = evaluatedEvidence.find(e => e.evaluation.recommendedRole === 'PRIMARY_PROOF' || e.evidence.pedagogicalRole === 'FORMAL_PROOF')?.evidence
     || externalResearch.evidenceList.find(e => e.pedagogicalRole === 'FORMAL_PROOF');
-  const workedExampleEvidence = evaluatedEvidence.find(e => e.evidence.pedagogicalRole === 'BEST_WORKED_EXAMPLE')?.evidence
+  const workedExampleEvidence = evaluatedEvidence.find(e => e.evaluation.recommendedRole === 'EXAMPLE_SOURCE' || e.evidence.pedagogicalRole === 'BEST_WORKED_EXAMPLE')?.evidence
     || externalResearch.evidenceList.find(e => e.pedagogicalRole === 'BEST_WORKED_EXAMPLE');
 
   // 5. Detect Notation Differences & Academic Conventions

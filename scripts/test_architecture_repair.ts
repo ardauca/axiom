@@ -236,6 +236,46 @@ async function runArchitectureRepairTests() {
       }
     }
 
+    // ----------------------------------------------------
+    // TEST H: COMPLETE DYNAMIC RESEARCH -> EVALUATION -> FUSION -> TEACHER RUNTIME CHAIN
+    // (Testing on concepts strictly OUTSIDE the static registry)
+    // ----------------------------------------------------
+    console.log('\n[TEST H] Live Dynamic Research -> Multi-Dimensional Evaluation -> Fusion -> Teacher Chain...');
+    const unregisteredConceptId = 'topological-space-axioms';
+    const dynamicResearch = await researchAcademicSources(unregisteredConceptId);
+    assert(dynamicResearch.isExternalAvailable === true, 'Dynamic academic research succeeded for unregistered concept');
+    assert(dynamicResearch.evidenceList.length >= 2, 'Discovered at least 2 Tier 1 academic benchmark sources', `Count: ${dynamicResearch.evidenceList.length}`);
+    
+    // Check dynamic evaluation of the newly discovered sources
+    const dynamicEvidence = dynamicResearch.evidenceList[0];
+    const dynamicEval = evaluateAcademicSource({
+      id: dynamicEvidence.citation,
+      name: dynamicEvidence.courseName,
+      institution: dynamicEvidence.institution,
+      tier: dynamicEvidence.tier,
+      authority: 'REFERENCE_TEXTBOOK',
+      rawText: `${dynamicEvidence.courseName} ${dynamicEvidence.citation} ${dynamicEvidence.extractedExcerpt}`,
+      topicsCovered: ['topological space', 'topology axioms']
+    }, {
+      targetConcept: 'topological-space-axioms',
+      courseCode: 'MAT301',
+      department: 'Matematik ve Bilgisayar Bilimleri'
+    });
+    assert(dynamicEval.overallQuality >= 70, 'Dynamically discovered source evaluated with high quality score', `Score: ${dynamicEval.overallQuality}`);
+
+    // Verify full teacher synthesis with dynamic fusion
+    const dynamicLesson = await generateStructuredLesson(unregisteredConceptId);
+    assert(dynamicLesson.steps.length === 8, '8-step pedagogical lesson synthesized for dynamically researched concept');
+    assert(dynamicLesson.fusion.intuitionSource.source.includes('MIT') || dynamicLesson.fusion.intuitionSource.source.includes('Cambridge'),
+      'Fusion attached dynamic academic intuition',
+      `Intuition Source: ${dynamicLesson.fusion.intuitionSource.source}`
+    );
+    const dynamicMiniCheck = dynamicLesson.steps.find(s => s.stepType === 'MINI_CHECK');
+    assert(!!dynamicMiniCheck?.miniCheckQuestion && !!dynamicMiniCheck?.miniCheckAnswer,
+      'Hypothesis-testing mini-check dynamically generated from assumptions',
+      `Mini-check Q: ${dynamicMiniCheck?.miniCheckQuestion?.slice(0, 50)}...`
+    );
+
     // Cleanup test users
     await prisma.userConceptMastery.deleteMany({ where: { userId: { in: [userA.id, userB.id] } } });
     await prisma.mistakeItem.deleteMany({ where: { userId: { in: [userA.id, userB.id] } } });

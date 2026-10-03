@@ -104,18 +104,45 @@ export default function ConceptLessonPage({
           {language === 'tr' && concept.dualTerminology ? concept.dualTerminology : concept.name}
         </h1>
 
-        {/* Academic Source Citation Card */}
-        {concept.sourceCitation && (
-          <div className="p-3 rounded-lg bg-academic-50 dark:bg-academic-950 border border-academic-200 dark:border-academic-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2 text-academic-600 dark:text-academic-400">
-            <div className="flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-amber-500 shrink-0" />
-              <span><strong>Akademik Kaynak:</strong> {concept.sourceCitation} — {concept.sourceAuthor}</span>
+        {/* Academic Source Citation & External Evidence Cards */}
+        <div className="space-y-2">
+          {concept.sourceCitation && (
+            <div className="p-3 rounded-lg bg-academic-50 dark:bg-academic-950 border border-academic-200 dark:border-academic-800 text-xs font-mono flex flex-wrap items-center justify-between gap-2 text-academic-600 dark:text-academic-400">
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4 text-amber-500 shrink-0" />
+                <span><strong>ESOGÜ Resmi Müfredat Kaynağı:</strong> {concept.sourceCitation} — {concept.sourceAuthor}</span>
+              </div>
+              <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                Doğrulama: {concept.verificationStatus} (Seviye {concept.verificationLevel})
+              </span>
             </div>
-            <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-              Doğrulama: {concept.verificationStatus} (Seviye {concept.verificationLevel})
-            </span>
-          </div>
-        )}
+          )}
+
+          {concept.externalEvidence && concept.externalEvidence.length > 0 && (
+            <div className="p-3 rounded-lg bg-blue-500/5 border border-blue-500/20 text-xs font-mono space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Dinamik Akademik Araştırma & Kanıt Füzyonu (Tier 1 Benchmark)</span>
+                </span>
+                <span className="text-[10px] text-academic-500">
+                  {concept.externalEvidence.length} Uluslararası Üniversite Kaynağı
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2 pt-0.5">
+                {concept.externalEvidence.map((ev: any, idx: number) => (
+                  <span
+                    key={idx}
+                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-white dark:bg-academic-900 border border-blue-500/30 text-academic-700 dark:text-academic-300"
+                    title={ev.citation}
+                  >
+                    <strong>{ev.institution}</strong> ({ev.role})
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Step Progress Indicators */}
         <div className="flex items-center gap-2 pt-2 overflow-x-auto pb-1">
