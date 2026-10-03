@@ -19,8 +19,8 @@ export interface AcademicResearchResult {
   statusMessage: string;
 }
 
-// Curated academic repository registry for university mathematics & computer science
-const ACADEMIC_KNOWLEDGE_CORPUS: Record<string, ExternalSourceEvidence[]> = {
+// Verified and curated academic fallback registry for university mathematics & computer science
+export const VERIFIED_SOURCE_REGISTRY: Record<string, ExternalSourceEvidence[]> = {
   'directional-derivative': [
     {
       institution: 'MIT OpenCourseWare',
@@ -600,8 +600,8 @@ export async function researchAcademicSources(
     };
   }
 
-  // 2. Discover from academic knowledge corpus
-  const discovered = ACADEMIC_KNOWLEDGE_CORPUS[conceptId];
+  // 2. Discover from verified academic source registry
+  const discovered = VERIFIED_SOURCE_REGISTRY[conceptId];
 
   if (!discovered || discovered.length === 0) {
     return {

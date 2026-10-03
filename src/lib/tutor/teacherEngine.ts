@@ -95,7 +95,13 @@ export async function generateStructuredLesson(
 
   // Step 3: MENTAL_MODEL
   let mentalModelText = `Zihninizde canlandırın: Tanımlanan matematiksel nesne statik bir sembol değil, bir dönüşüm veya karar sürecidir.`;
-  if (conceptId === 'bayes-theorem') {
+  // Generic Evidence-Driven Mental Model Synthesis:
+  // 1. Evidence extracted from evaluated sources
+  // 2. Verified fallback corpus if available
+  // 3. Dynamic generic synthesis grounded in formal statement and assumptions
+  if (fusion.intuitionSource.mentalModel && !fusion.intuitionSource.mentalModel.startsWith('Bu konu neden var')) {
+    mentalModelText = `**Zihinsel Model & Pedagojik Sezgi (${fusion.intuitionSource.source}):**\n\n${fusion.intuitionSource.mentalModel}\n\n*Pedagojik Çıkarım:* Bu analoji ${conceptName} kavramının kuru bir formülden ibaret olmadığını, matematiksel bir dönüşüm dinamiğini temsil ettiğini ortaya koyar.`;
+  } else if (conceptId === 'bayes-theorem') {
     mentalModelText = `**Zihinsel Model (Filtre / Odak Daraltma):**\n\nEvrensel küme $S$ içindeki tüm olasılıklar arasından, $B$ olayının gerçekleştiği bilgisi elimize ulaştığında, yeni evrenimiz artık yalnızca $B$ kümesidir. $A$'nın yeni olasılığı, $A$'nın $B$ içine düşen parçasının ($A \\cap B$) tüm $B$'ye olan alan oranıdır: $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$.`;
   } else if (conceptId === 'directional-derivative') {
     mentalModelText = `**Zihinsel Model (Dağ Yamacında Eğim):**\n\nÜç boyutlu bir tepede durduğunuzu hayal edin. Sadece Doğuya ($x$) veya Kuzeye ($y$) değil, istediğiniz herhangi bir $\\vec{u}$ yönüne adım attığınızda hissettiğiniz diklik/eğim miktarı o yöndeki türevdir. Gradyan vektörü $\\nabla f$ en dik tırmanış doğrultusunu gösterir; $\\vec{u}$ ile skaler çarpımı ise o yöndeki bileşeni verir.`;
@@ -141,6 +147,9 @@ export async function generateStructuredLesson(
     mentalModelText = `**Zihinsel Model (Adres Defteri ve Derleme Sonrası Maskeleme):**\n\nJava'da nesneler Heap denen dev depoda yaşar. Stack'teki yerel değişkenler ise nesnenin kendisini değil, deponun raf numarasını (adresini/referansını) tutar. Bir metoda nesne gönderdiğinizde Java bu raf numarasının bir fotokopisini metoda verir (kesinlikle Pass-by-Value). Java Generics ise derleyicinin taktığı güvenlik gözlüğüdür; derleme bittiğinde gözlük çıkarılır ve tüm generic tipler \`Object\`'e dönüştürülür (Type Erasure), böylece 1995 yılından kalan JVM'ler bile kodunuzu hatasız çalıştırır.`;
   } else if (conceptId === 'rsa-public-key-cryptography') {
     mentalModelText = `**Zihinsel Model (Açık Asma Kilit ve Tek Yönlü Tuzak Kapı):**\n\nHerkesin görebileceği meydana açık bir asma kilit bırakırsınız ($n$ ve $e$ genel anahtarı). Biri size gizli bir mesaj göndermek istediğinde mesajı kutuya koyup kilidi tık diye kapatır. Kapatmak çocuk oyuncağıdır (modüler üs alma). Ancak o kilidi anahtarsız açmak için iki dev asal sayının çarpımını ($n = p \\cdot q$) çarpanlarına ayırmak gerekir ki bu evrenin yaşı kadar sürer. Kilidi açacak tek anahtar ise sadece sizde olan $d$ gizli çarpanıdır (Euler Totient Teoremi).`;
+  } else {
+    // Generic dynamic mental model grounded in formal definition and hypotheses
+    mentalModelText = `**Zihinsel Model & Geometrik Sezgi:**\n\n${conceptName} kavramını ele alırken: Bir nesnenin veya sistemin doğrudan formülünü ezberlemek yerine, sistemin temel varsayımları altındaki davranışını gözlemleyin.\n\n$$\n${fusion.formalDefinitionSource.definitionLaTeX}\n$$\n\nTanımın geçerli olduğu bölgede ${fusion.formalDefinitionSource.assumptions} hipotezleri, bu matematiksel yapının sınırlarını belirler. Zihninizde bu kavramı; girdi aldığında durumu koruyan veya dönüştüren dinamik bir operatör olarak modelleyiniz.`;
   }
   steps.push({
     stepOrder: 3,
@@ -183,15 +192,33 @@ export async function generateStructuredLesson(
   });
 
   // Step 7: MINI_CHECK
-  let checkQ = 'Bu kavramın uygulanabilmesi için hangi önkoşul zorunludur?';
+  // Dynamic generic mini-check derived from concept assumptions, pitfalls, or verified formal statement
+  let checkQ = `"${conceptName}" kavramının veya ilgili teoreminin geçerli olabilmesi için hangi hipotez/önkoşul kesinlikle zorunludur?`;
+  let checkAns = concept.assumptions 
+    ? `${concept.assumptions}` 
+    : 'İlgili matematiksel tanım ve teoremin tüm hipotezlerinin eksiksiz sağlanması';
   let checkOpts = [
-    'Tüm değişkenlerin 0\'dan büyük olması',
-    'İlgili teoremin matematiksel hipotezlerinin eksiksiz sağlanması',
-    'Yalnızca lineer sistemlerde çalışması',
-    'Fonksiyonun tam sayı değerli olması'
+    checkAns,
+    'Tanım kümesindeki tüm değişkenlerin kesinlikle pozitif reel sayı olması',
+    'Yalnızca lineer ve sonlu boyutlu cebirsel uzaylarda tanımlı olması',
+    'Fonksiyon veya operatörün türevinin her noktada sıfıra eşit olması'
   ];
-  let checkAns = 'İlgili teoremin matematiksel hipotezlerinin eksiksiz sağlanması';
-  let checkExpl = 'Matematiksel teoremler yalnızca hipotezleri (varsayımları) sağlandığında geçerlidir; keyfi veya ezbere genelleme yapılamaz.';
+  let checkExpl = `Matematiksel ve algoritmik yapılar yalnızca belirtilen hipotezler (${checkAns}) sağlandığında geçerlidir. Ezbere veya koşulsuz genelleme yapılamaz.`;
+
+  // Parse common pitfalls if available for dynamic distractor generation
+  if (tr?.commonPitfalls) {
+    try {
+      const parsedPitfalls = JSON.parse(tr.commonPitfalls);
+      if (Array.isArray(parsedPitfalls) && parsedPitfalls.length > 0) {
+        checkExpl = `En sık yapılan kavramsal yanılgı: ${parsedPitfalls[0]}. Hipotezlerin (${checkAns}) sağlanması zorunludur.`;
+      }
+    } catch {
+      // Pitfalls might be plain text
+      if (tr.commonPitfalls.length > 10) {
+        checkExpl = `Kavramsal Yanılgı Uyarısı: ${tr.commonPitfalls.slice(0, 150)}... Hipotezler titizlikle kontrol edilmelidir.`;
+      }
+    }
+  }
 
   if (conceptId === 'bayes-theorem') {
     checkQ = 'Bayes formülünde P(A|B) = P(B|A)P(A) / P(B) ifadesinin matematiksel olarak tanımlı olabilmesi için hangi koşul zorunludur?';

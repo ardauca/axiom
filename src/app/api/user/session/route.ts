@@ -1,19 +1,22 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { getOrCreateGuestUser } from '@/lib/auth/session';
+import { getSessionUser } from '@/lib/auth/session';
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
-    const defaultScholar = await prisma.user.findFirst({
-      where: { role: 'ADMIN' },
+    const user = await getSessionUser(req);
+    const response = NextResponse.json({ user });
+
+    // Set cookie if not already set or updated
+    response.cookies.set({
+      name: 'axiom_user_id',
+      value: user.id,
+      path: '/',
+      httpOnly: false,
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24 * 365, // 1 year
     });
 
-    if (defaultScholar) {
-      return NextResponse.json({ user: defaultScholar });
-    }
-
-    const guest = await getOrCreateGuestUser();
-    return NextResponse.json({ user: guest });
+    return response;
   } catch (error) {
     console.error('Session error:', error);
     return NextResponse.json({ error: 'Failed to retrieve user session' }, { status: 500 });

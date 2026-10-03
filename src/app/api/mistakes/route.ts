@@ -1,12 +1,16 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { getSessionUser } from '@/lib/auth/session';
 
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const lang = searchParams.get('lang') || 'tr';
 
+    const user = await getSessionUser(req);
+
     const mistakes = await prisma.mistakeItem.findMany({
+      where: { userId: user.id },
       include: {
         problem: {
           include: {

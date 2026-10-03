@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { getOrCreateGuestUser } from '@/lib/auth/session';
+import { getSessionUser } from '@/lib/auth/session';
 import { getCourseCurriculum, calculateCourseReadiness } from '@/lib/tutor/curriculumEngine';
 
 export async function GET(
@@ -10,11 +10,8 @@ export async function GET(
   try {
     const { courseId } = await params;
 
-    // Retrieve default user or guest
-    const adminUser = await prisma.user.findFirst({
-      where: { role: 'ADMIN' }
-    });
-    const activeUser = adminUser || (await getOrCreateGuestUser());
+    // Retrieve active student session
+    const activeUser = await getSessionUser(req);
     const userId = activeUser.id;
 
     const course = await prisma.course.findUnique({

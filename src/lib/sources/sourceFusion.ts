@@ -1,5 +1,6 @@
 import { prisma } from '../prisma';
 import { researchAcademicSources, ExternalSourceEvidence } from './externalAcademicEngine';
+import { evaluateAcademicSource } from './sourceEvaluation';
 
 export interface SourceClaim {
   statement: string;
@@ -106,10 +107,36 @@ export async function fuseAcademicSources(
   // 4. Run External Academic Research
   const externalResearch = await researchAcademicSources(conceptId, options);
 
-  // Identify external roles
-  const intuitionEvidence = externalResearch.evidenceList.find(e => e.pedagogicalRole === 'BEST_INTUITION');
-  const proofEvidence = externalResearch.evidenceList.find(e => e.pedagogicalRole === 'FORMAL_PROOF');
-  const workedExampleEvidence = externalResearch.evidenceList.find(e => e.pedagogicalRole === 'BEST_WORKED_EXAMPLE');
+  // 4b. Perform Multi-Dimensional Academic Source Evaluation & Dynamic Role Assignment
+  const evaluatedEvidence = externalResearch.evidenceList.map(ev => {
+    const evalResult = evaluateAcademicSource(
+      {
+        id: ev.citation,
+        name: ev.courseName,
+        institution: ev.institution,
+        tier: ev.tier,
+        authority: 'REFERENCE_TEXTBOOK',
+        rawText: `${ev.courseName} ${ev.citation} ${ev.extractedExcerpt}`,
+        topicsCovered: [concept.translations[0]?.name || concept.id],
+      },
+      {
+        targetConcept: concept.translations[0]?.name || concept.id,
+      }
+    );
+
+    return {
+      evidence: ev,
+      evaluation: evalResult,
+    };
+  });
+
+  // Identify external roles based on evaluation or specified role
+  const intuitionEvidence = evaluatedEvidence.find(e => e.evidence.pedagogicalRole === 'BEST_INTUITION')?.evidence
+    || externalResearch.evidenceList.find(e => e.pedagogicalRole === 'BEST_INTUITION');
+  const proofEvidence = evaluatedEvidence.find(e => e.evidence.pedagogicalRole === 'FORMAL_PROOF')?.evidence
+    || externalResearch.evidenceList.find(e => e.pedagogicalRole === 'FORMAL_PROOF');
+  const workedExampleEvidence = evaluatedEvidence.find(e => e.evidence.pedagogicalRole === 'BEST_WORKED_EXAMPLE')?.evidence
+    || externalResearch.evidenceList.find(e => e.pedagogicalRole === 'BEST_WORKED_EXAMPLE');
 
   // 5. Detect Notation Differences & Academic Conventions
   let notationDifferences: string | undefined = undefined;

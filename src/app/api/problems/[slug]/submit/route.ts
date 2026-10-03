@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { getSessionUser } from '@/lib/auth/session';
 import { verifyAnswer } from '@/lib/verification/cas';
 import { calculateRatingUpdate } from '@/lib/algorithms/elo';
 import { calculateNextReview } from '@/lib/algorithms/spacedRepetition';
@@ -80,12 +81,7 @@ export async function POST(
     }
 
     // 2. Retrieve User Profile
-    const user = await prisma.user.findFirst({
-      where: { role: 'ADMIN' },
-    });
-    if (!user) {
-      return NextResponse.json({ error: 'User session not found' }, { status: 400 });
-    }
+    const user = await getSessionUser(req);
 
     // 3. Compute Adaptive Rating and Independence
     const ratingResult = calculateRatingUpdate({

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { getOrCreateGuestUser } from '@/lib/auth/session';
+import { getSessionUser } from '@/lib/auth/session';
 import { verifyAnswer } from '@/lib/verification/cas';
 import { diagnoseError, recordMistakeWithDiagnosis } from '@/lib/tutor/remediationEngine';
 
@@ -103,10 +103,7 @@ export async function POST(
     const body = await req.json();
     const { answers, timeSpentSec = 3600 } = body; // map of problemId -> userAnswer
 
-    const adminUser = await prisma.user.findFirst({
-      where: { role: 'ADMIN' },
-    });
-    const activeUser = adminUser || (await getOrCreateGuestUser());
+    const activeUser = await getSessionUser(req);
     const userId = activeUser.id;
 
     let totalScore = 0;

@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { getSessionUser } from '@/lib/auth/session';
 
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const lang = searchParams.get('lang') || 'tr';
 
-    const user = await prisma.user.findFirst({ where: { role: 'ADMIN' } });
-    if (!user) return NextResponse.json({ bookmarks: [] });
+    const user = await getSessionUser(req);
 
     const bookmarks = await prisma.bookmark.findMany({
       where: { userId: user.id },
@@ -42,8 +42,7 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   try {
     const { problemId } = await req.json();
-    const user = await prisma.user.findFirst({ where: { role: 'ADMIN' } });
-    if (!user) return NextResponse.json({ error: 'User not found' }, { status: 400 });
+    const user = await getSessionUser(req);
 
     const existing = await prisma.bookmark.findUnique({
       where: {

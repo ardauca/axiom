@@ -21,6 +21,8 @@ export interface MasteryUpdateResult {
     transferScore: number;
     averageScore: number;
     scoreDelta: number;
+    independentSolvesCount?: number;
+    totalSolvesCount?: number;
   }>;
   affectedCourses: Array<{
     courseId: string;
@@ -200,6 +202,8 @@ export async function updateMasteryOnSubmission(
       transferScore,
       averageScore: newAvg,
       scoreDelta: newAvg - prevAvg,
+      independentSolvesCount,
+      totalSolvesCount,
     });
   }
 
@@ -250,33 +254,62 @@ export async function recordLessonConceptProgress(
     },
   });
 
-  const baseGain = miniCheckPassed ? 25 : 12;
-
-  if (!currentMastery) {
-    currentMastery = await prisma.userConceptMastery.create({
-      data: {
-        userId,
-        conceptId,
-        conceptualScore: Math.min(100, 50 + baseGain),
-        formulaScore: 50,
-        problemSolvingScore: 30,
-        transferScore: 25,
-      },
-    });
-  } else {
-    currentMastery = await prisma.userConceptMastery.update({
-      where: {
-        userId_conceptId: {
+  if (miniCheckPassed) {
+    if (!currentMastery) {
+      currentMastery = await prisma.userConceptMastery.create({
+        data: {
           userId,
           conceptId,
+          conceptualScore: 65,
+          formulaScore: 60,
+          problemSolvingScore: 30,
+          transferScore: 25,
         },
-      },
-      data: {
-        conceptualScore: Math.min(100, currentMastery.conceptualScore + baseGain),
-        formulaScore: Math.min(100, currentMastery.formulaScore + (miniCheckPassed ? 15 : 5)),
-        lastPracticedAt: new Date(),
-      },
-    });
+      });
+    } else {
+      currentMastery = await prisma.userConceptMastery.update({
+        where: {
+          userId_conceptId: {
+            userId,
+            conceptId,
+          },
+        },
+        data: {
+          conceptualScore: Math.min(100, currentMastery.conceptualScore + 20),
+          formulaScore: Math.min(100, currentMastery.formulaScore + 15),
+          lastPracticedAt: new Date(),
+        },
+      });
+    }
+  } else {
+    // WRONG ANSWER IS NEVER EVIDENCE OF MASTERY:
+    // It is diagnostic evidence of misconception or prerequisite gap.
+    if (!currentMastery) {
+      currentMastery = await prisma.userConceptMastery.create({
+        data: {
+          userId,
+          conceptId,
+          conceptualScore: 20, // flagged as needing remediation
+          formulaScore: 20,
+          problemSolvingScore: 10,
+          transferScore: 10,
+        },
+      });
+    } else {
+      currentMastery = await prisma.userConceptMastery.update({
+        where: {
+          userId_conceptId: {
+            userId,
+            conceptId,
+          },
+        },
+        data: {
+          conceptualScore: Math.max(10, currentMastery.conceptualScore - 10),
+          formulaScore: Math.max(10, currentMastery.formulaScore - 5),
+          lastPracticedAt: new Date(),
+        },
+      });
+    }
   }
 
   // Find parent courses and recompute readiness

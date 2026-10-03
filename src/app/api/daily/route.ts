@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { getSessionUser } from '@/lib/auth/session';
 import { getCourseCurriculum } from '@/lib/tutor/curriculumEngine';
 
 export async function GET(req: Request) {
@@ -7,12 +8,7 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const lang = searchParams.get('lang') || 'tr';
 
-    const user = await prisma.user.findFirst({
-      where: { role: 'ADMIN' },
-    });
-    if (!user) {
-      return NextResponse.json({ error: 'User not found' }, { status: 400 });
-    }
+    const user = await getSessionUser(req);
 
     // 1. Identify active course (MAT201 default or user's active semester)
     let currentCourse = await prisma.course.findFirst({

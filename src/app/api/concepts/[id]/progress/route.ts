@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { getSessionUser } from '@/lib/auth/session';
 import { recordLessonConceptProgress } from '@/lib/tutor/masteryEngine';
 
 export async function POST(
@@ -11,13 +12,7 @@ export async function POST(
     const body = await req.json();
     const { miniCheckPassed = true } = body;
 
-    const user = await prisma.user.findFirst({
-      where: { role: 'ADMIN' },
-    });
-
-    if (!user) {
-      return NextResponse.json({ error: 'User not found' }, { status: 400 });
-    }
+    const user = await getSessionUser(req);
 
     const result = await recordLessonConceptProgress(user.id, id, miniCheckPassed);
 

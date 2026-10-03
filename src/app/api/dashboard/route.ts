@@ -1,14 +1,11 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { getOrCreateGuestUser } from '@/lib/auth/session';
+import { getSessionUser } from '@/lib/auth/session';
 import { getCourseCurriculum, calculateCourseReadiness } from '@/lib/tutor/curriculumEngine';
 
 export async function GET(req: Request) {
   try {
-    const adminUser = await prisma.user.findFirst({
-      where: { role: 'ADMIN' },
-    });
-    const activeUser = adminUser || (await getOrCreateGuestUser());
+    const activeUser = await getSessionUser(req);
     const userId = activeUser.id;
 
     // 1. Fetch current semester courses
